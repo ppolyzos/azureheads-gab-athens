@@ -1,0 +1,35 @@
+{
+  "name": "gab-athens",
+  "authors": [
+    "ppolyzos <ppolyzos@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "athens.azurebootcamp.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "3.1.1",
+    "bootstrap": "^3.3.7",
+    "jquery-validation": "jquery.validate#^1.13.0",
+    "toastr": "^2.1.3",
+    "waypoints": "^4.0.1",
+    "jquery_appear": "0.3.6",
+    "masonry": "^4.1.1",
+    "html5shiv": "3.7.3",
+    "respond": "1.4.2",
+    "font-awesome": "v4.7.0",
+    "simple-line-icons": "^2.3.2"
+  },
+  "resolutions": {
+    "jquery": "3.1.1",
+    "font-awesome": "v4.7.0"
+  }
+}

@@ -1,0 +1,32 @@
+﻿// Configure bundling and minification for the project.
+// More info at https://go.microsoft.com/fwlink/?LinkId=808241
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/lib/toastr/toastr.min.css",
+      "wwwroot/lib/font-awesome/css/font-awesome.css",
+      "wwwroot/fonts/styles.css",
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "wwwroot/lib/toastr/toastr.min.js",
+      "wwwroot/lib/waypoints/lib/jquery.waypoints.min.js",
+      "wwwroot/lib/jquery_appear/jquery.appear.js",
+      "wwwroot/lib/masonry/dist/masonry.pkgd.min.js",
+      "wwwroot/js/jquery.plugin.js",
+      "wwwroot/js/jquery.countTo.js",
+      "wwwroot/js/modal-box.js",
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

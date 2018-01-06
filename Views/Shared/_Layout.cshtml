@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>@ViewData["Title"] - Athens - Global Azure Bootcamp 2018</title>
+    <meta name="description" content="Global Azure Bootcamp 2018 Athens.">
+    <meta name="keywords" content="Events, Development, Globa azure bootcamp">
+    <meta name="author" content="ppolyzos, paris polyzos">
+
+    <link rel="icon" type="image/png" href="~/img/logo-2018.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,300italic,400italic,500italic&subset=latin,latin-ext" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700" />
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/fonts/styles.css">
+        
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+
+    <!--[if lt IE 9]>
+        <script src="lib/html5shiv/dist/html5shiv.js"></script>
+        <script src="lib/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    @RenderBody()
+    
+     <environment names="Development">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
+        <script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="lib/toastr/toastr.min.js"></script>
+        <script type="text/javascript" src="lib/waypoints/lib/jquery.waypoints.min.js"></script>
+        <script type="text/javascript" src="lib/jquery_appear/jquery.appear.js"></script>
+        <script type="text/javascript" src="lib/masonry/dist/masonry.pkgd.min.js"></script>
+        <script type="text/javascript" src="js/jquery.plugin.js"></script>
+        <script type="text/javascript" src="js/jquery.countTo.js"></script>
+        <script type="text/javascript" src="js/modal-box.js"></script>
+        <script src="~/js/site.js" asp-appension="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
