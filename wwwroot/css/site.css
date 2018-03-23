@@ -478,6 +478,31 @@ span {
 /* ----------------------------------------------------------------------------
     Common styles
 ---------------------------------------------------------------------------- */
+
+.btn-pink {
+    background-color: #ff5f9b !important;
+}
+
+.btn-green {
+    background-color: #91d539 !important;
+}
+
+.btn-blue {
+    background-color: #1ac6ff !important;
+}
+
+.btn-berry {
+    background-color: #fe6760 !important;
+}
+
+.btn-orange {
+    background-color: #fe4918 !important;
+}
+
+.btn-lg-size {
+    width: 30%;
+}
+
 .clearfix {
     zoom: 1;
 }
