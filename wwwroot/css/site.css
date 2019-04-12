@@ -4687,6 +4687,11 @@ button[type="submit"] .loading {
         height: 255px;
     }
 
+    .sponsor.small {
+        width: 160px;
+        height: 160px;
+    }
+
     .sponsor.inline {
         vertical-align: middle;
     }
@@ -6338,4 +6343,26 @@ button[type="submit"] .loading {
         margin-bottom: 0;
         width: 100%;
     }
+}
+
+
+.header__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.header__video iframe {
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
