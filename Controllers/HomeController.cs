@@ -12,7 +12,8 @@ namespace gab_athens.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
+            return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
         }
 
         public IActionResult Error()

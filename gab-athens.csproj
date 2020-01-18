@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\global-ai-athens-bootcamp-azureheads.jpg">
+    <Content Update="wwwroot\global-ai-bootcamp.jpg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

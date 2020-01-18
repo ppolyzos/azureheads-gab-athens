@@ -2362,7 +2362,7 @@ button.btn.btn-block {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    position: relative;
+    /*position: relative; CAUSING ISSUES WITH IFRAME VIDEO EMBED */ 
 }
 
     .nav-wrapper .nav-current {
@@ -5989,6 +5989,10 @@ button[type="submit"] .loading {
     background-image: url("../img/backgrounds/bg3.jpg");
 }
 
+.bg-ai {
+    background-image: url("../img/global-ai-bootcamp.jpg");
+}
+
 .gradient-overlay:before {
     background: #9001a5;
     background: -moz-linear-gradient(top, #9001a5 0%, #10171a 100%);
@@ -6366,3 +6370,62 @@ button[type="submit"] .loading {
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
+
+.schedule .no-border.tab-content-schedule:before {
+    border: none !important;
+}
+
+
+.videoPlayer {
+    background-image: url(/images/illustration-Shape-One.svg);
+    /*padding: 10%;*/
+    background-size: 90% 90%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 48px;
+}
+
+
+
+.videoPlayer .video-container {
+    position: relative;
+    padding-bottom: 52%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.videoPlayer .video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.extra-heading-spacer {
+    height: 25rem;
+}
+
+.ai-bootcamp .heading-alt {
+    color: #454b51 !important;
+    text-shadow: 1px 1px #dadada !important;
+}
+
+.ai-bootcamp h6 {
+    color: #fff!important;
+    text-shadow: 0 1px #dadada !important;
+}
+
+.sponsor-hero {
+    font-weight: 400;
+    color: #3c3c3c;
+    text-shadow: none;
+    margin-top: 0.5rem;
+    display: block;
+}
+    .sponsor-hero a {
+        color: #3c3c3c;
+        font-weight: 600;
+        text-shadow: 0 0 5px #dadada;
+    }
