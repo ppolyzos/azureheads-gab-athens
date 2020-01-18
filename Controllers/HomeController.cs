@@ -13,7 +13,8 @@ namespace gab_athens.Controllers
         public IActionResult Index()
         {
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
-            return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
+            //return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
+            return View("~/Views/ga-2020/Index.cshtml"); // Default for global-azure-2020
         }
 
         public IActionResult Error()

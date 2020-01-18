@@ -5993,6 +5993,10 @@ button[type="submit"] .loading {
     background-image: url("../img/global-ai-bootcamp.jpg");
 }
 
+.bg-ga-2020 {
+    background-image: url('../img/ga-2020/global-azure-athens-2020-v3.jpg');
+}
+
 .gradient-overlay:before {
     background: #9001a5;
     background: -moz-linear-gradient(top, #9001a5 0%, #10171a 100%);
