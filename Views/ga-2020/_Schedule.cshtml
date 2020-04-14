@@ -19,13 +19,378 @@
                 <div id="day1" class="tab-pane fade active in">
                     <!-- Navigation by auditorium start -->
                     <ul class="nav nav-schedule">
-                        <li class="active"><a href="#day1_auditorium1" data-toggle="tab">Coming Soon</a></li>
-                            @* <li><a href="#day1_auditorium2" data-toggle="tab">Gazarte 2</a></li> *@
-                            @*<li><a href="#day1_auditorium3" data-toggle="tab">ΦΟΥΡΝΟΙ</a></li>*@
+                        <li class="active"><a href="#day1_auditorium1" data-toggle="tab">Slot A</a></li>
+                        <li><a href="#day1_auditorium2" data-toggle="tab">Slot B</a></li>
+                        <li><a href="#day1_auditorium3" data-toggle="tab">Slot C</a></li>
                     </ul>
                     <!-- Navigation by auditorium start -->
                     <div class="tab-content tab-content-schedule">
-                        <p>More info comming soon.</p>
+                        <div id="day1_auditorium1" class="tab-pane fade active in">
+                            <div class="panel-group" id="day1_auditorium1_timeline">
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-building-o"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium1_timeline" href="#day1_auditorium1_time2" class="schedule-item-toggle">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>11:00 - 11:15</strong>
+                                        <h6 class="title">Welcome Keynote<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium1_time2" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <strong class="highlight speaker-name">Konstantinos Pantos, Paris Polyzos, Pantelis Apostolidis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-pantelis-apostolidis-new.jpg" alt="Pantelis Apostolidis" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time3" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>11:15 - 12:00</strong>
+                                        <h6 class="title">Azure Policy, Standardize the Azure Environment<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time3" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">At my session we will explain the tools that Microsoft Azure provides to help the administrators to enforce rules to all subscriptions. Some examples of those rules are to help the organizations to stay compliant with their corporate standards, to standardize the resources creation and management & to manage the permissions and access controls.</p>
+                                            <strong class="highlight speaker-name">Pantelis Apostolidis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-paris-polyzos-gab.jpg" alt="Paris Polyzos" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium1_timeline" href="#day1_auditorium1_time4" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>12:00 - 12:45</strong>
+                                        <h6 class="title">Azure API Management - From Zero to Hero<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium1_time4" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">In this session I will talk about Azure API Management service. How someone can get started using it and gradually move to more advanced topics covering policies, developer portal, authentication and how it can be used in a hybrid and multi-cloud environment.</p>
+                                            <strong class="highlight speaker-name">Paris Polyzos</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-kostas-pantos.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium1_timeline" href="#day1_auditorium1_time5" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>13:00 - 13:45</strong>
+                                        <h6 class="title">Building low code/no code services with Azure<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium1_time5" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <strong class="highlight speaker-name">Konstantinos Pantos</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-coffee"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium1_timeline" href="#day1_auditorium1_time6" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>14:00-15:00</strong>
+                                        <h6 class="title">Lunch Break<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-dimitris-pantazis.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium1_timeline" href="#day1_auditorium1_time7" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>15:00 - 15:45</strong>
+                                        <h6 class="title">Azure Stack Hub - Run Azure in your datacenter<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium1_time7" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">Find out what Azure Stack Hub is (and is not), how it integrates with the datacenter and what are the management options. During the demo you will see how to deploy the Azure Stack Development Kit, which is a free version of Azure Stack Hub for trial purposes.</p>
+                                            <strong class="highlight speaker-name">Dimitris Pantazis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-dimitris-fintzos.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium1_timeline" href="#day1_auditorium1_time8" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>16:00 - 16:45</strong>
+                                        <h6 class="title">Logic Apps, automation & cost management<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium1_time8" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">An introduction to the hurdles of Azure automation and orchestration in our IaaS/PaaS environments, how much code is enough, and cost-saving solutions practices via Logic Apps and automation. Τhe focus is on cases with logic apps integrations against Azure Automation solutions and the actual cost-saving.</p>
+                                            <strong class="highlight speaker-name">Dimitris Fintzos</strong>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-vaggelis-kappas.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium1_timeline" href="#day1_auditorium1_time9" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>17:00 - 17:45</strong>
+                                        <h6 class="title">Azure Network Security<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium1_time9" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">Building end-to-end a cloud native application on Azure, managing no servers, scalable to support any load, operationalize all the components involved with minimal effort. It will be a session with the absolutely necessary powerpoint slides and focus mostly of how a cloud native application may be realized on Azure. It will have a public facing web site to collect product orders, customer identity will be backed by AAD B2C, an Azure Functions based REST API, Azure Service Bus to act a load leveling mechanism, Cosmos DB as the NoSQL engine for persistence and App Insights as the end-to-end monitoring solutions.</p>
+                                            <strong class="highlight speaker-name">Vaggelis Kappas</strong>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-gift"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time11" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>17:45 - 18:00</strong>
+                                        <h6 class="title">Closing / Gifts<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="day1_auditorium2" class="tab-pane fade in">
+                            <div class="panel-group" id="day1_auditorium2_timeline">
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-building-o"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time2" class="schedule-item-toggle">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>11:00 - 11:15</strong>
+                                        <h6 class="title">Welcome Keynote<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time2" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <strong class="highlight speaker-name">Konstantinos Pantos, Paris Polyzos, Pantelis Apostolidis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-vassilis-ioannidis.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time3" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>11:15 - 12:00</strong>
+                                        <h6 class="title">Azure ARM Templates: deploy using IaC<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time3" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">Why and how to use ARM Templates along with PowerShell, to deploy your infrastructure on Azure. Aimed for IT Pros and DevOps people.</p>
+                                            <strong class="highlight speaker-name">Vassilis Ioannidis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-giorgo-kavvalakis.jpg" alt="Paris Polyzos" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time4" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>12:00 - 12:45</strong>
+                                        <h6 class="title">Azure Bastion and the power working from within the browser!<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time4" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">In this session we will explore what is Azure Bastion, how we can setup to use it and what can we do with it. Bastion combined with Azure Serial Console can provide us with tools to use in a browser, to gain flexibility and to be more secure. But we will also check this from the Pen-Tester's point of view.</p>
+                                            <strong class="highlight speaker-name">George Kavvalakis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-georgia-kalyva.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time5" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>13:00 - 13:45</strong>
+                                        <h6 class="title">Developing Solutions with Azure Machine learning studio<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time5" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">In this session, we are going to see how to use the designer and the Azure ML SDKs and CLI to quickly prep data, train and deploy machine learning models. We will see how several Azure Machine Learning features work like multiple framework support and advanced ML capabilities like automated machine learning and pipeline support.</p>
+                                            <strong class="highlight speaker-name">Georgia Kalyva</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-coffee"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time6" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>14:00-15:00</strong>
+                                        <h6 class="title">Lunch Break<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-michail-angelos-haggar.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time7" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>15:00 - 15:45</strong>
+                                        <h6 class="title">What's new in Microsoft Threat Protection <i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time7" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">In this session, we are going to demestify what brings the General Availability of Microsoft Threat Protection. We will discuss what's the new way to do cross investigations and forensics with Advanced Hunting across Endpoints, Identities, E-mails and Data.</p>
+                                            <strong class="highlight speaker-name">Michael Haggar</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker1.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time8" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>16:00 - 16:45</strong>
+                                        <h6 class="title">Azure containers<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time8" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">An intro to cloud native.  Learn about possible containers solutions on azure and when to use them.</p>
+                                            <strong class="highlight speaker-name">Konstantinos Ziazios</strong>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-vaggelis-kappas.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time9" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>17:00 - 17:45</strong>
+                                        <h6 class="title">3 effective ways to achieve a better security exposure for your cloud identities<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium2_time9" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">Do you want to achieve a better security exposure for your online identities? In this presentation you will learn a practical strategy on how to safeguard your cloud identities with Azure Active Directory. This session is intended for Business leaders, IT Pro’s, IS Professionals and Cloud enthusiasts. </p>
+                                            <strong class="highlight speaker-name">George Markou</strong>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-gift"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium2_timeline" href="#day1_auditorium2_time11" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>17:45 - 18:00</strong>
+                                        <h6 class="title">Closing / Gifts<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="day1_auditorium3" class="tab-pane fade in">
+                            <div class="panel-group" id="day1_auditorium3_timeline">
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-building-o"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium3_timeline" href="#day1_auditorium3_time2" class="schedule-item-toggle">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>11:00 - 11:15</strong>
+                                        <h6 class="title">Welcome Keynote<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium3_time2" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <strong class="highlight speaker-name">Konstantinos Pantos, Paris Polyzos, Pantelis Apostolidis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-yanni-touliatos.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium3_timeline" href="#day1_auditorium3_time3" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>11:15 - 12:00</strong>
+                                        <h6 class="title">Hybrid integration and solutions in Covid19 era and beyond<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium3_time3" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <strong class="highlight speaker-name">Yianni Touliatos</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-george-grammatikos.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium3_timeline" href="#day1_auditorium3_time4" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>12:00 - 12:45</strong>
+                                        <h6 class="title">Intro to Azure Service Bus<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium3_time4" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">An introduction to Azure Service Bus with a short demo combining Service Bus Queues and Azure Logic Apps.</p>
+                                            <strong class="highlight speaker-name">George Grammatikos</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker-chatzipavlis-bw.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium3_timeline" href="#day1_auditorium3_time5" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>13:00 - 13:45</strong>
+                                        <h6 class="title">Loading Data into Azure SQL DW (Synapse Analytics) <i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium3_time5" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <p class="description">An introduction of suitable methods to load data into Azure SQL DW (Synapse)</p>
+                                            <strong class="highlight speaker-name">Antonios Chatzipavlis</strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-coffee"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium3_timeline" href="#day1_auditorium3_time6" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>14:00-15:00</strong>
+                                        <h6 class="title">Lunch Break<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <img src="~/img/speakers/speaker1.jpg" alt="" class="img-responsive" />
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium3_timeline" href="#day1_auditorium3_time7" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>15:00 - 17:45</strong>
+                                        <h6 class="title">Please move to Slot A / Slot B<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                    <div id="day1_auditorium3_time7" class="panel-collapse collapse schedule-item-body">
+                                        <article>
+                                            <strong class="highlight speaker-name"></strong>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="panel schedule-item">
+                                    <div class="lecture-icon-wrapper">
+                                        <span class="fa fa-gift"></span>
+                                    </div>
+                                    <a data-toggle="collapse" data-parent="#day1_auditorium3_timeline" href="#day1_auditorium3_time11" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>17:45 - 18:00</strong>
+                                        <h6 class="title">Closing / Gifts<i class="icon icon-arrows-06"></i></h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
