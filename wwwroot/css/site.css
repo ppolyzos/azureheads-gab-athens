@@ -2364,7 +2364,7 @@ button.btn.btn-block {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /*position: relative; CAUSING ISSUES WITH IFRAME VIDEO EMBED */ 
+    position: relative; /* MAY CAUSE ISSUES WITH IFRAME VIDEO EMBED but doesn't work on mobile for multiple Auditoriums'*/
 }
 
     .nav-wrapper .nav-current {
