@@ -888,6 +888,10 @@ li {
     text-shadow: 0 0 5px #000;
 }
 
+.heading-block-card {
+    padding: 15px 0;
+}
+
 .hero-heading-top,
 .hero-heading-bottom {
     position: absolute;
@@ -5997,6 +6001,10 @@ button[type="submit"] .loading {
 .bg-ga-2020 {
     /*background-image: url('../img/ga-2020/global-azure-greece-2020-bg-v1.jpg');*/
     background-image: url('../img/ga-2020/global-azure-greece-2020-bg-blue-v1.jpg');
+}
+
+.bg-ga-2020-empty {
+    background-image: url('../img/ga-2020/global-azure-greece-2020-bg-empty.jpg');
 }
 
 .gradient-overlay:before {
