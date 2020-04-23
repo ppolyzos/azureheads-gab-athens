@@ -1598,6 +1598,16 @@ lesshat-selector {
         padding: 14px 20px 13px;
     }
 
+.btn.btn-stream {
+    min-width: 100px;
+    padding: 7px 10px;
+    margin: 0;
+    float: right;
+    letter-spacing: 0.2em;
+}
+
+
+
     .btn.btn-block {
         margin-left: auto;
         margin-right: auto;
