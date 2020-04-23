@@ -27,6 +27,7 @@ namespace gab_athens.Controllers
             { "ioannidis", "vassilis-ioannidis" },
             { "spyrou", "george-spyrou" },
             { "ziazios", "konstantinos-ziazios" },
+            { "nikolaidis", "michalis-nikolaidis" },
             { "set1", "set-1" },
             { "set2", "set-2" },
             { "set3", "set-3" },
