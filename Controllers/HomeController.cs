@@ -24,7 +24,13 @@ namespace gab_athens.Controllers
             { "polyzos", "paris-polyzos" } ,
             { "kappas", "vaggelis-kappas" } ,
             { "touliatos", "yanni-touliatos" },
-            { "ioannidis", "vassilis-ioannidis" }
+            { "ioannidis", "vassilis-ioannidis" },
+            { "spyrou", "george-spyrou" },
+            { "ziazios", "konstantinos-ziazios" },
+            { "set1", "set-1" },
+            { "set2", "set-2" },
+            { "set3", "set-3" },
+            { "set4", "set-4" },
         };
 
         public IActionResult Index(string speaker)
