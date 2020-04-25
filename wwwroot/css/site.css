@@ -1598,13 +1598,13 @@ lesshat-selector {
         padding: 14px 20px 13px;
     }
 
-.btn.btn-stream {
-    min-width: 100px;
-    padding: 7px 10px;
-    margin: 0;
-    float: right;
-    letter-spacing: 0.2em;
-}
+    .btn.btn-stream {
+        min-width: 100px;
+        padding: 7px 10px;
+        margin: 0;
+        float: right;
+        letter-spacing: 0.2em;
+    }
 
 
 
@@ -6388,16 +6388,16 @@ button[type="submit"] .loading {
     overflow: hidden;
 }
 
-.header__video iframe {
-    width: 100vw;
-    height: 56.25vw;
-    min-height: 100vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-}
+    .header__video iframe {
+        width: 100vw;
+        height: 56.25vw;
+        min-height: 100vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
 
 .schedule .no-border.tab-content-schedule:before {
     border: none !important;
@@ -6415,21 +6415,21 @@ button[type="submit"] .loading {
 
 
 
-.videoPlayer .video-container {
-    position: relative;
-    padding-bottom: 52%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-}
+    .videoPlayer .video-container {
+        position: relative;
+        padding-bottom: 52%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
 
-.videoPlayer .video-container iframe, .video-container object, .video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+        .videoPlayer .video-container iframe, .video-container object, .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
 .extra-heading-spacer {
     height: 25rem;
@@ -6441,7 +6441,7 @@ button[type="submit"] .loading {
 }
 
 .ai-bootcamp h6 {
-    color: #fff!important;
+    color: #fff !important;
     text-shadow: 0 1px #dadada !important;
 }
 
@@ -6452,8 +6452,26 @@ button[type="submit"] .loading {
     margin-top: 0.5rem;
     display: block;
 }
+
     .sponsor-hero a {
         color: #3c3c3c;
         font-weight: 600;
         text-shadow: 0 0 5px #dadada;
+    }
+
+
+.btn-speaker-hightlight {
+    letter-spacing: 0.2rem;
+    font-size: 14px;
+    text-shadow: none;
+    font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3)
+}
+
+    .btn-speaker-hightlight span {
+        display: block;
+        margin: 2px;
+        padding: 2px;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     }

@@ -6,7 +6,7 @@
         @*<li class="socials-nav-item"><a href="#"><span class="fa fa-github"></span></a></li>*@
         @*<li class="socials-nav-item"><a href="#"><span class="fa fa-vimeo-square"></span></a></li>*@
         @*<li class="socials-nav-item"><a href="#"><span class="fa fa-google-plus"></span></a></li>
-        <li class="socials-nav-item"><a href="#"><span class="fa fa-instagram"></span></a></li>*@
+            <li class="socials-nav-item"><a href="#"><span class="fa fa-instagram"></span></a></li>*@
     </ul>
     <div class="heading-block centered-block align-center">
         <div class="container">
@@ -15,12 +15,45 @@
             <h6 class="thin base-font">One day full of <strong>Microsoft Azure and the Cloud</strong></h6>
             <div class="btns-container">
                 <!-- <a href="https://www.meetup.com/azureheads/events/237850213/" class="btn btn-md">GET TICKETS</a> -->
+                <h6>Schedule & Stream Links</h6>
                 <ul>
-                    <li><a class="btn btn-md btn-lg-size" target="_blank" href="https://www.eventbrite.com/e/global-azure-bootcamp-2020-athens-tickets-90175518403">GET TICKETS</a></li>
+                    @*<li><a class="btn btn-md btn-lg-size" target="_blank" href="https://www.eventbrite.com/e/global-azure-bootcamp-2020-athens-tickets-90175518403">GET TICKETS</a></li>*@
+                    <li>
+                        <a class="btn btn-md btn-lg-size btn-green" onclick="selectSchedule('#day1_auditorium1')">Slot A</a>
+                        <a class="btn btn-md btn-lg-size btn-pink"  onclick="selectSchedule('#day1_auditorium2')">Slot B</a>
+                        <a class="btn btn-md btn-lg-size btn-berry" onclick="selectSchedule('#day1_auditorium3')">Slot C</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium1')">
+                            <span class="speaker">Pantelis Apostolidis</span>
+                            <span class="speaker">George Kavvalakis</span>
+                            <span class="speaker">Antonios Chatzipavlis</span>
+                            <span class="speaker">Dimitris Pantazis</span>
+                            <span class="speaker">Dimitris Fintzos</span>
+                            <span class="speaker">Vaggelis Kappas</span>
+                        </a>
+                        <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium2')">
+                            <span class="speaker">Vassilis Ioannidis</span>
+                            <span class="speaker">Paris Polyzos</span>
+                            <span class="speaker">Georgia Kalyva</span>
+                            <span class="speaker">Michael Haggar</span>
+                            <span class="speaker">Konstantinos Ziazios</span>
+                            <span class="speaker">George Markou</span>
+                        </a>
+                        <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium3')">
+                            <span class="speaker">Yianni Touliatos</span>
+                            <span class="speaker">George Grammatikos</span>
+                            <span class="speaker">Konstantinos Pantos</span>
+                            <span class="speaker">Nikolaos Antoniou</span>
+                            <span class="speaker">George Spyrou</span>
+                            <span class="speaker">Michalis Nikolaidis</span>
+                        </a>
+                    </li>
                     <li>
                         @*<a class="btn btn-md btn-lg-size btn-green" target="_blank" href="https://sessionize.com/globalazurevirtual/">Speakers</a>*@
                         @*<a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="http://bit.ly/GA20Volunteers">Volunteers</a>*@
                     </li>
+
                     @*<li><a class="btn btn-md btn-lg-size btn-green" target="_blank" href="~/files/AzureBootcamp2018_Sponsorship.pdf">Sponsorship</a></li>*@
                 </ul>
 
@@ -29,20 +62,32 @@
                 @*<a href="#" class="btn btn-outline btn-md" data-modal-link="0">VIDEO</a>*@
             </div>
             @*<div class="btns-container">
-                <h6>Session Links</h6>
-                <ul>
-                    <li>
-                        <a class="btn btn-md btn-lg-size btn-green" target="_blank" href="https://bit.ly/2xhsIY3">Slot A (10:00 - 14:00)</a>
-                        <a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="https://bit.ly/2VuRSu2">Slot B (10:00 - 14:00)</a>
-                        <a class="btn btn-md btn-lg-size btn-berry" target="_blank" href="https://bit.ly/2RBDe35">Slot C (10:00 - 14:00)</a>
-                    </li>
-                    <li>
-                        <a class="btn btn-md btn-lg-size btn-green" target="_blank" href="https://bit.ly/2Ry6Dvd">Slot A (15:00 - 18:00)</a>
-                        <a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="https://bit.ly/2ydAUbA">Slot B (15:00 - 18:00)</a>
-                        <a class="btn btn-md btn-lg-size btn-berry" target="_blank" href="https://bit.ly/2RBDe35">Slot C (15:00 - 18:00)</a>
-                    </li>
-                </ul>
-            </div>*@
+                    <h6>Session Links</h6>
+                    <ul>
+                        <li>
+                            <a class="btn btn-md btn-lg-size btn-green" target="_blank" href="https://bit.ly/2xhsIY3">Slot A (10:00 - 14:00)</a>
+                            <a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="https://bit.ly/2VuRSu2">Slot B (10:00 - 14:00)</a>
+                            <a class="btn btn-md btn-lg-size btn-berry" target="_blank" href="https://bit.ly/2RBDe35">Slot C (10:00 - 14:00)</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-md btn-lg-size btn-green" target="_blank" href="https://bit.ly/2Ry6Dvd">Slot A (15:00 - 18:00)</a>
+                            <a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="https://bit.ly/2ydAUbA">Slot B (15:00 - 18:00)</a>
+                            <a class="btn btn-md btn-lg-size btn-berry" target="_blank" href="https://bit.ly/2RBDe35">Slot C (15:00 - 18:00)</a>
+                        </li>
+                    </ul>
+                </div>*@
         </div>
     </div>
+
+    <script type="text/javascript">
+        function selectSchedule(tabId) {
+            $('#day1_auditorium1, #day1_auditorium2, #day1_auditorium3').toggleClass('active', false);
+            $('#day1 .nav-schedule li').toggleClass('active', false);
+            $(tabId).toggleClass('active', true);
+
+            var index = parseInt(tabId[tabId.length - 1]) - 1;
+            $(`#day1 .nav-schedule li:eq(${index})`).toggleClass('active', true);
+            window.location = `https://${window.location.hostname}/#schedule`;
+        }
+    </script>
 </section>
