@@ -1,5 +1,3 @@
-using System;
-
 namespace gab_athens.Models
 {
     public class ErrorViewModel

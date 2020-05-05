@@ -8,7 +8,7 @@ namespace gab_athens.Controllers
 {
     public class HomeController : Controller
     {
-        private Dictionary<string, string> mappings = new Dictionary<string, string>()
+        private readonly Dictionary<string, string> _mappings = new Dictionary<string, string>()
         {
             { "chatzipavlis", "antonios-chatzipavlis" } ,
             { "fintzos", "dimitris-fintzos" } ,
@@ -37,7 +37,7 @@ namespace gab_athens.Controllers
         public IActionResult Index(string speaker)
         {
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
-            //return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
+            // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
             return View("~/Views/ga-2020/Index.cshtml"); // Default for global-azure-2020
         }
 
@@ -45,7 +45,7 @@ namespace gab_athens.Controllers
         public IActionResult Speaker(string speaker)
         {
             speaker = speaker.ToLowerInvariant();
-            mappings.TryGetValue(speaker, out var speakerImage);
+            _mappings.TryGetValue(speaker, out var speakerImage);
             var speakerCard = new ExpandoObject();
             speakerCard.TryAdd("image", speakerImage ?? "speakers");
             return View("~/Views/ga-2020/Speaker.cshtml", speakerCard);
