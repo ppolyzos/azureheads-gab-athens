@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Dynamic;
 using Microsoft.AspNetCore.Mvc;
 using gab_athens.Models;
+using gab_athens.Services;
 
 namespace gab_athens.Controllers
 {
@@ -36,9 +37,11 @@ namespace gab_athens.Controllers
 
         public IActionResult Index(string speaker)
         {
+            var service = new EventDataReaderService();
+            var eventDetails = service.Read();
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
-            return View("~/Views/ga-2020/Index.cshtml"); // Default for global-azure-2020
+            return View("~/Views/ga-2020/Index.cshtml", eventDetails); // Default for global-azure-2020
         }
 
         [Route("speaker/{speaker}")]
