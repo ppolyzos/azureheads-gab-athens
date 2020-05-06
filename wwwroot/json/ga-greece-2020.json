@@ -33,6 +33,48 @@
       "enabled": false
     }
   ],
+  "communities": [
+    {
+      "url": "https://www.azureheads.gr",
+      "imageUrl": "/img/communities/azureheads.jpg",
+      "width": "100%",
+      "name": "AzureHeads.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.autoexec.gr",
+      "imageUrl": "/img/communities/autoexec.jpg",
+      "width": "100%",
+      "name": "autoexec.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.sqlschool.gr",
+      "imageUrl": "/img/communities/sqlschool.png",
+      "width": "100%",
+      "name": "sqlschool.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.dotnetzone.gr",
+      "imageUrl": "/img/communities/dotnetzone.png",
+      "width": "100%",
+      "name": "dotnetzone.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "https://www.meetup.com/Thessaloniki-NET-Meetup/",
+      "imageUrl": "/img/communities/thessaloniki-dotnet-meetup.jpeg",
+      "width": "100%",
+      "name": "Thessaloniki .NET Meetup",
+      "style": "big",
+      "enabled": true
+    }
+  ],
   "speakers": [
     {
       "id": "pantelis-apostolidis",
