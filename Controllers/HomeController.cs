@@ -24,7 +24,7 @@ namespace gab_athens.Controllers
             { "apostolidis", "pantelis-apostolidis" } ,
             { "polyzos", "paris-polyzos" } ,
             { "kappas", "vaggelis-kappas" } ,
-            { "touliatos", "yanni-touliatos" },
+            { "touliatos", "yianni-touliatos" },
             { "ioannidis", "vassilis-ioannidis" },
             { "spyrou", "george-spyrou" },
             { "ziazios", "konstantinos-ziazios" },

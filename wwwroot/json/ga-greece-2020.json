@@ -131,7 +131,7 @@
       ]
     },
     {
-      "id": "kontantinos-pantos",
+      "id": "konstantinos-pantos",
       "name": "Konstantinos Pantos",
       "title": "Cloud Solutions Architect @ Microsoft",
       "about": "Since 2001, when I started my professional career, I was given the opportunity to work with some of the largest Greek Software development Companies and worked with cutting edge Microsoft technologies. Nowadays I work as a Solutions Architect for Microsoft where I focus in providing innovative cloud solutions.",
@@ -309,7 +309,7 @@
       "name": "Vassilis Ioannidis",
       "title": "Technical Manager @@ incadea | Azure Solutions Architect | Trainer",
       "about": "Vassilis Ioannidis is a Lead Technical Consultant and a seasoned Microsoft SQL Server expert, working at incadea group, and is in the IT industry for more than 2 decades. Vassilis has a degree in Computer Programming, has numerous Microsoft certifications since 2000 and has been a Microsoft Certified Trainer since 2005. The past 4 years he is working closely with clients, in projects that span across the globe, to move workloads on Microsoft Azure and modernize client solutions on-premises and/or the cloud. Vassilis is a community enthusiast and speaker in many events. Result-driven and a lifelong learner.",
-      "imageUrl": "/img/speakers/speaker-georgia-kalyva.jpg",
+      "imageUrl": "/img/speakers/speaker-vassilis-ioannidis.jpg",
       "links": [
         {
           "url": "https://sqltattoo.com",
@@ -330,11 +330,11 @@
       ]
     },
     {
-      "id": "yanni-touliatos",
+      "id": "yianni-touliatos",
       "name": "Yianni Touliatos",
       "title": "Regional Director, Technical Sales for CEE @ Microsoft",
       "about": "As Regional Technical Sales Director, Yianni Touliatos is leading a team of Cloud Solution Architects and Technical Specialists in a 28 country region in CEE for Microsoft. His prior role was as a Cloud Solution Architect also in the CEE region working with Partners. Yianni has a background of more than 20 years of experience in systems engineering and consulting. Since 2003 he has been primarily focused on hosting and cloud computing and has advised service providers all over the world. Prior to joining Microsoft, Yianni was the managing director of Nimateks, a systems integrator. Yianni and his team worked closely with Citrix and with the Microsoft Hosting and Cloud solutions team designing multi-tenant IaaS and SaaS platforms and executing implementation and migration projects for hosting companies.",
-      "imageUrl": "/img/speakers/speaker-yanni-touliatos.jpg",
+      "imageUrl": "/img/speakers/speaker-yianni-touliatos.jpg",
       "links": [
         {
           "url": "https://www.linkedin.com/in/yiannitouliatos/",
@@ -394,5 +394,211 @@
         }
       ]
     }
-  ]
+  ],
+  "schedule": {
+    "slotA": [
+      {
+        "title": "Welcome Keynote",
+        "description": "",
+        "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
+        "icon": "fa fa-building-o",
+        "time": "11:00 - 11:15",
+        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk"
+      },
+      {
+        "title": "Azure Policy, Standardize the Azure Environment",
+        "description": "At my session we will explain the tools that Microsoft Azure provides to help the administrators to enforce rules to all subscriptions. Some examples of those rules are to help the organizations to stay compliant with their corporate standards, to standardize the resources creation and management & to manage the permissions and access controls.",
+        "speakerIds": ["pantelis-apostolidis"],
+        "time": "11:15 - 12:00",
+        "videoUrl": "https://www.youtube.com/watch?v=pmwgA4p3yJk"
+      },
+      {
+        "title": "Azure Bastion and the power working from within the browser!",
+        "description": "In this session we will explore what is Azure Bastion, how we can setup to use it and what can we do with it. Bastion combined with Azure Serial Console can provide us with tools to use in a browser, to gain flexibility and to be more secure. But we will also check this from the Pen-Tester's point of view.",
+        "speakerIds": ["giorgos-kavvalakis"],
+        "time": "12:00 - 12:45",
+        "videoUrl": "https://www.youtube.com/watch?v=2rpjTQLDoBY"
+      },
+      {
+        "title": "Loading Data into Azure SQL DW (Synapse Analytics)",
+        "description": "An introduction of suitable methods to load data into Azure SQL DW (Synapse)",
+        "speakerIds": ["antonios-chatzipavlis"],
+        "time": "13:00 - 13:45",
+        "videoUrl": "https://www.youtube.com/watch?v=w_07YosS2hA"
+      },
+      {
+        "title": "Lunch Break",
+        "description": "",
+        "SpeakerIds": [],
+        "icon": "fa fa-coffee",
+        "time": "14:00 - 15:00",
+        "videoUrl": null
+      },
+      {
+        "title": "Azure Stack Hub - Run Azure in your datacenter",
+        "description": "Find out what Azure Stack Hub is (and is not), how it integrates with the datacenter and what are the management options. During the demo you will see how to deploy the Azure Stack Development Kit, which is a free version of Azure Stack Hub for trial purposes.",
+        "speakerIds": ["dimitris-pantazis"],
+        "time": "15:00 - 15:45",
+        "videoUrl": "https://www.youtube.com/watch?v=ZJ8TV8FXy7k"
+      },
+      {
+        "title": "Logic Apps, automation & cost management",
+        "description": "An introduction to the hurdles of Azure automation and orchestration in our IaaS/PaaS environments, how much code is enough, and cost-saving solutions practices via Logic Apps and automation. Τhe focus is on cases with logic apps integrations against Azure Automation solutions and the actual cost-saving.",
+        "speakerIds": ["dimitris-fintzos"],
+        "time": "16:00 - 16:45",
+        "videoUrl": "https://www.youtube.com/watch?v=2R7NzNz7jkw"
+      },
+      {
+        "title": "Azure Network Security",
+        "description": "Building end-to-end a cloud native application on Azure, managing no servers, scalable to support any load, operationalize all the components involved with minimal effort. It will be a session with the absolutely necessary powerpoint slides and focus mostly of how a cloud native application may be realized on Azure. It will have a public facing web site to collect product orders, customer identity will be backed by AAD B2C, an Azure Functions based REST API, Azure Service Bus to act a load leveling mechanism, Cosmos DB as the NoSQL engine for persistence and App Insights as the end-to-end monitoring solutions.",
+        "speakerIds": ["vaggelis-kappas"],
+        "time": "17:00 - 17:45",
+        "videoUrl": "https://www.youtube.com/watch?v=eLydjvlqOjw"
+      },
+      {
+        "title": "Closing / Gifts",
+        "description": "",
+        "SpeakerIds": [],
+        "icon": "fa fa-gift",
+        "time": "17:45 - 18:00",
+        "videoUrl": null
+      }
+    ],
+    "slotB": [
+      {
+        "title": "Welcome Keynote",
+        "description": "",
+        "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
+        "icon": "fa fa-building-o",
+        "time": "11:00 - 11:15",
+        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk"
+      },
+      {
+        "title": "Azure ARM Templates: deploy using IaC",
+        "description": "Why and how to use ARM Templates along with PowerShell, to deploy your infrastructure on Azure. Aimed for IT Pros and DevOps people",
+        "speakerIds": ["vassilis-ioannidis"],
+        "time": "11:15 - 12:00",
+        "videoUrl": "https://www.youtube.com/watch?v=vm8aYn7LwBU"
+      },
+      {
+        "title": "Azure API Management - From Zero to Hero",
+        "description": "In this session I will talk about Azure API Management service. How someone can get started using it and gradually move to more advanced topics covering policies, developer portal, authentication and how it can be used in a hybrid and multi-cloud environment.",
+        "speakerIds": ["paris-polyzos"],
+        "time": "12:00 - 12:45",
+        "videoUrl": "https://www.youtube.com/watch?v=syNM6K_wdBs"
+      },
+      {
+        "title": "Developing Solutions with Azure Machine learning studio",
+        "description": "In this session, we are going to see how to use the designer and the Azure ML SDKs and CLI to quickly prep data, train and deploy machine learning models. We will see how several Azure Machine Learning features work like multiple framework support and advanced ML capabilities like automated machine learning and pipeline support.",
+        "speakerIds": ["georgia-kalyva"],
+        "time": "13:00 - 13:45",
+        "videoUrl": "https://www.youtube.com/watch?v=jFu4sQ7JqMk"
+      },
+      {
+        "title": "Lunch Break",
+        "description": "",
+        "SpeakerIds": [],
+        "icon": "fa fa-coffee",
+        "time": "14:00 - 15:00",
+        "videoUrl": null
+      },
+      {
+        "title": "What's new in Microsoft Threat Protection",
+        "description": "In this session, we are going to demistify what brings the General Availability of Microsoft Threat Protection. We will discuss what's the new way to do cross investigations and forensics with Advanced Hunting across Endpoints, Identities, E-mails and Data.",
+        "speakerIds": ["michail-angelos-haggar"],
+        "time": "15:00 - 15:45",
+        "videoUrl": "https://www.youtube.com/watch?v=uOeZ1aWv2O0"
+      },
+      {
+        "title": "Azure containers",
+        "description": "An intro to cloud native. Learn about possible containers solutions on azure and when to use them.",
+        "speakerIds": ["konstantinos-ziazios"],
+        "time": "16:00 - 16:45",
+        "videoUrl": "https://www.youtube.com/watch?v=b2U5xFGCkgM"
+      },
+      {
+        "title": "3 effective ways to achieve a better security exposure for your cloud identities",
+        "description": "Do you want to achieve a better security exposure for your online identities? In this presentation you will learn a practical strategy on how to safeguard your cloud identities with Azure Active Directory. This session is intended for Business leaders, IT Pro’s, IS Professionals and Cloud enthusiasts.",
+        "speakerIds": ["george-markou"],
+        "time": "17:00 - 17:45",
+        "videoUrl": "https://www.youtube.com/watch?v=WZAVRtPSr5M"
+      },
+      {
+        "title": "Closing / Gifts",
+        "description": "",
+        "SpeakerIds": [],
+        "icon": "fa fa-gift",
+        "time": "17:45 - 18:00",
+        "videoUrl": null
+      }
+    ],
+    "slotC": [
+      {
+        "title": "Welcome Keynote",
+        "description": "",
+        "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
+        "icon": "fa fa-building-o",
+        "time": "11:00 - 11:15",
+        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk"
+      },
+      {
+        "title": "Hybrid integration and solutions in Covid19 era and beyond",
+        "description": "Hybrid integration and solutions in Covid19 era and beyond",
+        "speakerIds": ["yianni-touliatos"],
+        "time": "11:15 - 12:00",
+        "videoUrl": "https://www.youtube.com/watch?v=Wfxk5Ha8bDY"
+      },
+      {
+        "title": "Intro to Azure Service Bus",
+        "description": "An introduction to Azure Service Bus with a short demo combining Service Bus Queues and Azure Logic Apps.",
+        "speakerIds": ["george-grammatikos"],
+        "time": "12:00 - 12:45",
+        "videoUrl": "https://www.youtube.com/watch?v=CzUZnaobrjY"
+      },
+      {
+        "title": "Building low code/no code services with Azure",
+        "description": "Building low code/no code services with Azure",
+        "speakerIds": ["konstantinos-pantos"],
+        "time": "13:00 - 13:45",
+        "videoUrl": "https://www.youtube.com/watch?v=Lwnt8X4HZ0o"
+      },
+      {
+        "title": "Lunch Break",
+        "description": "",
+        "SpeakerIds": [],
+        "icon": "fa fa-coffee",
+        "time": "14:00 - 15:00",
+        "videoUrl": null
+      },
+      {
+        "title": "The poor man's Cloud Native Architectures",
+        "description": "Building cost effective scalable server(less) solutions.",
+        "speakerIds": ["nikolaos-antoniou"],
+        "time": "15:00 - 15:45",
+        "videoUrl": "https://www.youtube.com/watch?v=3ly216Nxn9k"
+      },
+      {
+        "title": "Developing a Speech to Text component using Azure Logic Apps and Cognitive Services",
+        "description": "A high level overview on the architecture of the Speech to Text component developed for the European Union Intellectual Propery Office.",
+        "speakerIds": ["george-spyrou"],
+        "time": "16:00 - 16:45",
+        "videoUrl": "https://www.youtube.com/watch?v=ImCUPW8j0vg"
+      },
+      {
+        "title": "Azure and the Internet of Things",
+        "description": "In this session we will see how we can prototype a real-time PowerBI IOT dashboard with almost no code.",
+        "speakerIds": ["michalis-nikolaidis"],
+        "time": "17:00 - 17:45",
+        "videoUrl": "https://www.youtube.com/watch?v=lnYZBxz0jtU"
+      },
+      {
+        "title": "Closing / Gifts",
+        "description": "",
+        "SpeakerIds": [],
+        "icon": "fa fa-gift",
+        "time": "17:45 - 18:00",
+        "videoUrl": null
+      }
+    ]
+  }
 }

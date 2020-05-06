@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace gab_athens.Models
 {
@@ -22,6 +23,26 @@ namespace gab_athens.Models
         public string Style { get; set; }
         public bool Enabled { get; set; }
     }
+
+    public class Schedule
+    {
+        public IList<Session> SlotA { get; set; }
+        public IList<Session> SlotB { get; set; }
+        public IList<Session> SlotC { get; set; }
+    }
+
+    public class Session
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string[] SpeakerIds { get; set; }
+        
+        [JsonIgnore]
+        public IList<Speaker> Speakers { get; set; }
+        public string Icon { get; set; }
+        public string Time { get; set; }
+        public string VideoUrl { get; set; }
+    }
     
 
     public class Link
@@ -35,5 +56,6 @@ namespace gab_athens.Models
         public IList<Speaker> Speakers { get; set; }
         public IList<Entity> Sponsors { get; set; }
         public IList<Entity> Communities { get; set; }
+        public Schedule Schedule { get; set; }
     }
 }
