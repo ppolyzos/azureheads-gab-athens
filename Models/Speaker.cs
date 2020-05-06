@@ -13,6 +13,16 @@ namespace gab_athens.Models
         public IList<Link> Links { get; set; }
     }
 
+    public class Sponsor
+    {
+        public string Name { get; set; }
+        public string Url { get; set; }
+        public string ImageUrl { get; set; }
+        public string Width { get; set; }
+        public string Style { get; set; }
+        public bool Enabled { get; set; }
+    }
+
     public class Link
     {
         public string Url { get; set; }
@@ -22,5 +32,6 @@ namespace gab_athens.Models
     public class EventDetails
     {
         public IList<Speaker> Speakers { get; set; }
+        public IList<Sponsor> Sponsors { get; set; }
     }
 }

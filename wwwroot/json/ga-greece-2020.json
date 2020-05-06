@@ -1,7 +1,41 @@
 ﻿{
+  "sponsors": [
+    {
+      "url": "http://officeline.gr/",
+      "imageUrl": "/img/sponsors/sponsor-office-line-gold.png",
+      "width": "60%",
+      "name": "Office Line",
+      "style": "inline",
+      "enabled": true
+    },
+    {
+      "url": "https://sessionize.com/",
+      "imageUrl": "/img/sponsors/sessionize-logo.png",
+      "width": "100%",
+      "name": "Sessionize",
+      "style": "inline",
+      "enabled": true
+    },
+    {
+      "url": "https://stoiximan.gr/",
+      "imageUrl": "/img/sponsors/stoiximan.png",
+      "width": "100%",
+      "name": "Stoiximan.gr",
+      "style": "big",
+      "enabled": false
+    },
+    {
+      "url": "https://microsoft.com/",
+      "imageUrl": "/img/sponsors/microsoft.png",
+      "width": "100%",
+      "name": "Microsoft",
+      "style": "big",
+      "enabled": false
+    }
+  ],
   "speakers": [
     {
-      "id": "pantelis-apostolidis", 
+      "id": "pantelis-apostolidis",
       "name": "Pantelis Apostolidis",
       "title": "Sr. Solutions Architect @ Office Line SA | Microsoft Azure MVP",
       "about": "Passionate about information technology, Pantelis is a Solutions Architect at Office Line SA & a Microsoft Azure MVP. For the last 10 years, Pantelis has been involved to major cloud projects in Greece & abroad. He is an author, blogger & a spokesperson | Moderator of the azureheads.gr & autoexec.gr communities | Husband | DAD",
