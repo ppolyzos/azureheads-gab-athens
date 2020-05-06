@@ -42,6 +42,7 @@ namespace gab_athens.Models
         public string Icon { get; set; }
         public string Time { get; set; }
         public string VideoUrl { get; set; }
+        public bool IsGreeting { get; set; }
     }
     
 
@@ -51,8 +52,18 @@ namespace gab_athens.Models
         public string Icon { get; set; }
     }
 
+    public class Configuration
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Location { get; set; }
+        public string Date { get; set; }
+        public IList<Link> Links { get; set; }
+    }
+
     public class EventDetails
     {
+        public Configuration Configuration { get; set; }
         public IList<Speaker> Speakers { get; set; }
         public IList<Entity> Sponsors { get; set; }
         public IList<Entity> Communities { get; set; }

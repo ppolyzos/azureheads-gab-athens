@@ -7,9 +7,8 @@
         <p class="text-alt">Vast number of different speeches<br/> and <span class="highlight">activities</span></p>
         <br/>
         <br/>
-        <!-- Schedule start -->
         <div class="schedule">
-            <!-- Navigation by day start -->
+
             <ul class="nav nav-schedule">
                 <li class="active">
                     <a href="#day1" data-toggle="tab">
@@ -18,10 +17,7 @@
                     </a>
                 </li>
             </ul>
-            <!-- Navigation by day end -->
-            <!-- First level content start -->
             <div class="tab-content">
-                <!-- Day 1 content start -->
                 <div id="day1" class="tab-pane fade active in">
                     <!-- Navigation by auditorium start -->
                     <ul class="nav nav-schedule">
@@ -35,7 +31,6 @@
                             <a href="#day1_auditorium3" data-toggle="tab">Slot C</a>
                         </li>
                     </ul>
-                    <!-- Navigation by auditorium start -->
                     <div class="tab-content tab-content-schedule">
                         @{
                             await Html.RenderPartialAsync("~/Views/Partial/ScheduleSlot.cshtml", Model.Schedule.SlotA, new ViewDataDictionary(ViewData) {{"section", "day1_auditorium1"}});

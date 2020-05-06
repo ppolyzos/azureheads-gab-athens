@@ -1,4 +1,20 @@
 ﻿{
+  "configuration": {
+    "name": "Global Azure Greece 2020",
+    "description": "One day full of <strong>Microsoft Azure and the Cloud</strong>",
+    "location": "GREECE (VIRTUAL)",
+    "date": "25 Apr",
+    "links": [{
+      "url": "https://www.twitter.com/azureheads/",
+      "icon": "fa fa-twitter"
+    },{
+      "url": "https://www.facebook.com/azureheads/",
+      "icon": "fa fa-facebook"
+    },{
+      "url": "https://www.meetup.com/azureheads/",
+      "icon": "fa fa-meetup"
+    }]
+  },
   "sponsors": [
     {
       "url": "http://officeline.gr/",
@@ -403,7 +419,8 @@
         "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
         "icon": "fa fa-building-o",
         "time": "11:00 - 11:15",
-        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk"
+        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk",
+        "IsGreeting": true
       },
       {
         "title": "Azure Policy, Standardize the Azure Environment",
@@ -471,7 +488,8 @@
         "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
         "icon": "fa fa-building-o",
         "time": "11:00 - 11:15",
-        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk"
+        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk",
+        "IsGreeting": true
       },
       {
         "title": "Azure ARM Templates: deploy using IaC",
@@ -539,7 +557,8 @@
         "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
         "icon": "fa fa-building-o",
         "time": "11:00 - 11:15",
-        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk"
+        "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk",
+        "IsGreeting": true
       },
       {
         "title": "Hybrid integration and solutions in Covid19 era and beyond",

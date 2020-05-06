@@ -1,18 +1,31 @@
-﻿<section id="hero" class="hero-section bg-ga-2020 bg-cover window-height light-text">
+﻿@model EventDetails
+
+@functions
+{
+    private static IEnumerable<string> DistinctSpeakers(IEnumerable<Session> sessions)
+    {
+        return sessions.Where(s => !s.IsGreeting).SelectMany(c => c.Speakers.Select(s => s.Name)).Distinct();
+    }
+}
+
+<section id="hero" class="hero-section bg-ga-2020 bg-cover window-height light-text">
     <ul class="socials-nav">
-        <li class="socials-nav-item"><a href="https://www.twitter.com/azureheads/"><span class="fa fa-twitter"></span></a></li>
-        <li class="socials-nav-item"><a href="https://www.facebook.com/azureheads/"><span class="fa fa-facebook"></span></a></li>
-        <li class="socials-nav-item"><a href="https://www.meetup.com/azureheads/"><span class="fa fa-meetup"></span></a></li>
-        @*<li class="socials-nav-item"><a href="#"><span class="fa fa-github"></span></a></li>*@
-        @*<li class="socials-nav-item"><a href="#"><span class="fa fa-vimeo-square"></span></a></li>*@
-        @*<li class="socials-nav-item"><a href="#"><span class="fa fa-google-plus"></span></a></li>
-            <li class="socials-nav-item"><a href="#"><span class="fa fa-instagram"></span></a></li>*@
+        @foreach (var link in Model.Configuration.Links)
+        {
+            <li class="socials-nav-item">
+                <a href="@link.Url">
+                    <span class="@link.Icon"></span>
+                </a>
+            </li>
+        }
     </ul>
     <div class="heading-block centered-block align-center">
         <div class="container">
-            <h5 class="heading-alt" style="margin-bottom: 8px;"><span class="fa fa-calendar-o base-clr-txt"></span>25.Apr <span class="fa fa-map-marker base-clr-txt" style="margin-left: 14px;"></span>Greece (Virtual)</h5>
-            <h1 class="extra-heading">Global Azure Greece 2020</h1>
-            <h6 class="thin base-font">One day full of <strong>Microsoft Azure and the Cloud</strong></h6>
+            <h5 class="heading-alt" style="margin-bottom: 8px;">
+                <span class="fa fa-calendar-o base-clr-txt"></span>@Model.Configuration.Date <span class="fa fa-map-marker base-clr-txt" style="margin-left: 14px;"></span>@Model.Configuration.Location
+            </h5>
+            <h1 class="extra-heading">@Model.Configuration.Name</h1>
+            <h6 class="thin base-font">@Html.Raw(Model.Configuration.Description)</h6>
             <div class="btns-container">
                 <!-- <a href="https://www.meetup.com/azureheads/events/237850213/" class="btn btn-md">GET TICKETS</a> -->
                 <h6>Schedule & Stream Links</h6>
@@ -20,33 +33,27 @@
                     @*<li><a class="btn btn-md btn-lg-size" target="_blank" href="https://www.eventbrite.com/e/global-azure-bootcamp-2020-athens-tickets-90175518403">GET TICKETS</a></li>*@
                     <li>
                         <a class="btn btn-md btn-lg-size btn-green" onclick="selectSchedule('#day1_auditorium1')">Slot A</a>
-                        <a class="btn btn-md btn-lg-size btn-pink"  onclick="selectSchedule('#day1_auditorium2')">Slot B</a>
+                        <a class="btn btn-md btn-lg-size btn-pink" onclick="selectSchedule('#day1_auditorium2')">Slot B</a>
                         <a class="btn btn-md btn-lg-size btn-berry" onclick="selectSchedule('#day1_auditorium3')">Slot C</a>
                     </li>
                     <li>
                         <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium1')">
-                            <span class="speaker">Pantelis Apostolidis</span>
-                            <span class="speaker">George Kavvalakis</span>
-                            <span class="speaker">Antonios Chatzipavlis</span>
-                            <span class="speaker">Dimitris Pantazis</span>
-                            <span class="speaker">Dimitris Fintzos</span>
-                            <span class="speaker">Vaggelis Kappas</span>
+                            @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotA))
+                            {
+                                <span class="speaker">@speaker</span>
+                            }
                         </a>
                         <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium2')">
-                            <span class="speaker">Vassilis Ioannidis</span>
-                            <span class="speaker">Paris Polyzos</span>
-                            <span class="speaker">Georgia Kalyva</span>
-                            <span class="speaker">Michael Haggar</span>
-                            <span class="speaker">Konstantinos Ziazios</span>
-                            <span class="speaker">George Markou</span>
+                            @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotB))
+                            {
+                                <span class="speaker">@speaker</span>
+                            }
                         </a>
                         <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium3')">
-                            <span class="speaker">Yianni Touliatos</span>
-                            <span class="speaker">George Grammatikos</span>
-                            <span class="speaker">Konstantinos Pantos</span>
-                            <span class="speaker">Nikolaos Antoniou</span>
-                            <span class="speaker">George Spyrou</span>
-                            <span class="speaker">Michalis Nikolaidis</span>
+                            @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotC))
+                            {
+                                <span class="speaker">@speaker</span>
+                            }
                         </a>
                     </li>
                     <li>
@@ -56,7 +63,6 @@
 
                     @*<li><a class="btn btn-md btn-lg-size btn-green" target="_blank" href="~/files/AzureBootcamp2018_Sponsorship.pdf">Sponsorship</a></li>*@
                 </ul>
-
 
 
                 @*<a href="#" class="btn btn-outline btn-md" data-modal-link="0">VIDEO</a>*@
