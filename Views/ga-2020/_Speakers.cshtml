@@ -1,5 +1,12 @@
 ﻿@model EventDetails;
 
+@{
+    string SplitText(string text, int take = 10, int skip = 0)
+    {
+        return string.Join(' ', text.Split(' ').Skip(skip).Take(take));
+    }
+}
+
 <section id="speakers" class="section align-center">
     <div class="container">
         <span class="icon section-icon icon-faces-users-04"></span>
@@ -29,7 +36,22 @@
                             <small>@speaker.Title</small>
                         </p>
                         <p class="about">
-                            @speaker.About
+                            @{
+                                if (speaker.About.Length > 300)
+                                {
+                                    <span>@SplitText(speaker.About, 30, 0)</span>
+                                    <span class="collapse" id="about-@speaker.Id">
+                                        @SplitText(speaker.About, 1000, 30)
+                                    </span>
+                                    <a data-toggle="collapse" href="#about-@speaker.Id" role="button" aria-expanded="false" aria-controls="about-@speaker.Id">
+                                        ...
+                                    </a>              
+                                }
+                                else
+                                {
+                                    @speaker.About
+                                }
+                            }
                         </p>
                         <ul class="speaker-socials">
                             @foreach (var link in speaker.Links)
