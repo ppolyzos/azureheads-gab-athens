@@ -1,44 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Dynamic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using gab_athens.Models;
 using gab_athens.Services;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace gab_athens.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly Dictionary<string, string> _mappings = new Dictionary<string, string>()
+        private readonly EventDataReaderService _eventDataReaderService;
+
+        public HomeController(EventDataReaderService eventDataReaderService)
         {
-            { "chatzipavlis", "antonios-chatzipavlis" } ,
-            { "fintzos", "dimitris-fintzos" } ,
-            { "pantazis", "dimitris-pantazis" } ,
-            { "grammatikos", "george-grammatikos" } ,
-            { "markou", "george-markou" } ,
-            { "kalyva", "georgia-kalyva" } ,
-            { "kavvalakis", "giorgos-kavvalakis" } ,
-            { "pantos", "konstantinos-pantos" } ,
-            { "haggar", "michail-haggar" } ,
-            { "antoniou", "nikolaos-antoniou" } ,
-            { "apostolidis", "pantelis-apostolidis" } ,
-            { "polyzos", "paris-polyzos" } ,
-            { "kappas", "vaggelis-kappas" } ,
-            { "touliatos", "yianni-touliatos" },
-            { "ioannidis", "vassilis-ioannidis" },
-            { "spyrou", "george-spyrou" },
-            { "ziazios", "konstantinos-ziazios" },
-            { "nikolaidis", "michalis-nikolaidis" },
-            { "set1", "set-1" },
-            { "set2", "set-2" },
-            { "set3", "set-3" },
-            { "set4", "set-4" },
-        };
+            _eventDataReaderService = eventDataReaderService;
+        }
 
         public IActionResult Index(string speaker)
         {
-            var service = new EventDataReaderService();
-            var eventDetails = service.Read();
+            var eventDetails = _eventDataReaderService.Read();
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
             return View("~/Views/ga-2020/Index.cshtml", eventDetails); // Default for global-azure-2020
@@ -47,11 +29,11 @@ namespace gab_athens.Controllers
         [Route("speaker/{speaker}")]
         public IActionResult Speaker(string speaker)
         {
-            speaker = speaker.ToLowerInvariant();
-            _mappings.TryGetValue(speaker, out var speakerImage);
-            var speakerCard = new ExpandoObject();
-            speakerCard.TryAdd("image", speakerImage ?? "speakers");
-            return View("~/Views/ga-2020/Speaker.cshtml", speakerCard);
+            var eventDetails = _eventDataReaderService.Read();
+            var card = eventDetails.Speakers.FirstOrDefault(c => c.Aliases.Contains(speaker.ToLowerInvariant()));
+            ViewData["card"] = card;
+            
+            return View("~/Views/ga-2020/Speaker.cshtml", eventDetails);
         }
 
         [Route("{speaker}")]

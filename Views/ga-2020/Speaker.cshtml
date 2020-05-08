@@ -3,9 +3,8 @@
     Layout = "~/Views/Shared/_Layout_ga-2020_card.cshtml";
 }
 
+@await Html.PartialAsync("./_Card.cshtml")
+@await Html.PartialAsync("./_Schedule.cshtml")
+@await Html.PartialAsync("./_Speakers.cshtml")
 
-@await Html.PartialAsync("~/Views/ga-2020/_Card.cshtml")
-@await Html.PartialAsync("~/Views/ga-2020/_Schedule.cshtml")
-@await Html.PartialAsync("~/Views/ga-2020/_Speakers.cshtml")
-
-@await Html.PartialAsync("~/Views/ga-2020/_Footer.cshtml")
+@await Html.PartialAsync("./_Footer.cshtml")

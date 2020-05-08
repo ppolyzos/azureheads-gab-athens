@@ -1,3 +1,4 @@
+﻿using gab_athens.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,7 @@ namespace gab_athens
         {
             services.AddMvc();
             services.AddApplicationInsightsTelemetry();
+            services.AddTransient<EventDataReaderService>();
             services.AddTransient<UtilService>();
         }
 
