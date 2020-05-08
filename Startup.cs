@@ -1,4 +1,4 @@
-﻿using gab_athens.Services;
+using gab_athens.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,7 +25,7 @@ namespace gab_athens
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -36,11 +36,13 @@ namespace gab_athens
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseRouting();
+            app.UseCors("default");
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
