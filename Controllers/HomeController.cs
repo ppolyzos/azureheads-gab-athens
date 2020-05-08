@@ -11,25 +11,24 @@ namespace gab_athens.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly EventDataReaderService _eventDataReaderService;
+        private readonly IEventDataReaderService _eventDataReaderService;
 
-        public HomeController(EventDataReaderService eventDataReaderService)
+        public HomeController(IEventDataReaderService eventDataReaderService)
         {
             _eventDataReaderService = eventDataReaderService;
         }
 
         public IActionResult Index(string speaker)
         {
-            var eventDetails = _eventDataReaderService.Read();
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
-            return View("~/Views/ga-2020/Index.cshtml", eventDetails); // Default for global-azure-2020
+            return View("~/Views/ga-2020/Index.cshtml", _eventDataReaderService.EventDetails); // Default for global-azure-2020
         }
 
         [Route("speaker/{speaker}")]
         public IActionResult Speaker(string speaker)
         {
-            var eventDetails = _eventDataReaderService.Read();
+            var eventDetails = _eventDataReaderService.EventDetails;
             var card = eventDetails.Speakers.FirstOrDefault(c => c.Aliases.Contains(speaker.ToLowerInvariant()));
             ViewData["card"] = card;
             
