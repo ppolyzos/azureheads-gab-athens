@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using gab_athens.Models;
@@ -10,21 +9,21 @@ namespace gab_athens.Services
     public interface IEventDataReaderService
     {
         public EventDetails EventDetails { get; }
-        
     }
-    
+
     public class EventDataReaderService : IEventDataReaderService
     {
-        public EventDetails EventDetails { get; private set; }
         public EventDataReaderService()
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\json\\ga-greece-2020.json");
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\json\\ga-greece-2020.json");
             var json = File.ReadAllText(filePath);
-            this.EventDetails = JsonConvert.DeserializeObject<EventDetails>(json);
-            HydrateSpeakers(this.EventDetails.Speakers, this.EventDetails.Schedule.SlotA);
-            HydrateSpeakers(this.EventDetails.Speakers, this.EventDetails.Schedule.SlotB);
-            HydrateSpeakers(this.EventDetails.Speakers, this.EventDetails.Schedule.SlotC);
+            EventDetails = JsonConvert.DeserializeObject<EventDetails>(json);
+            HydrateSpeakers(EventDetails.Speakers, EventDetails.Schedule.SlotA);
+            HydrateSpeakers(EventDetails.Speakers, EventDetails.Schedule.SlotB);
+            HydrateSpeakers(EventDetails.Speakers, EventDetails.Schedule.SlotC);
         }
+
+        public EventDetails EventDetails { get; }
 
         private static void HydrateSpeakers(IList<Speaker> speakers, IEnumerable<Session> sessions)
         {

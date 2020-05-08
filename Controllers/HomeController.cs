@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Dynamic;
+﻿using System.Diagnostics;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
 using gab_athens.Models;
 using gab_athens.Services;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc;
 
 namespace gab_athens.Controllers
 {
@@ -22,7 +19,8 @@ namespace gab_athens.Controllers
         {
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
-            return View("~/Views/ga-2020/Index.cshtml", _eventDataReaderService.EventDetails); // Default for global-azure-2020
+            return View("~/Views/ga-2020/Index.cshtml",
+                _eventDataReaderService.EventDetails); // Default for global-azure-2020
         }
 
         [Route("speaker/{speaker}")]
@@ -31,7 +29,7 @@ namespace gab_athens.Controllers
             var eventDetails = _eventDataReaderService.EventDetails;
             var card = eventDetails.Speakers.FirstOrDefault(c => c.Aliases.Contains(speaker.ToLowerInvariant()));
             ViewData["card"] = card;
-            
+
             return View("~/Views/ga-2020/Speaker.cshtml", eventDetails);
         }
 
@@ -43,7 +41,7 @@ namespace gab_athens.Controllers
 
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
     }
 }
