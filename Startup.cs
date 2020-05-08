@@ -1,8 +1,9 @@
-using gab_athens.Services;
+﻿using gab_athens.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace gab_athens
 {
@@ -19,9 +20,12 @@ namespace gab_athens
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddHealthChecks();
+            
             services.AddApplicationInsightsTelemetry();
             services.AddTransient<EventDataReaderService>();
             services.AddTransient<UtilService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,8 +47,7 @@ namespace gab_athens
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHealthChecks("/health");
             });
         }
     }
