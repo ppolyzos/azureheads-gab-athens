@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using gab_athens.Models;
@@ -13,9 +14,11 @@ namespace gab_athens.Services
 
     public class EventDataReaderService : IEventDataReaderService
     {
+        
         public EventDataReaderService()
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\json\\ga-greece-2020.json");
+            var eventFile = Environment.GetEnvironmentVariable("EVENT_FILE") ?? "ga-greece-2020.json";
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "json", eventFile);
             var json = File.ReadAllText(filePath);
             EventDetails = JsonConvert.DeserializeObject<EventDetails>(json);
             HydrateSpeakers(EventDetails.Speakers, EventDetails.Schedule.SlotA);
