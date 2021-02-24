@@ -1,4 +1,5 @@
-﻿<header class="header header-black">
+﻿@model EventDetails
+<header class="header header-black">
     <div class="header-wrapper">
         <div class="container">
             <div class="col-sm-2 col-xs-12 navigation-header">
@@ -22,8 +23,7 @@
                         <li class="navigation-item"><a href="#gallery" class="navigation-link">Gallery</a></li>
                         <li class="navigation-item">@*<a href="#contacts" class="navigation-link">Contacts</a>*@</li>
                     </ul>
-                    <!-- <a href="https://www.eventbrite.com/e/athens-azure-bootcamp-2020-tickets-60322290595" class="pull-right buy-btn">Get Tickets</a> -->
-                    <a target="_blank" class="pull-right buy-btn" href="https://www.eventbrite.com/e/athens-azure-bootcamp-2020-tickets-60322290595">Get Tickets</a>
+                    <a target="_blank" class="pull-right buy-btn" href="@Model.Configuration.RegistrationUrl">Get Tickets</a>
                 </div>
             </div>
         </div>

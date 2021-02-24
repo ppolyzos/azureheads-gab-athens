@@ -728,6 +728,10 @@ li {
     margin-bottom: 7px;
 }
 
+.p-2 {
+    padding: 2rem;
+}
+
 .visible {
     opacity: 1;
 }
@@ -6015,6 +6019,10 @@ button[type="submit"] .loading {
 .bg-ga-2020 {
     /*background-image: url('../img/ga-2020/global-azure-greece-2020-bg-v1.jpg');*/
     background-image: url('../img/ga-2020/global-azure-greece-2020-bg-blue-v1.jpg');
+}
+
+.bg-ga-2021 {
+    background-image: url('../img/ga-2020/global-azure-greece-bg-v1.jpg');
 }
 
 .bg-ga-2020-empty {

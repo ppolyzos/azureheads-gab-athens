@@ -3,8 +3,13 @@
     "name": "Global Azure Greece 2021",
     "description": "One day full of <strong>Microsoft Azure and the Cloud</strong>",
     "location": "GREECE (VIRTUAL)",
-    "date": "25 Apr",
-    "dateExt": "April 17, 2021", 
+    "date": "17 Apr",
+    "dateExt": "April 17, 2021",
+    "bgHeroCssName": "bg-ga-2021",
+    "registrationUrl": "https://www.eventbrite.com/e/global-azure-virtual-greece-2021-tickets-137971236683",
+    "callForSpeakersUrl": "https://sessionize.com/global-azure-greece-2021/",
+    "callForVolunteersUrl": "",
+    "sponsorshipUrl": "~/files/AzureBootcamp2018_Sponsorship.pdf",
     "links": [
       {
         "url": "https://www.twitter.com/azureheads/",
@@ -19,6 +24,14 @@
         "icon": "fa fa-meetup"
       }
     ]
+  },
+  "state": {
+    "showRegistration": true,
+    "showSchedule": false,
+    "showSessionLinks": false,
+    "showSessions": false,
+    "showSpeakers": false,
+    "showSponsors": false 
   },
   "sponsors": [
     {
@@ -99,7 +112,7 @@
   "speakers": [
     {
       "id": "pantelis-apostolidis",
-      "aliases": ["apostolidis"],
+      "aliases": [ "apostolidis" ],
       "name": "Pantelis Apostolidis",
       "title": "Sr. Solutions Architect @ Office Line SA | Microsoft Azure MVP",
       "about": "Passionate about information technology, Pantelis is a Solutions Architect at Office Line SA & a Microsoft Azure MVP. For the last 10 years, Pantelis has been involved to major cloud projects in Greece & abroad. He is an author, blogger & a spokesperson | Moderator of the azureheads.gr & autoexec.gr communities | Husband | DAD",
@@ -125,7 +138,7 @@
     },
     {
       "id": "paris-polyzos",
-      "aliases": ["polyzos"],
+      "aliases": [ "polyzos" ],
       "name": "Paris Polyzos",
       "title": "Tech Lead @ ViaBill | Microsoft Azure MVP",
       "about": "Paris is a Senior Software Engineer and a Microsoft Azure MVP. He holds an MSc in Electical & Computer Engineering; he is passionate about the Web, Microsoft Technologies and the cloud!",
@@ -155,7 +168,7 @@
     },
     {
       "id": "konstantinos-pantos",
-      "aliases": ["pantos"],
+      "aliases": [ "pantos" ],
       "name": "Konstantinos Pantos",
       "title": "Cloud Solutions Architect @ Microsoft",
       "about": "Since 2001, when I started my professional career, I was given the opportunity to work with some of the largest Greek Software development Companies and worked with cutting edge Microsoft technologies. Nowadays I work as a Solutions Architect for Microsoft where I focus in providing innovative cloud solutions.",
@@ -177,7 +190,7 @@
     },
     {
       "id": "antonios-chatzipavlis",
-      "aliases": ["chatzipavlis"],
+      "aliases": [ "chatzipavlis" ],
       "name": "Antonios Chatzipavlis",
       "title": "Data Solutions Consultant Trainer | MVP on Data Platform | MCT, MCSE, MCITP, MCPD, MCSD, MCDBA, MCSA, MCTS, MCAD, MCP, OCA, ITIL-F",
       "about": "Antonios is a Data Solutions Architect and Trainer. He has been working in IT since 1988. In his career, he has worked as senior developer, IT Manager, Software Architect and IT Consultant.\n                Since 1995 he has been devoted on new technologies and software development tools, mainly by Microsoft, either by training company staff and colleagues (he has been a Microsoft Certified Trainer since 2000) or assisting them in design, development and implementation as a consultant or chief developer. He focused in Databases and Data Science since 2000. He specialized in Microsoft SQL Server since version 6.0 in areas like SQL Server Internals, Database Design and Development, Business Intelligence and in 2010 he has started working with Azure Data Platform, NoSQL databases, Big Data Technologies and Machine Learning. He is an active member in many IT communities in Greece, answering colleagues' questions and writing articles in his web site.\n                        He is the owner of SQLschool.gr which is a community portal with a lot of information about Microsoft SQL Server.\n                        Microsoft honored him as MVP on Data Platform due to his activities in Microsoft Data Platform.\n                        He holds a large number of Microsoft Certifications and Microsoft SQL Server Certifications since version 6.5.",
@@ -203,7 +216,7 @@
     },
     {
       "id": "vaggelis-kappas",
-      "aliases": ["kappas"],
+      "aliases": [ "kappas" ],
       "name": "Vaggelis Kappas",
       "title": "Solution Specialist for Azure Apps & Infra @ Microsoft",
       "about": "Microsoft Solution Specialist for Azure Applications and Infrastructure, that is helping enterprise customers to realize the benefits and value of Cloud.\n                Administrative member and moderator of autoexec.gr. Frequent speaker on technology events organized by the major IT communities in Greece, such as autoexec.gr and azureheads.gr. Proud husband and dad.",
@@ -225,7 +238,7 @@
     },
     {
       "id": "georgia-kalyva",
-      "aliases": ["kalyva"],
+      "aliases": [ "kalyva" ],
       "name": "Georgia Kalyva",
       "title": "Microsoft AI MVP, Web Applications Developer, B.Sc, MSP, MCP",
       "about": "Georgia Kalyva has graduated from the University of Piraeus, is a Microsoft AI MVP with years of experience in software engineering and is currently working for ITT as Web Applications Developer. She is passionate about AI and Azure and has represented Greece in global competitions in Technology and Entrepreneurship. She is a member of the Microsoft Student Partners team and has taken over the role of mentor in several Microsoft competitions and trainings.",
@@ -255,7 +268,7 @@
     },
     {
       "id": "giorgos-kavvalakis",
-      "aliases": ["kavvalakis"],
+      "aliases": [ "kavvalakis" ],
       "name": "Giorgos Kavvalakis",
       "title": "Risk Management & Security Architect @@ BNP Paribas Fortis. Top100 Leaders in Global Healthcare 2019, BSc, MSc, MCSA, interoperability influencer, Azure Solutions Architect",
       "about": "George has more than 20 years of experience in the IT industry where he started working as a Systems and Network Engineer since 1998. He has worked for global firms like Robert Bosch SA and he was the sole Greek representative in the global Microsoft-Robert Bosch summit at the age of 20. In 2008, while working for Vamvas Group of companies, he took the role of IT Manager and two years later he was promoted to Chief Information Officer for the group. In 2019 he was awarded as one of the Top 100 Leaders in Global Healthcare for his work, his innovative solutions and his contribution in global healthcare. He was one out of two CIOs that received this award. His achievement led to numerous proposals and thus he made his next step. He currently works as Risk Management Officer and Security Architect for BNP Paribas Fortis in Brussels. He is an active member of Azureheads.gr and moderator of Autoexec.gr and he is passionate with technology. Pen-tester hobbyist, Gamer, Entrepreneur, Speaker.",
@@ -269,7 +282,7 @@
     },
     {
       "id": "michail-angelos-haggar",
-      "aliases": ["haggar"],
+      "aliases": [ "haggar" ],
       "name": "Michail Angelos Haggar",
       "title": "Technology Solutions Professional @ Microsoft",
       "about": "Michael is a Technical Specialist at Microsoft for Central and Eastern Europe specialized in Cybersecurity. He has 13 years’ experience and is passionate about Microsoft Technologies. His focus is to bring modern cloud-powered solutions to organizations and help them achieve more.",
@@ -283,7 +296,7 @@
     },
     {
       "id": "george-markou",
-      "aliases": ["markou"],
+      "aliases": [ "markou" ],
       "name": "George Markou",
       "title": "George Markou | CDM MVP | Technical Trainer",
       "about": "George Markou is a Technical Lead for Cloud & Infrastructure technologies at Bewise, Microsoft CDM MVP and a Technical Trainer. George is all about the software defined datacenter and the Hybrid Cloud, mainly focused in Microsoft Technologies. He is currently based in the south frontier of Europe, Greece. When he is not glued to his PC, he seeks to explore other Countries, spent his free time with friends and family and parenting his Persian Cat.",
@@ -297,7 +310,7 @@
     },
     {
       "id": "george-grammatikos",
-      "aliases": ["grammatikos"],
+      "aliases": [ "grammatikos" ],
       "name": "George Grammatikos",
       "title": "Azure Architect @ Tisski ltd. | Microsoft Azure MVP",
       "about": "George has more than 10 years of experience in different technologies like Azure services, servers, networks, security solutions, etc. He is the cloudopszone.com founder and one of the moderators of the Microsoft Wiki community.",
@@ -311,7 +324,7 @@
     },
     {
       "id": "dimitris-pantazis",
-      "aliases": ["pantazis"],
+      "aliases": [ "pantazis" ],
       "name": "Dimitris Pantazis",
       "title": "Senior Engineer @ UniSystems | MCSE, Azure Associate",
       "about": "Dimitris is a Senior Engineer at UniSystems, focusing on Microsoft technologies such as Windows Server, Exchange Server as well as Azure and Office 365. In the past 10 years he has worked for several companies both in Greece and abroad. One of his passions is to automate IT operations and inspire others to do so.",
@@ -325,7 +338,7 @@
     },
     {
       "id": "dimitris-fintzos",
-      "aliases": ["fintzos"],
+      "aliases": [ "fintzos" ],
       "name": "Dimitris Fintzos",
       "title": "Senior Systems Engineer @ Oriflame Software | MCSE, Azure Solutions Architect",
       "about": "Experienced Senior Systems Engineer with a demonstrated history of working in the computer software and outsourcing industry. Skilled in Hyper-V, Azure, Windows Server, VMware and a strong understanding of Citrix and Networking. Currently working with AKS, Azure Automation and Logic apps.",
@@ -339,7 +352,7 @@
     },
     {
       "id": "vassilis-ioannidis",
-      "aliases": ["ioannidis"],
+      "aliases": [ "ioannidis" ],
       "name": "Vassilis Ioannidis",
       "title": "Technical Manager @@ incadea | Azure Solutions Architect | Trainer",
       "about": "Vassilis Ioannidis is a Lead Technical Consultant and a seasoned Microsoft SQL Server expert, working at incadea group, and is in the IT industry for more than 2 decades. Vassilis has a degree in Computer Programming, has numerous Microsoft certifications since 2000 and has been a Microsoft Certified Trainer since 2005. The past 4 years he is working closely with clients, in projects that span across the globe, to move workloads on Microsoft Azure and modernize client solutions on-premises and/or the cloud. Vassilis is a community enthusiast and speaker in many events. Result-driven and a lifelong learner.",
@@ -365,7 +378,7 @@
     },
     {
       "id": "yianni-touliatos",
-      "aliases": ["touliatos"],
+      "aliases": [ "touliatos" ],
       "name": "Yianni Touliatos",
       "title": "Regional Director, Technical Sales for CEE @ Microsoft",
       "about": "As Regional Technical Sales Director, Yianni Touliatos is leading a team of Cloud Solution Architects and Technical Specialists in a 28 country region in CEE for Microsoft. His prior role was as a Cloud Solution Architect also in the CEE region working with Partners. Yianni has a background of more than 20 years of experience in systems engineering and consulting. Since 2003 he has been primarily focused on hosting and cloud computing and has advised service providers all over the world. Prior to joining Microsoft, Yianni was the managing director of Nimateks, a systems integrator. Yianni and his team worked closely with Citrix and with the Microsoft Hosting and Cloud solutions team designing multi-tenant IaaS and SaaS platforms and executing implementation and migration projects for hosting companies.",
@@ -379,7 +392,7 @@
     },
     {
       "id": "nikolaos-antoniou",
-      "aliases": ["antoniou"],
+      "aliases": [ "antoniou" ],
       "name": "Nikolaos Antoniou",
       "title": "Azure App/Dev Specialist @ Microsoft",
       "about": "Passionate about software engineering in the cloud era, avid coder, casual gamer and amateur cyclist. On a mission to help companies achieve more through strategic employment of Azure technologies.",
@@ -393,7 +406,7 @@
     },
     {
       "id": "george-spyrou",
-      "aliases": ["spyrou"],
+      "aliases": [ "spyrou" ],
       "name": "George Spyrou",
       "title": "Software Engineer @ Intrasoft International S.A.",
       "about": "Software Engineer at Intrasoft International S.A.",
@@ -407,7 +420,7 @@
     },
     {
       "id": "konstantinos-ziazios",
-      "aliases": ["ziazios"],
+      "aliases": [ "ziazios" ],
       "name": "Konstantinos Ziazios",
       "title": "Software developer @ Pheron ltd",
       "about": "Long time C#/.NET developer with roots in C++. He has developed ASP.NET (WebForms and MVC and core) web apps for many years. Konstantinos has spent many years working as a consultant for many different projects and has deep ties to the agile community. He is also very interested in automated testing using tools like WatiN or Selenium. On any given day he could be programming in C#, Javascript, Java or all of them. (C# is his favorite language though.)",
@@ -421,7 +434,7 @@
     },
     {
       "id": "michalis-nikolaidis",
-      "aliases": ["nikolaidis"],
+      "aliases": [ "nikolaidis" ],
       "name": "Michalis Nikolaidis",
       "title": "Senior Software Engineer | Microsoft Certified Professional | Microsoft Certified Trainer | MSP Digital Lead Greece",
       "about": "Michalis is a Senior Software Engineer, Consultant, Microsoft Certified Professional & Microsoft Certified Trainer. He is mainly interested in the development of innovative web and mobile solutions that take full advantage of the Microsoft technology stack. He has worked on multiple projects providing quality services both in team environments and individually.",
@@ -439,7 +452,7 @@
       {
         "title": "Welcome Keynote",
         "description": "",
-        "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
+        "SpeakerIds": [ "konstantinos-pantos", "paris-polyzos", "pantelis-apostolidis" ],
         "icon": "fa fa-building-o",
         "time": "11:00 - 11:15",
         "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk",
@@ -448,21 +461,21 @@
       {
         "title": "Azure Policy, Standardize the Azure Environment",
         "description": "At my session we will explain the tools that Microsoft Azure provides to help the administrators to enforce rules to all subscriptions. Some examples of those rules are to help the organizations to stay compliant with their corporate standards, to standardize the resources creation and management & to manage the permissions and access controls.",
-        "speakerIds": ["pantelis-apostolidis"],
+        "speakerIds": [ "pantelis-apostolidis" ],
         "time": "11:15 - 12:00",
         "videoUrl": "https://www.youtube.com/watch?v=pmwgA4p3yJk"
       },
       {
         "title": "Azure Bastion and the power working from within the browser!",
         "description": "In this session we will explore what is Azure Bastion, how we can setup to use it and what can we do with it. Bastion combined with Azure Serial Console can provide us with tools to use in a browser, to gain flexibility and to be more secure. But we will also check this from the Pen-Tester's point of view.",
-        "speakerIds": ["giorgos-kavvalakis"],
+        "speakerIds": [ "giorgos-kavvalakis" ],
         "time": "12:00 - 12:45",
         "videoUrl": "https://www.youtube.com/watch?v=2rpjTQLDoBY"
       },
       {
         "title": "Loading Data into Azure SQL DW (Synapse Analytics)",
         "description": "An introduction of suitable methods to load data into Azure SQL DW (Synapse)",
-        "speakerIds": ["antonios-chatzipavlis"],
+        "speakerIds": [ "antonios-chatzipavlis" ],
         "time": "13:00 - 13:45",
         "videoUrl": "https://www.youtube.com/watch?v=w_07YosS2hA"
       },
@@ -477,21 +490,21 @@
       {
         "title": "Azure Stack Hub - Run Azure in your datacenter",
         "description": "Find out what Azure Stack Hub is (and is not), how it integrates with the datacenter and what are the management options. During the demo you will see how to deploy the Azure Stack Development Kit, which is a free version of Azure Stack Hub for trial purposes.",
-        "speakerIds": ["dimitris-pantazis"],
+        "speakerIds": [ "dimitris-pantazis" ],
         "time": "15:00 - 15:45",
         "videoUrl": "https://www.youtube.com/watch?v=ZJ8TV8FXy7k"
       },
       {
         "title": "Logic Apps, automation & cost management",
         "description": "An introduction to the hurdles of Azure automation and orchestration in our IaaS/PaaS environments, how much code is enough, and cost-saving solutions practices via Logic Apps and automation. Τhe focus is on cases with logic apps integrations against Azure Automation solutions and the actual cost-saving.",
-        "speakerIds": ["dimitris-fintzos"],
+        "speakerIds": [ "dimitris-fintzos" ],
         "time": "16:00 - 16:45",
         "videoUrl": "https://www.youtube.com/watch?v=2R7NzNz7jkw"
       },
       {
         "title": "Azure Network Security",
         "description": "Building end-to-end a cloud native application on Azure, managing no servers, scalable to support any load, operationalize all the components involved with minimal effort. It will be a session with the absolutely necessary powerpoint slides and focus mostly of how a cloud native application may be realized on Azure. It will have a public facing web site to collect product orders, customer identity will be backed by AAD B2C, an Azure Functions based REST API, Azure Service Bus to act a load leveling mechanism, Cosmos DB as the NoSQL engine for persistence and App Insights as the end-to-end monitoring solutions.",
-        "speakerIds": ["vaggelis-kappas"],
+        "speakerIds": [ "vaggelis-kappas" ],
         "time": "17:00 - 17:45",
         "videoUrl": "https://www.youtube.com/watch?v=eLydjvlqOjw"
       },
@@ -508,7 +521,7 @@
       {
         "title": "Welcome Keynote",
         "description": "",
-        "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
+        "SpeakerIds": [ "konstantinos-pantos", "paris-polyzos", "pantelis-apostolidis" ],
         "icon": "fa fa-building-o",
         "time": "11:00 - 11:15",
         "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk",
@@ -517,21 +530,21 @@
       {
         "title": "Azure ARM Templates: deploy using IaC",
         "description": "Why and how to use ARM Templates along with PowerShell, to deploy your infrastructure on Azure. Aimed for IT Pros and DevOps people",
-        "speakerIds": ["vassilis-ioannidis"],
+        "speakerIds": [ "vassilis-ioannidis" ],
         "time": "11:15 - 12:00",
         "videoUrl": "https://www.youtube.com/watch?v=vm8aYn7LwBU"
       },
       {
         "title": "Azure API Management - From Zero to Hero",
         "description": "In this session I will talk about Azure API Management service. How someone can get started using it and gradually move to more advanced topics covering policies, developer portal, authentication and how it can be used in a hybrid and multi-cloud environment.",
-        "speakerIds": ["paris-polyzos"],
+        "speakerIds": [ "paris-polyzos" ],
         "time": "12:00 - 12:45",
         "videoUrl": "https://www.youtube.com/watch?v=syNM6K_wdBs"
       },
       {
         "title": "Developing Solutions with Azure Machine learning studio",
         "description": "In this session, we are going to see how to use the designer and the Azure ML SDKs and CLI to quickly prep data, train and deploy machine learning models. We will see how several Azure Machine Learning features work like multiple framework support and advanced ML capabilities like automated machine learning and pipeline support.",
-        "speakerIds": ["georgia-kalyva"],
+        "speakerIds": [ "georgia-kalyva" ],
         "time": "13:00 - 13:45",
         "videoUrl": "https://www.youtube.com/watch?v=jFu4sQ7JqMk"
       },
@@ -546,21 +559,21 @@
       {
         "title": "What's new in Microsoft Threat Protection",
         "description": "In this session, we are going to demistify what brings the General Availability of Microsoft Threat Protection. We will discuss what's the new way to do cross investigations and forensics with Advanced Hunting across Endpoints, Identities, E-mails and Data.",
-        "speakerIds": ["michail-angelos-haggar"],
+        "speakerIds": [ "michail-angelos-haggar" ],
         "time": "15:00 - 15:45",
         "videoUrl": "https://www.youtube.com/watch?v=uOeZ1aWv2O0"
       },
       {
         "title": "Azure containers",
         "description": "An intro to cloud native. Learn about possible containers solutions on azure and when to use them.",
-        "speakerIds": ["konstantinos-ziazios"],
+        "speakerIds": [ "konstantinos-ziazios" ],
         "time": "16:00 - 16:45",
         "videoUrl": "https://www.youtube.com/watch?v=b2U5xFGCkgM"
       },
       {
         "title": "3 effective ways to achieve a better security exposure for your cloud identities",
         "description": "Do you want to achieve a better security exposure for your online identities? In this presentation you will learn a practical strategy on how to safeguard your cloud identities with Azure Active Directory. This session is intended for Business leaders, IT Pro’s, IS Professionals and Cloud enthusiasts.",
-        "speakerIds": ["george-markou"],
+        "speakerIds": [ "george-markou" ],
         "time": "17:00 - 17:45",
         "videoUrl": "https://www.youtube.com/watch?v=WZAVRtPSr5M"
       },
@@ -577,7 +590,7 @@
       {
         "title": "Welcome Keynote",
         "description": "",
-        "SpeakerIds": ["konstantinos-pantos","paris-polyzos", "pantelis-apostolidis"],
+        "SpeakerIds": [ "konstantinos-pantos", "paris-polyzos", "pantelis-apostolidis" ],
         "icon": "fa fa-building-o",
         "time": "11:00 - 11:15",
         "videoUrl": "https://www.youtube.com/watch?v=bYlp22qzefk",
@@ -586,21 +599,21 @@
       {
         "title": "Hybrid integration and solutions in Covid19 era and beyond",
         "description": "Hybrid integration and solutions in Covid19 era and beyond",
-        "speakerIds": ["yianni-touliatos"],
+        "speakerIds": [ "yianni-touliatos" ],
         "time": "11:15 - 12:00",
         "videoUrl": "https://www.youtube.com/watch?v=Wfxk5Ha8bDY"
       },
       {
         "title": "Intro to Azure Service Bus",
         "description": "An introduction to Azure Service Bus with a short demo combining Service Bus Queues and Azure Logic Apps.",
-        "speakerIds": ["george-grammatikos"],
+        "speakerIds": [ "george-grammatikos" ],
         "time": "12:00 - 12:45",
         "videoUrl": "https://www.youtube.com/watch?v=CzUZnaobrjY"
       },
       {
         "title": "Building low code/no code services with Azure",
         "description": "Building low code/no code services with Azure",
-        "speakerIds": ["konstantinos-pantos"],
+        "speakerIds": [ "konstantinos-pantos" ],
         "time": "13:00 - 13:45",
         "videoUrl": "https://www.youtube.com/watch?v=Lwnt8X4HZ0o"
       },
@@ -615,21 +628,21 @@
       {
         "title": "The poor man's Cloud Native Architectures",
         "description": "Building cost effective scalable server(less) solutions.",
-        "speakerIds": ["nikolaos-antoniou"],
+        "speakerIds": [ "nikolaos-antoniou" ],
         "time": "15:00 - 15:45",
         "videoUrl": "https://www.youtube.com/watch?v=3ly216Nxn9k"
       },
       {
         "title": "Developing a Speech to Text component using Azure Logic Apps and Cognitive Services",
         "description": "A high level overview on the architecture of the Speech to Text component developed for the European Union Intellectual Propery Office.",
-        "speakerIds": ["george-spyrou"],
+        "speakerIds": [ "george-spyrou" ],
         "time": "16:00 - 16:45",
         "videoUrl": "https://www.youtube.com/watch?v=ImCUPW8j0vg"
       },
       {
         "title": "Azure and the Internet of Things",
         "description": "In this session we will see how we can prototype a real-time PowerBI IOT dashboard with almost no code.",
-        "speakerIds": ["michalis-nikolaidis"],
+        "speakerIds": [ "michalis-nikolaidis" ],
         "time": "17:00 - 17:45",
         "videoUrl": "https://www.youtube.com/watch?v=lnYZBxz0jtU"
       },

@@ -18,10 +18,10 @@
                     </li>
                     <li class="tweet">
                         <p class="text-alt tweet-text">Contact <a href="http://bit.ly/GA20Volunteers">us</a> if you want to be part of this amazing community, or reach us through communities that support the event</p>
-                        <small class="tweet-date"><a href="http://www.azureheads.gr">azureheads.gr</a></small>
-                        <small class="tweet-date"><a href="http://www.autoexec.gr">autoexec.gr</a></small>
-                        <small class="tweet-date"><a href="http://www.sqlschool.gr">sqlschool.gr</a></small>
-                        <small class="tweet-date"><a href="http://www.dotnetzone.gr">dotnetzone.gr</a></small>
+                        @foreach (var community in Model.Communities.Where(c => c.Enabled))
+                        {
+                            <small class="tweet-date"><a href="@community.Url" target="_blank">@community.Name</a></small>
+                        }
                     </li>
                 </ul>
             </div>

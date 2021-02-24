@@ -4,38 +4,48 @@
     <div class="container">
         <span class="icon section-icon icon-documents-bookmarks-12"></span>
         <h3>General sponsors</h3>
-        <p class="text-alt">companies that <span class="highlight">support</span> us</p>
 
-        <div class="sponsors">
-            @*<div class="sponsor big"><img src="img/sponsors/mvp.png" alt=""></div>*@
-            @*<div class="sponsor big"><a href="http://microsoft.com/" target="_blank"><img src="img/sponsors/microsoft.png" alt="Microsoft"></a></div>*@
-            @* <div class="sponsor big"><a href="http://stoiximan.gr/" target="_blank"><img src="img/sponsors/stoiximan.png" alt="stoiximan.gr"></a></div>  *@
-            @foreach (var sponsor in @Model.Sponsors.Where(c => c.Enabled))
-            {
-                <div class="sponsor @sponsor.Style">
-                    <a href="@sponsor.Url" target="_blank">
-                        <img src="@sponsor.ImageUrl" width="@sponsor.Width" alt="@sponsor.Name">
-                    </a>
-                </div>
-            }
-        </div>
 
-        <div class="sponsors">
-            @*<div class="sponsor big"><a href="http://officeline.gr/" target="_blank"><img src="img/sponsors/office-line-new.png" alt="OfficeLine"></a></div>
-            <div class="sponsor big"><a href="http://officeline.gr/" target="_blank"><img src="img/sponsors/sponsor-office-line-v3.png" alt="OfficeLine"></a></div>*@
-            @* <div class="sponsor big"><a href="http://www.iqsolutions.gr/" target="_blank"><img src="~/img/sponsors/iq-solutions.png" alt="iQ Solutions"></a></div> *@
-            @* <div class="sponsor big"><a href="http://www.bewise.gr/" target="_blank"><img src="~/img/sponsors/sponsor-bewise.png" alt="Bewise"></a></div> *@
-            @*<div class="sponsor big"><a href="http://www.cuberm.com/" target="_blank"><img src="~/img/sponsors/cuberm.png" alt="Cube RM"></a></div>*@
-            @*<div class="sponsor inline"><img src="img/sponsors/sponsor2.png" alt=""></div>
-        <div class="sponsor inline"><img src="img/sponsors/sponsor3.png" alt=""></div>
-        <div class="sponsor inline"><img src="img/sponsors/sponsor4.png" alt=""></div>*@
-        </div>
+        @if (!Model.State.ShowSponsors)
+        {
+            <p class="text-alt p-2">Coming <span class="highlight">soon...</span></p>
+        }
 
-        @* <div class="sponsors"> *@
-        @*     <div class="sponsor inline"><a href="https://revdebug.com/" target="_blank"><img src="img/sponsors/logo-revdebug.png" alt="RevDeBug"></a></div>*@
-        @*     <div class="sponsor inline"><a href="https://sessionize.com/" target="_blank"><img src="img/sponsors/sponsor-office-line-gold.png" alt="Office Line"></a></div>*@
-        @*     <div class="sponsor inline"><img src="img/sponsors/sponsor1.png" alt=""></div>*@
-        @* </div> *@
+        @if (Model.State.ShowSponsors)
+        {
+            <p class="text-alt">companies that <span class="highlight">support</span> us</p>
+            <div class="sponsors">
+                @*<div class="sponsor big"><img src="img/sponsors/mvp.png" alt=""></div>*@
+                @*<div class="sponsor big"><a href="http://microsoft.com/" target="_blank"><img src="img/sponsors/microsoft.png" alt="Microsoft"></a></div>*@
+                @* <div class="sponsor big"><a href="http://stoiximan.gr/" target="_blank"><img src="img/sponsors/stoiximan.png" alt="stoiximan.gr"></a></div>  *@
+                @foreach (var sponsor in @Model.Sponsors.Where(c => c.Enabled))
+                {
+                    <div class="sponsor @sponsor.Style">
+                        <a href="@sponsor.Url" target="_blank">
+                            <img src="@sponsor.ImageUrl" width="@sponsor.Width" alt="@sponsor.Name">
+                        </a>
+                    </div>
+                }
+            </div>
+
+            <div class="sponsors">
+                @*<div class="sponsor big"><a href="http://officeline.gr/" target="_blank"><img src="img/sponsors/office-line-new.png" alt="OfficeLine"></a></div>
+                <div class="sponsor big"><a href="http://officeline.gr/" target="_blank"><img src="img/sponsors/sponsor-office-line-v3.png" alt="OfficeLine"></a></div>*@
+                @* <div class="sponsor big"><a href="http://www.iqsolutions.gr/" target="_blank"><img src="~/img/sponsors/iq-solutions.png" alt="iQ Solutions"></a></div> *@
+                @* <div class="sponsor big"><a href="http://www.bewise.gr/" target="_blank"><img src="~/img/sponsors/sponsor-bewise.png" alt="Bewise"></a></div> *@
+                @*<div class="sponsor big"><a href="http://www.cuberm.com/" target="_blank"><img src="~/img/sponsors/cuberm.png" alt="Cube RM"></a></div>*@
+                @*<div class="sponsor inline"><img src="img/sponsors/sponsor2.png" alt=""></div>
+                <div class="sponsor inline"><img src="img/sponsors/sponsor3.png" alt=""></div>
+                <div class="sponsor inline"><img src="img/sponsors/sponsor4.png" alt=""></div>*@
+            </div>
+
+            @* <div class="sponsors"> *@
+            @*     <div class="sponsor inline"><a href="https://revdebug.com/" target="_blank"><img src="img/sponsors/logo-revdebug.png" alt="RevDeBug"></a></div>*@
+            @*     <div class="sponsor inline"><a href="https://sessionize.com/" target="_blank"><img src="img/sponsors/sponsor-office-line-gold.png" alt="Office Line"></a></div>*@
+            @*     <div class="sponsor inline"><img src="img/sponsors/sponsor1.png" alt=""></div>*@
+            @* </div> *@
+        }
+
 
     </div>
 </section>

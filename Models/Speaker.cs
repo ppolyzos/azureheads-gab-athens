@@ -53,6 +53,12 @@ namespace gab_athens.Models
         public string Icon { get; set; }
     }
 
+    public class SessionLink
+    {
+        public string Url { get; set; }
+        public string Title { get; set; }
+    }
+
     public class Configuration
     {
         public string Name { get; set; }
@@ -60,11 +66,26 @@ namespace gab_athens.Models
         public string Location { get; set; }
         public string Date { get; set; }
         public string DateExt { get; set; }
+        public string RegistrationUrl { get; set; }
+        public string CallForSpeakersUrl { get; set; }
+        public string CallForVolunteersUrl { get; set; }
+        public string BgHeroCssName { get; set; }
         public IList<Link> Links { get; set; }
+    }
+
+    public class State
+    {
+        public bool ShowRegistration { get; set; }
+        public bool ShowSchedule { get; set; }
+        public bool ShowSessionLinks { get; set; }
+        public bool ShowSessions { get; set; }
+        public bool ShowSpeakers { get; set; }
+        public bool ShowSponsors { get; set; }
     }
 
     public class EventDetails
     {
+        public State State { get; set; }
         public Configuration Configuration { get; set; }
         public IList<Speaker> Speakers { get; set; }
         public IList<Entity> Sponsors { get; set; }

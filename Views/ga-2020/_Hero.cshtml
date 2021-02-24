@@ -8,7 +8,7 @@
     }
 }
 
-<section id="hero" class="hero-section bg-ga-2020 bg-cover window-height light-text">
+<section id="hero" class="hero-section bg-cover window-height light-text @Model.Configuration.BgHeroCssName">
     <ul class="socials-nav">
         @foreach (var link in Model.Configuration.Links)
         {
@@ -26,48 +26,61 @@
             </h5>
             <h1 class="extra-heading">@Model.Configuration.Name</h1>
             <h6 class="thin base-font">@Html.Raw(Model.Configuration.Description)</h6>
-            <div class="btns-container">
-                <!-- <a href="https://www.meetup.com/azureheads/events/237850213/" class="btn btn-md">GET TICKETS</a> -->
-                <h6>Schedule & Stream Links</h6>
-                <ul>
-                    @*<li><a class="btn btn-md btn-lg-size" target="_blank" href="https://www.eventbrite.com/e/global-azure-bootcamp-2020-athens-tickets-90175518403">GET TICKETS</a></li>*@
-                    <li>
-                        <a class="btn btn-md btn-lg-size btn-green" onclick="selectSchedule('#day1_auditorium1')">Slot A</a>
-                        <a class="btn btn-md btn-lg-size btn-pink" onclick="selectSchedule('#day1_auditorium2')">Slot B</a>
-                        <a class="btn btn-md btn-lg-size btn-berry" onclick="selectSchedule('#day1_auditorium3')">Slot C</a>
-                    </li>
-                    <li>
-                        <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium1')">
-                            @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotA))
-                            {
-                                <span class="speaker">@speaker</span>
-                            }
-                        </a>
-                        <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium2')">
-                            @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotB))
-                            {
-                                <span class="speaker">@speaker</span>
-                            }
-                        </a>
-                        <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium3')">
-                            @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotC))
-                            {
-                                <span class="speaker">@speaker</span>
-                            }
-                        </a>
-                    </li>
-                    <li>
-                        @*<a class="btn btn-md btn-lg-size btn-green" target="_blank" href="https://sessionize.com/globalazurevirtual/">Speakers</a>*@
-                        @*<a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="http://bit.ly/GA20Volunteers">Volunteers</a>*@
-                    </li>
+            @if (Model.State.ShowSchedule)
+            {
+                <div class="btns-container">
+                    <!-- <a href="https://www.meetup.com/azureheads/events/237850213/" class="btn btn-md">GET TICKETS</a> -->
+                    <h6>Schedule & Stream Links @Model.State.ShowRegistration</h6>
+                    <ul>
+                        @*<li><a class="btn btn-md btn-lg-size" target="_blank" href="https://www.eventbrite.com/e/global-azure-bootcamp-2020-athens-tickets-90175518403">GET TICKETS</a></li>*@
+                        <li>
+                            <a class="btn btn-md btn-lg-size btn-green" onclick="selectSchedule('#day1_auditorium1')">Slot A</a>
+                            <a class="btn btn-md btn-lg-size btn-pink" onclick="selectSchedule('#day1_auditorium2')">Slot B</a>
+                            <a class="btn btn-md btn-lg-size btn-berry" onclick="selectSchedule('#day1_auditorium3')">Slot C</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium1')">
+                                @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotA))
+                                {
+                                    <span class="speaker">@speaker</span>
+                                }
+                            </a>
+                            <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium2')">
+                                @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotB))
+                                {
+                                    <span class="speaker">@speaker</span>
+                                }
+                            </a>
+                            <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium3')">
+                                @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotC))
+                                {
+                                    <span class="speaker">@speaker</span>
+                                }
+                            </a>
+                        </li>
+                    </ul>
+                    @*<a href="#" class="btn btn-outline btn-md" data-modal-link="0">VIDEO</a>*@
+                </div>
+            }
 
-                    @*<li><a class="btn btn-md btn-lg-size btn-green" target="_blank" href="~/files/AzureBootcamp2018_Sponsorship.pdf">Sponsorship</a></li>*@
-                </ul>
+            @if (Model.State.ShowRegistration)
+            {
+                <div class="btns-container">
+                    <ul>
+                        <li><a class="btn btn-md btn-lg-size" target="_blank" href="@Model.Configuration.RegistrationUrl">Register Now!</a></li>
+                        <li>
+                            <a class="btn btn-md btn-lg-size btn-green" target="_blank" href="@Model.Configuration.CallForSpeakersUrl">Speakers</a>
+                            <a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="@Model.Configuration.CallForVolunteersUrl">Volunteers</a>
+                        </li>
+                        <li><a class="btn btn-md btn-lg-size btn-berry" target="_blank" href="~/files/AzureBootcamp2018_Sponsorship.pdf">Sponsorship</a></li>
+                    </ul>
+                    @*<a href="#" class="btn btn-outline btn-md" data-modal-link="0">VIDEO</a>*@
+                </div>
+            }
 
-
-                @*<a href="#" class="btn btn-outline btn-md" data-modal-link="0">VIDEO</a>*@
-            </div>
-            @*<div class="btns-container">
+            @if (Model.State.ShowSessionLinks)
+            {
+                <div class="btns-container">
                     <h6>Session Links</h6>
                     <ul>
                         <li>
@@ -81,7 +94,8 @@
                             <a class="btn btn-md btn-lg-size btn-berry" target="_blank" href="https://bit.ly/2RBDe35">Slot C (15:00 - 18:00)</a>
                         </li>
                     </ul>
-                </div>*@
+                </div>
+            }
         </div>
     </div>
 
