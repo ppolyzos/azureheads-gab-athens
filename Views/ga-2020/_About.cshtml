@@ -1,7 +1,9 @@
-﻿<section id="about" class="section align-center">
+﻿@model EventDetails
+
+<section id="about" class="section align-center">
     <div class="container">        
         <span class="icon section-icon icon-multimedia-12"></span>
-        <h3>Global Azure Greece 2020</h3>
+        <h3>@Model.Configuration.Name</h3>
         <p class="text-alt">One day event where everyone, <span class="highlight">globally</span>, talks about the expanding universe of Microsoft Azure!
         </p>
         <br/>
@@ -32,8 +34,8 @@
                         <img src="img/ga-2020/MarkR_2020.jpg" alt="" class="img-responsive"/>
                     </div>
                     <div class="col-sm-7 align-left">
-                        <h6>Global Azure Greece 2020</h6>
-                        <p><strong>Welcome to Global Azure Greece 2020!</strong> In April 25, 2020, all communities will come together once again in the seventh great Global Azure event! Each user group organizes their own one to three day Azure event the way they see fit and how it works for their members. The result is that thousands of people will get together to learn about Azure and join together online under the social media hashtag! Around the world user groups and communities want to learn about Azure and Cloud Computing!
+                        <h6>@Model.Configuration.Name</h6>
+                        <p><strong>Welcome to @Model.Configuration.Name!</strong> In @Model.Configuration.DateExt, all communities will come together once again in the seventh great Global Azure event! Each user group organizes their own one to three day Azure event the way they see fit and how it works for their members. The result is that thousands of people will get together to learn about Azure and join together online under the social media hashtag! Around the world user groups and communities want to learn about Azure and Cloud Computing!
                         </p>
                         <h6>A Community of Communities!</h6>
                         <p>Learning about Azure is a massive undertaking for anyone. The Azure Cloud Platform is really big and offers a very long list of great services. How do you get a grip on it all? Together!</p>

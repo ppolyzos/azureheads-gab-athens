@@ -17,7 +17,7 @@ namespace gab_athens.Services
         
         public EventDataReaderService()
         {
-            var eventFile = Environment.GetEnvironmentVariable("EVENT_FILE") ?? "ga-greece-2020.json";
+            var eventFile = Environment.GetEnvironmentVariable("EVENT_FILE") ?? "ga-greece-2021.json";
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "json", eventFile);
             var json = File.ReadAllText(filePath);
             EventDetails = JsonConvert.DeserializeObject<EventDetails>(json);

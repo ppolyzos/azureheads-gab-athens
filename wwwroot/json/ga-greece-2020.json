@@ -4,16 +4,21 @@
     "description": "One day full of <strong>Microsoft Azure and the Cloud</strong>",
     "location": "GREECE (VIRTUAL)",
     "date": "25 Apr",
-    "links": [{
-      "url": "https://www.twitter.com/azureheads/",
-      "icon": "fa fa-twitter"
-    },{
-      "url": "https://www.facebook.com/azureheads/",
-      "icon": "fa fa-facebook"
-    },{
-      "url": "https://www.meetup.com/azureheads/",
-      "icon": "fa fa-meetup"
-    }]
+    "dateExt": "April 25, 2020",
+    "links": [
+      {
+        "url": "https://www.twitter.com/azureheads/",
+        "icon": "fa fa-twitter"
+      },
+      {
+        "url": "https://www.facebook.com/azureheads/",
+        "icon": "fa fa-facebook"
+      },
+      {
+        "url": "https://www.meetup.com/azureheads/",
+        "icon": "fa fa-meetup"
+      }
+    ]
   },
   "sponsors": [
     {

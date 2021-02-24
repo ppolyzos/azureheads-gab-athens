@@ -59,6 +59,7 @@ namespace gab_athens.Models
         public string Description { get; set; }
         public string Location { get; set; }
         public string Date { get; set; }
+        public string DateExt { get; set; }
         public IList<Link> Links { get; set; }
     }
 
