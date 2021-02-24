@@ -10,6 +10,8 @@
     "callForSpeakersUrl": "https://sessionize.com/globalazurevirtual/",
     "callForVolunteersUrl": "http://bit.ly/GA20Volunteers",
     "sponsorshipUrl": "~/files/AzureBootcamp2018_Sponsorship.pdf",
+    "productionUrl": "https://global-azure-greece-2021.azurewebsites.net/",
+    "productionImageUrl": "https://global-azure-greece-2020.azurewebsites.net/img/ga-2020/global-azure-virtual-2020.jpg",
     "links": [
       {
         "url": "https://www.twitter.com/azureheads/",

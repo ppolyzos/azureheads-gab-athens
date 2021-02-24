@@ -70,6 +70,8 @@ namespace gab_athens.Models
         public string CallForSpeakersUrl { get; set; }
         public string CallForVolunteersUrl { get; set; }
         public string BgHeroCssName { get; set; }
+        public string ProductionUrl { get; set; }
+        public string ProductionImageUrl { get; set; }
         public IList<Link> Links { get; set; }
     }
 
