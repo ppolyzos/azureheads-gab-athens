@@ -109,6 +109,14 @@
       "name": "Thessaloniki .NET Meetup",
       "style": "big",
       "enabled": true
+    },
+    {
+      "url": "https://studentambassadors.microsoft.com/",
+      "imageUrl": "/img/communities/student-partners.png",
+      "width": "100%",
+      "name": "Microsoft Learn Student Ambassadors",
+      "style": "big",
+      "enabled": true
     }
   ],
   "speakers": [
