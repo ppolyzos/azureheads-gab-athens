@@ -19,7 +19,7 @@ namespace gab_athens.Controllers
         {
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
-            return View("~/Views/ga-2020/Index.cshtml",
+            return View("~/Views/ga/Index.cshtml",
                 _eventDataReaderService.EventDetails); // Default for global-azure-2020
         }
 
@@ -30,7 +30,7 @@ namespace gab_athens.Controllers
             var card = eventDetails.Speakers.FirstOrDefault(c => c.Aliases.Contains(speaker.ToLowerInvariant()));
             ViewData["card"] = card;
 
-            return View("~/Views/ga-2020/Speaker.cshtml", eventDetails);
+            return View("~/Views/ga/Speaker.cshtml", eventDetails);
         }
 
         [Route("{speaker}")]

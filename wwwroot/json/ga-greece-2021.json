@@ -11,7 +11,7 @@
     "callForVolunteersUrl": "",
     "sponsorshipUrl": "~/files/AzureBootcamp2018_Sponsorship.pdf",
     "productionUrl": "https://global-azure-greece-2021.azurewebsites.net/",
-    "productionImageUrl": "https://global-azure-greece-2021.azurewebsites.net/img/ga-2020/global-azure-virtual.jpg",
+    "productionImageUrl": "https://global-azure-greece-2021.azurewebsites.net/img/ga/global-azure-virtual.jpg",
     "links": [
       {
         "url": "https://www.twitter.com/azureheads/",

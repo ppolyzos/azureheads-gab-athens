@@ -1,28 +1,29 @@
-﻿@model EventDetails
-
+﻿@{
+    var card = ViewData["card"] as Speaker;
+}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>@ViewData["Title"] - @Model.Configuration.Name - @Model.Configuration.Location</title>
-    <meta name="description" content="@Model.Configuration.Name - @Model.Configuration.Location.">
+    <title>@ViewData["Title"] - Global Azure Greece 2020 - Virtual</title>
+    <meta name="description" content="Global Azure Greece 2020 - Virtual.">
     <meta name="keywords" content="Events, Development, Globa azure bootcamp">
     <meta name="author" content="ppolyzos, paris polyzos">
 
-    <link rel="icon" type="image/png" href="~/img/ga-2020/global-azure-virtual-2020.jpg">
+    <link rel="icon" type="image/png" href="~/img/ga/global-azure-virtual-2020.jpg">
 
-    <meta property="og:title" content="@Model.Configuration.Name - @Model.Configuration.Location.">
-    <meta property="og:description" content="On @Model.Configuration.DateExt, all communities will come together once again in the seventh great Global Azure event! Each user group organizes their own one to three day Azure event the way they see fit and how it works for their members.">
-    <meta property="og:image" content="@Model.Configuration.ProductionImageUrl">
+    <meta property="og:title" content="Global Azure Greece 2020 - Virtual">
+    <meta property="og:description" content="On April 25, 2020, all communities will come together once again in the seventh great Global Azure event! Each user group organizes their own one to three day Azure event the way they see fit and how it works for their members.">
+    <meta property="og:image" content="@($"https://global-azure-greece-2020.azurewebsites.net/img/ga/cards/card-{card?.Id}.jpg")" >
     <meta property="og:type" content="website">
-    <meta property="og:url" content="@Model.Configuration.ProductionUrl">
+    <meta property="og:url" content="@($"https://global-azure-greece-2020.azurewebsites.net/img/ga/cards/card-{card?.Id}.jpg")">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,300italic,400italic,500italic&subset=latin,latin-ext" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel='SHORTCUT ICON' href='~/img/ga-2020/favicon.ico' type='image/x-icon' />
+    <link rel='SHORTCUT ICON' href='~/img/ga/favicon.ico' type='image/x-icon' />
 
     <environment include="Development">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -44,7 +45,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
     <![endif]-->
 </head>
-<body>
+<body class="p-0">
     @RenderBody()
     
     <environment names="Development">
