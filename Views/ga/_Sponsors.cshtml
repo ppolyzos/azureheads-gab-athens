@@ -18,7 +18,7 @@
                 @*<div class="sponsor big"><img src="img/sponsors/mvp.png" alt=""></div>*@
                 @*<div class="sponsor big"><a href="http://microsoft.com/" target="_blank"><img src="img/sponsors/microsoft.png" alt="Microsoft"></a></div>*@
                 @* <div class="sponsor big"><a href="http://stoiximan.gr/" target="_blank"><img src="img/sponsors/stoiximan.png" alt="stoiximan.gr"></a></div>  *@
-                @foreach (var sponsor in @Model.Sponsors.Where(c => c.Enabled))
+                @foreach (var sponsor in Model.Sponsors.Where(c => c.Enabled))
                 {
                     <div class="sponsor @sponsor.Style">
                         <a href="@sponsor.Url" target="_blank">

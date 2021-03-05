@@ -8,9 +8,14 @@
         <h3>Speakers</h3>
         @if (!Model.State.ShowSpeakers)
         {
-            <p class="text-alt">Call for <a href="@Model.Configuration.CallForSpeakersUrl"><span class="highlight">content</span></a></p>
-            <br />
-            <br />
+            <p class="text-alt">
+                Call for
+                <a href="@Model.Configuration.CallForSpeakersUrl">
+                    <span class="highlight">content</span>
+                </a>
+            </p>
+            <br/>
+            <br/>
             <div class="row">
                 <div class="col-md-12">
                     <a class="btn btn-md btn-lg-size btn-blue" target="_blank" href="@Model.Configuration.CallForSpeakersUrl">Call for Speakers</a>
@@ -20,57 +25,56 @@
 
         @if (Model.State.ShowSpeakers)
         {
-            @foreach (var (index, speaker) in @Model.Speakers.Select((value, i) => (i, value)))
+            @foreach (var (index, speaker) in Model.Speakers.Select((value, i) => (i, value)))
             {
                 if (index % 3 == 0)
                 {
                     @:<div class="row">
-                    }
-                    <div class="col-sm-4">
-                        <div class="speaker">
-                            <div class="photo-wrapper rounded">
-                                <img src="@speaker.ImageUrl" width="200" height="200" alt="@speaker.Name" class="img-responsive">
-                            </div>
-                            <h3 class="name">@speaker.Name</h3>
-                            <p class="text-alt">
-                                <small>@speaker.Title</small>
-                            </p>
-                            <p class="about">
-                                @{
-                                    if (speaker.About.Length > 300)
-                                    {
-                                        <span>@UtilService.SplitText(speaker.About, 30, 0)</span>
-                                        <span class="collapse" id="about-@speaker.Id">
-                                            @UtilService.SplitText(speaker.About, 1000, 30)
-                                        </span>
-                                        <a data-toggle="collapse" href="#about-@speaker.Id" role="button" aria-expanded="false" aria-controls="about-@speaker.Id">
-                                            ...
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        @speaker.About
-                                    }
-                                }
-                            </p>
-                            <ul class="speaker-socials">
-                                @foreach (var link in speaker.Links)
-                                {
-                                    <li>
-                                        <a href="@link.Url">
-                                            <span class="@link.Icon"></span>
-                                        </a>
-                                    </li>
-                                }
-                            </ul>
+                }
+                <div class="col-sm-4">
+                    <div class="speaker">
+                        <div class="photo-wrapper rounded">
+                            <img src="@speaker.ImageUrl" width="200" height="200" alt="@speaker.Name" class="img-responsive">
                         </div>
+                        <h3 class="name">@speaker.Name</h3>
+                        <p class="text-alt">
+                            <small>@speaker.Title</small>
+                        </p>
+                        <p class="about">
+                            @{
+                                if (speaker.About.Length > 300)
+                                {
+                                    <span>@UtilService.SplitText(speaker.About, 30)</span>
+                                    <span class="collapse" id="about-@speaker.Id">
+                                        @UtilService.SplitText(speaker.About, 1000, 30)
+                                    </span>
+                                    <a data-toggle="collapse" href="#about-@speaker.Id" role="button" aria-expanded="false" aria-controls="about-@speaker.Id">
+                                        ...
+                                    </a>
+                                }
+                                else
+                                {
+                                    @speaker.About
+                                }
+                            }
+                        </p>
+                        <ul class="speaker-socials">
+                            @foreach (var link in speaker.Links)
+                            {
+                                <li>
+                                    <a href="@link.Url">
+                                        <span class="@link.Icon"></span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
                     </div>
-                    if (index % 3 == 2)
-                    {
+                </div>
+                if (index % 3 == 2)
+                {
                     @:</div>
                 }
             }
-
         }
 
 

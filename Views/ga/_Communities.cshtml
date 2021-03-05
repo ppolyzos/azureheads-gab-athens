@@ -4,13 +4,17 @@
         <span class="icon section-icon icon-documents-bookmarks-12"></span>
         <h3>Communities</h3>
         <p class="text-alt">Communities <span class="highlight">involved</span></p>
-        <br />
-        <br />
+        <br/>
+        <br/>
 
         <div class="sponsors">
             @foreach (var community in Model.Communities.Where(c => c.Enabled))
             {
-                <div class="sponsor @community.Style"><a href="@community.Url" target="_blank"><img src="@community.ImageUrl" alt="@community.Name"></a></div>
+                <div class="sponsor @community.Style">
+                    <a href="@community.Url" target="_blank">
+                        <img src="@community.ImageUrl" alt="@community.Name">
+                    </a>
+                </div>
             }
         </div>
     </div>

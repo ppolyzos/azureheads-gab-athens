@@ -1,11 +1,11 @@
 ﻿@model EventDetails
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>@ViewData["Title"] - @Model.Configuration.Name - @Model.Configuration.Location</title>
     <meta name="description" content="@Model.Configuration.Name - @Model.Configuration.Location.">
     <meta name="keywords" content="Events, Development, Globa azure bootcamp">
@@ -19,24 +19,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="@Model.Configuration.ProductionUrl">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,300italic,400italic,500italic&subset=latin,latin-ext" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel='SHORTCUT ICON' href='~/img/ga/favicon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,300italic,400italic,500italic&subset=latin,latin-ext"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="SHORTCUT ICON" href="~/img/ga/favicon.ico" type="image/x-icon"/>
 
     <environment include="Development">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="~/fonts/styles.css">
 
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/site.css"/>
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"/>
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true"/>
     </environment>
 
     <!--[if lt IE 9]>
@@ -45,21 +45,21 @@
     <![endif]-->
 </head>
 <body>
-    @RenderBody()
-    
-    <environment names="Development">
-        <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+@RenderBody()
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js" integrity="sha256-19/eyBKQKb8IPrt7321hbLkI1+xyM8d/DpzjyiEKnCE=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js" integrity="sha256-ABaSwG2hLCOs+8EKSe3XsIukUcbV1nraP4uzVL+cuS4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/jquery.plugin.js"></script>
-        <script type="text/javascript" src="js/modal-box.js"></script>
-        <script src="~/js/site.js" asp-appension="true"></script>
-    </environment>
+<environment names="Development">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js" integrity="sha256-19/eyBKQKb8IPrt7321hbLkI1+xyM8d/DpzjyiEKnCE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js" integrity="sha256-ABaSwG2hLCOs+8EKSe3XsIukUcbV1nraP4uzVL+cuS4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery.plugin.js"></script>
+    <script type="text/javascript" src="js/modal-box.js"></script>
+    <script src="~/js/site.js" asp-appension="true"></script>
+</environment>
 <environment names="Staging,Production">
     <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -77,6 +77,6 @@
     <script src="~/js/site.min.js" asp-append-version="true"></script>
 </environment>
 
-    @RenderSection("scripts", required: false)
+@await RenderSectionAsync("scripts", false)
 </body>
 </html>

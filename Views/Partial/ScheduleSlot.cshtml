@@ -12,7 +12,7 @@
                     }
                     else
                     {
-                        var mainSpeaker = session.Speakers.FirstOrDefault() ?? new Speaker() {Name = "", ImageUrl = ""};
+                        var mainSpeaker = session.Speakers.FirstOrDefault() ?? new Speaker { Name = "", ImageUrl = "" };
                         <img src="@mainSpeaker.ImageUrl" alt="@mainSpeaker.Name" class="img-responsive"/>
                     }
                 </div>
