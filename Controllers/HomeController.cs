@@ -1,7 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using gab_athens.Models;
 using gab_athens.Services;
+using gab_athens.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace gab_athens.Controllers
@@ -15,18 +18,23 @@ namespace gab_athens.Controllers
             _eventDataReaderService = eventDataReaderService;
         }
 
-        public IActionResult Index(string speaker)
+        public async Task<IActionResult> Index(string speaker)
         {
+            var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
+            var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2021.json";
+            
+            var eventDetails =
+                await _eventDataReaderService.FetchEventDetailsAsync(eventContainer, eventFile);
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
-            return View("~/Views/ga/Index.cshtml",
-                _eventDataReaderService.EventDetails); // Default for global-azure-2020
+            return View("~/Views/ga/Index.cshtml", eventDetails);
         }
 
         [Route("speaker/{speaker}")]
-        public IActionResult Speaker(string speaker)
+        public async Task<IActionResult> Speaker(string speaker)
         {
-            var eventDetails = _eventDataReaderService.EventDetails;
+            var eventDetails =
+                await _eventDataReaderService.FetchEventDetailsAsync("gab-events", "ga-greece-2021.json");
             var card = eventDetails.Speakers.FirstOrDefault(c => c.Aliases.Contains(speaker.ToLowerInvariant()));
             ViewData["card"] = card;
 
@@ -34,14 +42,14 @@ namespace gab_athens.Controllers
         }
 
         [Route("{speaker}")]
-        public IActionResult SpeakerIndex(string speaker)
+        public async Task<IActionResult> SpeakerIndex(string speaker)
         {
-            return Speaker(speaker);
+            return await Speaker(speaker);
         }
 
         public IActionResult Error()
         {
-            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

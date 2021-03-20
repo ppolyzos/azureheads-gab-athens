@@ -23,6 +23,7 @@ namespace gab_athens
             services.AddHealthChecks();
             
             services.AddApplicationInsightsTelemetry();
+            services.AddSingleton<IStorageService, StorageService>();
             services.AddSingleton<IEventDataReaderService, EventDataReaderService>();
             services.AddSingleton<UtilService>();
             
