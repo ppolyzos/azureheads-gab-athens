@@ -1,4 +1,5 @@
-﻿using gab_athens.Services;
+﻿using gab_athens.Configuration.Extensions;
+using gab_athens.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,12 +22,15 @@ namespace gab_athens
         {
             services.AddMvc();
             services.AddHealthChecks();
-            
+
+            services.SetupConfiguration(Configuration);
             services.AddApplicationInsightsTelemetry();
             services.AddSingleton<IStorageService, StorageService>();
             services.AddSingleton<IEventDataReaderService, EventDataReaderService>();
             services.AddSingleton<UtilService>();
-            
+
+            services.AddScoped<ISessionizeService, SessionizeService>();
+            services.AddScoped<IEventSessionizeService, EventSessionizeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
