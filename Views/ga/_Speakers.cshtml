@@ -40,24 +40,27 @@
                         <p class="text-alt">
                             <small>@speaker.Title</small>
                         </p>
-                        <p class="about">
-                            @{
-                                if (speaker.About.Length > 300)
-                                {
-                                    <span>@UtilService.SplitText(speaker.About, 30)</span>
-                                    <span class="collapse" id="about-@speaker.Id">
-                                        @UtilService.SplitText(speaker.About, 1000, 30)
-                                    </span>
-                                    <a data-toggle="collapse" href="#about-@speaker.Id" role="button" aria-expanded="false" aria-controls="about-@speaker.Id">
-                                        ...
-                                    </a>
+                        @if (Model.State.ShowSpeakerDescription)
+                        {
+                            <p class="about">
+                                @{
+                                    if (speaker.About.Length > 300)
+                                    {
+                                        <span>@UtilService.SplitText(speaker.About, 30)</span>
+                                        <span class="collapse" id="about-@speaker.Id">
+                                            @UtilService.SplitText(speaker.About, 1000, 30)
+                                        </span>
+                                        <a data-toggle="collapse" href="#about-@speaker.Id" role="button" aria-expanded="false" aria-controls="about-@speaker.Id">
+                                            ...
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        @speaker.About
+                                    }
                                 }
-                                else
-                                {
-                                    @speaker.About
-                                }
-                            }
-                        </p>
+                            </p>
+                        }
                         <ul class="speaker-socials">
                             @foreach (var link in speaker.Links)
                             {

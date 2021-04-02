@@ -83,6 +83,7 @@ namespace gab_athens.Models
         public bool ShowSessions { get; set; }
         public bool ShowSpeakers { get; set; }
         public bool ShowSponsors { get; set; }
+        public bool ShowSpeakerDescription { get; set; }
     }
 
     public class EventDetails

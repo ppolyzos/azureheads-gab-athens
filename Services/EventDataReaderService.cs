@@ -40,7 +40,7 @@ namespace gab_athens.Services
         private async Task<EventDetails> GetAsync(string container, string configFile)
         {
             var eventDetails = await _storageService.FetchAsync<EventDetails>(container, configFile);
-            
+
             HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotA);
             HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotB);
             HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotC);
@@ -55,7 +55,9 @@ namespace gab_athens.Services
                 session.Speakers = new List<Speaker>();
                 foreach (var speakerId in session.SpeakerIds)
                 {
-                    var speaker = speakers.First(c => c.Id.Equals(speakerId));
+                    var speaker = speakers.FirstOrDefault(c => c.Id.Equals(speakerId));
+                    if (speaker == null) continue;
+                    
                     session.Speakers.Add(speaker);
                 }
             }
