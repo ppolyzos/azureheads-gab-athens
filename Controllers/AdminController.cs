@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using gab_athens.Services;
+using gab_athens.Services.Storage;
 using gab_athens.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -9,13 +9,13 @@ namespace gab_athens.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly IEventDataReaderService _eventDataReaderService;
+        private readonly IEventDataStorageService _eventDataStorageService;
         private readonly IMemoryCache _memoryCache;
 
-        public AdminController(IEventDataReaderService eventDataReaderService,
+        public AdminController(IEventDataStorageService eventDataStorageService,
             IMemoryCache memoryCache)
         {
-            _eventDataReaderService = eventDataReaderService;
+            _eventDataStorageService = eventDataStorageService;
             _memoryCache = memoryCache;
         }
 
@@ -30,7 +30,7 @@ namespace gab_athens.Controllers
             var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2021.json";
             var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
 
-            var content = await _eventDataReaderService.FetchEventDetailsAsync(eventContainer, eventFile);
+            var content = await _eventDataStorageService.FetchEventDetailsAsync(eventContainer, eventFile);
             return Ok(content);
         } 
         
@@ -45,7 +45,7 @@ namespace gab_athens.Controllers
             var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2021.json";
             var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
 
-            var content = await _eventDataReaderService.FetchEventDetailsAsync(eventContainer, eventFile);
+            var content = await _eventDataStorageService.FetchEventDetailsAsync(eventContainer, eventFile);
             return Ok(content);
         } 
     }

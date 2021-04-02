@@ -94,5 +94,6 @@ namespace gab_athens.Models
         public IList<Entity> Sponsors { get; set; }
         public IList<Entity> Communities { get; set; }
         public Schedule Schedule { get; set; }
+        public IList<string> SpeakerOrder { get; set; }
     }
 }

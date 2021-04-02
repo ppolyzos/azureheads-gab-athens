@@ -6,19 +6,19 @@ using gab_athens.Models;
 using gab_athens.Utilities;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace gab_athens.Services
+namespace gab_athens.Services.Storage
 {
-    public interface IEventDataReaderService
+    public interface IEventDataStorageService
     {
         Task<EventDetails> FetchEventDetailsAsync(string container, string configFile);
     }
 
-    public class EventDataReaderService : IEventDataReaderService
+    public class EventDataStorageService : IEventDataStorageService
     {
         private readonly IStorageService _storageService;
         private readonly IMemoryCache _memoryCache;
 
-        public EventDataReaderService(IStorageService storageService, IMemoryCache memoryCache)
+        public EventDataStorageService(IStorageService storageService, IMemoryCache memoryCache)
         {
             _storageService = storageService;
             _memoryCache = memoryCache;

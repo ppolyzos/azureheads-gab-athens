@@ -6,7 +6,7 @@ using Azure.Storage.Blobs;
 using gab_athens.Infrastructure.Output;
 using Microsoft.Extensions.Configuration;
 
-namespace gab_athens.Services
+namespace gab_athens.Services.Storage
 {
     public interface IStorageService
     {

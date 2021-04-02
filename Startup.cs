@@ -1,5 +1,6 @@
 ﻿using gab_athens.Configuration.Extensions;
 using gab_athens.Services;
+using gab_athens.Services.Storage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +27,7 @@ namespace gab_athens
             services.SetupConfiguration(Configuration);
             services.AddApplicationInsightsTelemetry();
             services.AddSingleton<IStorageService, StorageService>();
-            services.AddSingleton<IEventDataReaderService, EventDataReaderService>();
+            services.AddSingleton<IEventDataStorageService, EventDataStorageService>();
             services.AddSingleton<UtilService>();
 
             services.AddScoped<ISessionizeService, SessionizeService>();
