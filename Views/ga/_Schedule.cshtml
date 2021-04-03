@@ -24,26 +24,26 @@
                     <p class="text-alt p-2">Coming <span class="highlight">soon...</span></p>
                 }
 
-                @if (Model.State.ShowSessions)
+                @if (!Model.State.ShowSessions)
                 {
                     <div id="day1" class="tab-pane fade active in">
                         <!-- Navigation by auditorium start -->
                         <ul class="nav nav-schedule">
-                            <li class="active">
-                                <a href="#day1_auditorium1" data-toggle="tab">Slot A</a>
-                            </li>
-                            <li>
-                                <a href="#day1_auditorium2" data-toggle="tab">Slot B</a>
-                            </li>
-                            <li>
-                                <a href="#day1_auditorium3" data-toggle="tab">Slot C</a>
-                            </li>
+                            @foreach (var (index, slot) in Model.Schedule.Slots.Select((session, i) => (i, session)))
+                            {
+                                <li class="@(index == 0 ? "active" : string.Empty)">
+                                    <a href="@($"#day1_auditorium{index + 1}")" data-toggle="tab">@slot.Key</a>
+                                </li>
+                            }
                         </ul>
                         <div class="tab-content tab-content-schedule">
-                            @{
-                                await Html.RenderPartialAsync("~/Views/Partial/ScheduleSlot.cshtml", Model.Schedule.SlotA, new ViewDataDictionary(ViewData) { { "section", "day1_auditorium1" } });
-                                await Html.RenderPartialAsync("~/Views/Partial/ScheduleSlot.cshtml", Model.Schedule.SlotB, new ViewDataDictionary(ViewData) { { "section", "day1_auditorium2" } });
-                                await Html.RenderPartialAsync("~/Views/Partial/ScheduleSlot.cshtml", Model.Schedule.SlotC, new ViewDataDictionary(ViewData) { { "section", "day1_auditorium3" } });
+                            @foreach (var (index, slot) in Model.Schedule.Slots.Select((session, i) => (i, session)))
+                            {
+                                await Html.RenderPartialAsync("~/Views/Partial/ScheduleSlot.cshtml", slot.Value, new ViewDataDictionary(ViewData)
+                                {
+                                    { "index", index },
+                                    { "section", $"day1_auditorium{index + 1}" }
+                                });
                             }
                         </div>
                     </div>

@@ -27,6 +27,7 @@ namespace gab_athens.Models
 
     public class Schedule
     {
+        public Dictionary<string, IList<Session>> Slots { get; set; }
         public IList<Session> SlotA { get; set; }
         public IList<Session> SlotB { get; set; }
         public IList<Session> SlotC { get; set; }

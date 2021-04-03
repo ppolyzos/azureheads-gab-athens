@@ -45,6 +45,13 @@ namespace gab_athens.Services.Storage
             HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotB);
             HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotC);
 
+            eventDetails.Schedule.Slots = new Dictionary<string, IList<Session>>()
+            {
+                { "Slot A", eventDetails.Schedule.SlotA },
+                { "Slot B", eventDetails.Schedule.SlotB },
+                { "Slot C", eventDetails.Schedule.SlotC }
+            };
+
             return eventDetails;
         }
 
