@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using gab_athens.Infrastructure.Extensions;
 using gab_athens.Models;
 using gab_athens.Utilities;
 using Microsoft.Extensions.Caching.Memory;
@@ -11,6 +12,7 @@ namespace gab_athens.Services
     public interface IEventSessionizeService
     {
         Task<IEnumerable<Speaker>> FetchSpeakersAsync();
+        Task<IEnumerable<Session>> FetchSessionsAsync();
     }
 
     public class EventSessionizeService : IEventSessionizeService
@@ -60,6 +62,38 @@ namespace gab_athens.Services
             _memoryCache.Set(Constants.CacheSpeakersKey, speakers, cacheEntryOptions);
 
             return speakers;
+        }
+
+        public async Task<IEnumerable<Session>> FetchSessionsAsync()
+        {
+            if (_memoryCache.TryGetValue(Constants.CacheSessionsKey, out IList<Session> sessions))
+                return sessions;
+
+            var cacheEntryOptions = new MemoryCacheEntryOptions()
+                .SetSlidingExpiration(TimeSpan.FromDays(1));
+
+            var sessionizeSessions = await _sessionizeService.FetchSessionsAsync();
+
+            var speakers = (await FetchSpeakersAsync()).ToArray();
+            sessions = sessionizeSessions.Select(ss => new Session
+            {
+                Title = ss.Title,
+                Description = ss.Description,
+                SpeakerIds = ss.Speakers.Select(c => c.Name).ToArray(),
+                Time = $"{ss.StartsAt.ToTimeZone("HH:mm")} - {ss.EndsAt.ToTimeZone("HH:mm")}",
+                Categories = ss.Categories.ToDictionary(c => c.Name,
+                    sc => sc.CategoryItems.Select(si => si.Name))
+            }).ToList();
+
+            foreach (var session in sessions)
+            {
+                session.Speakers = speakers.Where(s => session.SpeakerIds.Contains(s.Name)).ToArray();
+                session.SpeakerIds = session.Speakers.Select(c => c.Id).ToArray();
+            }
+
+            _memoryCache.Set(Constants.CacheSessionsKey, sessions, cacheEntryOptions);
+
+            return sessions;
         }
     }
 }

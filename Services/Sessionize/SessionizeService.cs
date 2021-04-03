@@ -15,6 +15,7 @@ namespace gab_athens.Services
     public interface ISessionizeService
     {
         Task<IList<Speaker>> FetchSpeakersAsync();
+        Task<IEnumerable<Session>> FetchSessionsAsync();
     }
 
     public class SessionizeService : ISessionizeService
@@ -27,15 +28,20 @@ namespace gab_athens.Services
             _config.ApiUrl = _config.ApiUrl.Replace("{{EventId}}", _config.EventId);
         }
 
-        public async Task<IList<Speaker>> FetchSpeakersAsync()
+        public async Task<IList<Speaker>> FetchSpeakersAsync() => await Invoke<Speaker[]>("Speakers", HttpMethod.Get);
+
+        public async Task<IEnumerable<Session>> FetchSessionsAsync()
         {
-            return await Invoke<Speaker[]>("Speakers", HttpMethod.Get);
+            var groupSessions = await Invoke<GroupSession[]>("Sessions", HttpMethod.Get);
+
+            var groupSession = groupSessions.FirstOrDefault();
+            return groupSession?.Sessions;
         }
 
         private async Task<T> Invoke<T>(string path, HttpMethod method, IDictionary<string, string> data = null)
         {
             var uri = $"{_config.ApiUrl}/{path}";
-            
+
             if (method == HttpMethod.Get && data?.Count > 0)
             {
                 uri = uri + "?" + GetQueryString(data);

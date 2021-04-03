@@ -8,6 +8,7 @@ namespace gab_athens.Utilities
         public const string EnvEventFile = "EVENT_FILE";
         public const string EnvEventContainer = "EVENT_CONTAINER";
         
-        public const string CacheSpeakersKey = "event-speakers";
+        public const string CacheSpeakersKey = "event-sessionize-speakers";
+        public const string CacheSessionsKey = "event-sessionize-sessions";
     }
 }
