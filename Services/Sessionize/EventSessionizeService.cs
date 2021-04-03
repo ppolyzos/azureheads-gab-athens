@@ -66,7 +66,7 @@ namespace gab_athens.Services
 
         public async Task<IEnumerable<Session>> FetchSessionsAsync()
         {
-            if (_memoryCache.TryGetValue(Constants.CacheSessionsKey, out IList<Session> sessions))
+            if (_memoryCache.TryGetValue(Constants.CacheSessionsKey, out List<Session> sessions))
                 return sessions;
 
             var cacheEntryOptions = new MemoryCacheEntryOptions()
@@ -81,6 +81,7 @@ namespace gab_athens.Services
                 Description = ss.Description,
                 SpeakerIds = ss.Speakers.Select(c => c.Name).ToArray(),
                 Time = $"{ss.StartsAt.ToTimeZone("HH:mm")} - {ss.EndsAt.ToTimeZone("HH:mm")}",
+                Room = ss.Room,
                 Categories = ss.Categories.ToDictionary(c => c.Name,
                     sc => sc.CategoryItems.Select(si => si.Name))
             }).ToList();
@@ -91,9 +92,48 @@ namespace gab_athens.Services
                 session.SpeakerIds = session.Speakers.Select(c => c.Id).ToArray();
             }
 
+            var slots = sessions.GroupBy(c => c.Room).Select(c => c.Key);
+            foreach (var slot in slots)
+            {
+                sessions.AddRange(GetServiceSessions(slot));
+            }
+
+            sessions = sessions.OrderBy(c => c.Room).ThenBy(c => c.Time).ToList();
+
             _memoryCache.Set(Constants.CacheSessionsKey, sessions, cacheEntryOptions);
 
             return sessions;
+        }
+
+        private Session[] GetServiceSessions(string room)
+        {
+            return new[]
+            {
+                new Session
+                {
+                    Title = "Welcome Keynote",
+                    Time = "11:00 - 11:15",
+                    Icon = "fa fa-building-o",
+                    Room = room,
+                    IsGreeting = true,
+                },
+
+                new Session
+                {
+                    Title = "Lunch Break",
+                    Time = "14:00 - 15:00",
+                    Icon = "fa fa-coffee",
+                    Room = room
+                },
+                
+                new Session
+                {
+                    Title = "Closing / Gifts",
+                    Time = "17:45 - 18:00",
+                    Icon = "fa fa-gift",
+                    Room = room
+                }
+            };
         }
     }
 }

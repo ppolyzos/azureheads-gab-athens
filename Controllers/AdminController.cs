@@ -57,6 +57,18 @@ namespace gab_athens.Controllers
             var content = await _eventDataStorageService.FetchEventDetailsAsync(eventContainer, eventFile);
             return Ok(content);
         }
+        
+        [HttpGet("api/admin/sessionize/speakers")]
+        public async Task<IActionResult> FetchSessionizeSpeakersAsync([FromQuery] string key)
+        {
+            if (string.IsNullOrEmpty(key) ||
+                !string.Equals(key, Environment.GetEnvironmentVariable(Constants.EnvAdminKey)))
+                return BadRequest();
+
+            var speakers = await _sessionizeService.FetchSpeakersAsync();
+
+            return Ok(speakers);
+        }
 
         [HttpGet("api/admin/sessionize/sessions")]
         public async Task<IActionResult> FetchSessionizeSessionsAsync([FromQuery] string key)

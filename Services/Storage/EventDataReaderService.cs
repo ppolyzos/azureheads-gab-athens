@@ -42,6 +42,7 @@ namespace gab_athens.Services.Storage
             var eventDetails = await _storageService.FetchAsync<EventDetails>(container, configFile);
 
             eventDetails.Schedule.Slots = eventDetails.Schedule.Sessions
+                .Where(c => !string.IsNullOrEmpty(c.Room))
                 .GroupBy(c => c.Room)
                 .ToDictionary(g => g.Key, g => g.ToArray());
 

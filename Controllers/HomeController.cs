@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,6 +40,17 @@ namespace gab_athens.Controllers
                     .ToList();
             }
 
+            eventDetails.Schedule = new Schedule { Sessions = await _eventSessionizeService.FetchSessionsAsync() };
+            eventDetails.Schedule.Slots = eventDetails.Schedule.Sessions
+                .Where(c => !string.IsNullOrEmpty(c.Room))
+                .OrderBy(c => c.Room)
+                .GroupBy(c => c.Room)
+                .ToDictionary(g => g.Key, g => g.ToArray());
+
+            foreach (var slot in eventDetails.Schedule.Slots)
+            {
+                HydrateSpeakers(eventDetails.Speakers, slot.Value);
+            }
 
             //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
@@ -65,6 +77,23 @@ namespace gab_athens.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private static void HydrateSpeakers(IList<Speaker> speakers, IEnumerable<Session> sessions)
+        {
+            foreach (var session in sessions)
+            {
+                session.Speakers = new List<Speaker>();
+                if (session.SpeakerIds == null) continue;
+
+                foreach (var speakerId in session.SpeakerIds)
+                {
+                    var speaker = speakers.FirstOrDefault(c => c.Id.Equals(speakerId));
+                    if (speaker == null) continue;
+
+                    session.Speakers.Add(speaker);
+                }
+            }
         }
     }
 }
