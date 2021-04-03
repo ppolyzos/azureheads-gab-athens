@@ -39,24 +39,15 @@
                             <a class="btn btn-md btn-lg-size btn-berry" onclick="selectSchedule('#day1_auditorium3')">Slot C</a>
                         </li>
                         <li>
-                            <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium1')">
-                                @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotA))
-                                {
-                                    <span class="speaker">@speaker</span>
-                                }
-                            </a>
-                            <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium2')">
-                                @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotB))
-                                {
-                                    <span class="speaker">@speaker</span>
-                                }
-                            </a>
-                            <a class="btn btn-outline btn-lg-size btn-speaker-hightlight" onclick="selectSchedule('#day1_auditorium3')">
-                                @foreach (var speaker in DistinctSpeakers(Model.Schedule.SlotC))
-                                {
-                                    <span class="speaker">@speaker</span>
-                                }
-                            </a>
+                            @foreach (var (index, slot) in Model.Schedule.Slots.Select((session, i) => (i, session)))
+                            {
+                                <a class="btn btn-outline btn-lg-size btn-speaker-highlight" onclick="selectSchedule(@($"'#day1_auditorium{index+1}'"))">
+                                    @foreach (var speaker in DistinctSpeakers(slot.Value))
+                                    {
+                                        <div class="speaker">@speaker</div>
+                                    }
+                                </a>
+                            }
                         </li>
                     </ul>
                     @*<a href="#" class="btn btn-outline btn-md" data-modal-link="0">VIDEO</a>*@

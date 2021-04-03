@@ -41,16 +41,14 @@ namespace gab_athens.Services.Storage
         {
             var eventDetails = await _storageService.FetchAsync<EventDetails>(container, configFile);
 
-            HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotA);
-            HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotB);
-            HydrateSpeakers(eventDetails.Speakers, eventDetails.Schedule.SlotC);
+            eventDetails.Schedule.Slots = eventDetails.Schedule.Sessions
+                .GroupBy(c => c.Room)
+                .ToDictionary(g => g.Key, g => g.ToArray());
 
-            eventDetails.Schedule.Slots = new Dictionary<string, IList<Session>>()
+            foreach (var slot in eventDetails.Schedule.Slots)
             {
-                { "Slot A", eventDetails.Schedule.SlotA },
-                { "Slot B", eventDetails.Schedule.SlotB },
-                { "Slot C", eventDetails.Schedule.SlotC }
-            };
+                HydrateSpeakers(eventDetails.Speakers, slot.Value);
+            }
 
             return eventDetails;
         }

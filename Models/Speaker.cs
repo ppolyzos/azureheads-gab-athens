@@ -27,10 +27,8 @@ namespace gab_athens.Models
 
     public class Schedule
     {
-        public Dictionary<string, IList<Session>> Slots { get; set; }
-        public IList<Session> SlotA { get; set; }
-        public IList<Session> SlotB { get; set; }
-        public IList<Session> SlotC { get; set; }
+        public Dictionary<string, Session[]> Slots { get; set; }
+        public IEnumerable<Session> Sessions { get; set; }
     }
 
     public class Session
@@ -47,6 +45,7 @@ namespace gab_athens.Models
         public string VideoUrl { get; set; }
         public string StreamUrl { get; set; }
         public bool IsGreeting { get; set; }
+        public string Room { get; set; }
     }
     
 

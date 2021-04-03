@@ -24,7 +24,7 @@
                     <p class="text-alt p-2">Coming <span class="highlight">soon...</span></p>
                 }
 
-                @if (!Model.State.ShowSessions)
+                @if (Model.State.ShowSessions)
                 {
                     <div id="day1" class="tab-pane fade active in">
                         <!-- Navigation by auditorium start -->
