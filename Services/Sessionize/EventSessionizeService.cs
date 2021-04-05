@@ -123,7 +123,8 @@ namespace gab_athens.Services
                     Title = "Lunch Break",
                     Time = "14:00 - 15:00",
                     Icon = "fa fa-coffee",
-                    Room = room
+                    Room = room,
+                    IsGreeting = true
                 },
                 
                 new Session
@@ -131,7 +132,8 @@ namespace gab_athens.Services
                     Title = "Closing / Gifts",
                     Time = "17:45 - 18:00",
                     Icon = "fa fa-gift",
-                    Room = room
+                    Room = room,
+                    IsGreeting = true
                 }
             };
         }

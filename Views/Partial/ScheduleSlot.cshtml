@@ -1,6 +1,6 @@
 ﻿@model IList<Session>
 
-<div id="@($"{ViewData["section"]}")" class="@($"tab-pane fade {((int)ViewData["index"] == 0 ? "active" : "")} in")">
+<div id="@($"{ViewData["section"]}")" class="@($"tab-pane fade {((int) ViewData["index"] == 0 ? "active" : "")} in")">
     <div class="panel-group" id="day1_auditorium1_timeline">
         @foreach (var (index, session) in Model.Select((session, i) => (i, session)))
         {
@@ -20,10 +20,14 @@
                 {
                     <a class="btn btn-stream btn-green" href="@session.VideoUrl" target="_blank">Watch Video</a>
                 }
-                
+
                 @if (session.StreamUrl != null)
                 {
                     <a class="btn btn-stream btn-green" href="@session.StreamUrl" target="_blank">Join Us</a>
+                }
+                @if (index == 0)
+                {
+                    <a class="btn btn-stream btn-blue" href="@($"#day1_auditorium{(int) ViewData["index"] + 1}")" target="_blank">@session.Room</a>
                 }
                 <a data-toggle="collapse" data-parent="@($"#{ViewData["section"]}_timeline")" href="@($"#{ViewData["section"]}_time-{index}")" class="schedule-item-toggle">
                     <strong class="time highlight">

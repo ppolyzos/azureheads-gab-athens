@@ -29,6 +29,9 @@
                     <div id="day1" class="tab-pane fade active in">
                         <!-- Navigation by auditorium start -->
                         <ul class="nav nav-schedule">
+                            <li>
+                                <a href="@($"#day1_auditorium0")" data-toggle="tab">Overview</a>
+                            </li>
                             @foreach (var (index, slot) in Model.Schedule.Slots.Select((session, i) => (i, session)))
                             {
                                 <li class="@(index == 0 ? "active" : string.Empty)">
@@ -37,6 +40,18 @@
                             }
                         </ul>
                         <div class="tab-content tab-content-schedule">
+                            <div id="day1_auditorium0" class="tab-pane fade in">
+                                @foreach (var (index, slot) in Model.Schedule.Slots
+                                    .Select((session, i) => (i, session)))
+                                {
+                                    await Html.RenderPartialAsync("~/Views/Partial/ScheduleSlotOverview.cshtml", slot.Value, new ViewDataDictionary(ViewData)
+                                    {
+                                        { "index", index },
+                                        { "section", $"day1_auditorium_overview{index + 1}" }
+                                    });
+                                }
+                            </div>
+
                             @foreach (var (index, slot) in Model.Schedule.Slots.Select((session, i) => (i, session)))
                             {
                                 await Html.RenderPartialAsync("~/Views/Partial/ScheduleSlot.cshtml", slot.Value, new ViewDataDictionary(ViewData)
