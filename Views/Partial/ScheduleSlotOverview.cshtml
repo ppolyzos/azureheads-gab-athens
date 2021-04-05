@@ -36,15 +36,18 @@
                 <h6 class="title">
                     @session.Title<i class="icon icon-arrows-06"></i>
                 </h6>
-
             </a>
+            <div class="panel-collapse schedule-item-body">
+                <article>
+                    <strong class="highlight speaker-name">@string.Join(',', session.Speakers.Select(c => c.Name))</strong>
+                </article>
+            </div>
             <div id="@($"{ViewData["section"]}_time-{index}")" class="panel-collapse collapse schedule-item-body">
                 <article>
                     @if (session.Description != null)
                     {
                         <p class="description">@session.Description</p>
                     }
-                    <strong class="highlight speaker-name">@string.Join(',', session.Speakers.Select(c => c.Name))</strong>
                 </article>
             </div>
         </div>
