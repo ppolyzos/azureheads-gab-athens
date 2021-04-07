@@ -43,7 +43,7 @@ namespace gab_athens.Services
                 return speakers;
 
             var cacheEntryOptions = new MemoryCacheEntryOptions()
-                .SetSlidingExpiration(TimeSpan.FromDays(1));
+                .SetSlidingExpiration(TimeSpan.FromHours(1));
 
             var sessionizeSpeakers = await _sessionizeService.FetchSpeakersAsync();
 
@@ -70,7 +70,7 @@ namespace gab_athens.Services
                 return sessions;
 
             var cacheEntryOptions = new MemoryCacheEntryOptions()
-                .SetSlidingExpiration(TimeSpan.FromDays(1));
+                .SetSlidingExpiration(TimeSpan.FromHours(1));
 
             var sessionizeSessions = await _sessionizeService.FetchSessionsAsync();
 
