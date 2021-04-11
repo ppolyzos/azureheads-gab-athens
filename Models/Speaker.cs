@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace gab_athens.Models
@@ -55,10 +56,10 @@ namespace gab_athens.Models
         public string Icon { get; set; }
     }
 
-    public class SessionLink
+    public class StreamUrl
     {
+        public string Name { get; set; }
         public string Url { get; set; }
-        public string Title { get; set; }
     }
 
     public class Configuration
@@ -82,6 +83,8 @@ namespace gab_athens.Models
         public bool ShowRegistration { get; set; }
         public bool ShowSchedule { get; set; }
         public bool ShowSessionLinks { get; set; }
+        public DateTime? ShowStreamUrlsFrom { get; set; }
+        public DateTime? ShowStreamUrlsTo { get; set; }
         public bool ShowSessions { get; set; }
         public bool ShowSpeakers { get; set; }
         public bool ShowSponsors { get; set; }
@@ -97,5 +100,6 @@ namespace gab_athens.Models
         public IList<Entity> Communities { get; set; }
         public Schedule Schedule { get; set; }
         public IList<string> SpeakerOrder { get; set; }
+        public IList<StreamUrl> StreamUrls { get; set; }
     }
 }
