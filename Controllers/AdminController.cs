@@ -39,6 +39,10 @@ namespace gab_athens.Controllers
             var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
 
             var content = await _eventDataStorageService.FetchEventDetailsAsync(eventContainer, eventFile);
+            
+            _memoryCache.Remove(Constants.CacheSpeakersKey);
+            _memoryCache.Remove(Constants.CacheSessionsKey);
+            
             return Ok(content);
         }
 
