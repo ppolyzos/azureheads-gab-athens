@@ -130,6 +130,7 @@ namespace gab_athens.Services
                 new Session
                 {
                     Title = "Closing / Gifts",
+                    Description = "Gifts are a kind offer from InfoQuest Technologies.",
                     Time = "17:45 - 18:00",
                     Icon = "fa fa-gift",
                     Room = room,
