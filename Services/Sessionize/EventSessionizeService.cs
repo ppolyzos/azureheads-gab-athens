@@ -95,7 +95,12 @@ namespace gab_athens.Services
             var slots = sessions.GroupBy(c => c.Room).Select(c => c.Key);
             foreach (var slot in slots)
             {
-                sessions.AddRange(GetServiceSessions(slot));
+                var serviceSessions = GetServiceSessions(slot);
+                if (slot.Equals("Slot 1"))
+                {
+                    serviceSessions = serviceSessions.Where(s => s.Title != "Lunch Break").ToArray();
+                }
+                sessions.AddRange(serviceSessions);
             }
 
             sessions = sessions.OrderBy(c => c.Room).ThenBy(c => c.Time).ToList();
