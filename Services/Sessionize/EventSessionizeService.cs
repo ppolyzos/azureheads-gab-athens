@@ -88,7 +88,14 @@ namespace gab_athens.Services
 
             foreach (var session in sessions)
             {
-                session.Speakers = speakers.Where(s => session.SpeakerIds.Contains(s.Name)).ToArray();
+                session.Speakers = new List<Speaker>();
+                foreach (var speakerId in session.SpeakerIds)
+                {
+                    var speaker = speakers.FirstOrDefault(s => s.Name == speakerId);
+                    if (speaker == null) continue;
+                    
+                    session.Speakers.Add(speaker);
+                }
                 session.SpeakerIds = session.Speakers.Select(c => c.Id).ToArray();
             }
 
