@@ -105,7 +105,7 @@ namespace gab_athens.Services
                 var serviceSessions = GetServiceSessions(slot);
                 if (slot.Equals("Slot 1"))
                 {
-                    serviceSessions = serviceSessions.Where(s => s.Title != "Lunch Break").ToArray();
+                    serviceSessions = serviceSessions.Where(s => s.Title != "Welcome Keynote").ToArray();
                 }
                 sessions.AddRange(serviceSessions);
             }
