@@ -1,0 +1,61 @@
+﻿@using gab_athens.Services
+@model EventDetails;
+@inject UtilService UtilService;
+
+<section id="volunteers" class="section align-center">
+    <div class="container">
+        <span class="icon section-icon icon-faces-users-04"></span>
+        <h3>Volunteers</h3>
+        @if (!Model.State.ShowVolunteers)
+        {
+            <p class="text-alt">
+                Call for
+                <a href="@Model.Configuration.CallForVolunteersUrl">
+                    <span class="highlight">volunteers</span>
+                </a>
+            </p>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <a class="btn btn-md btn-lg-size btn-blue" target="_blank" href="@Model.Configuration.CallForVolunteersUrl">Call for Volunteers</a>
+                </div>
+            </div>
+        }
+
+        @if (Model.State.ShowVolunteers)
+        {
+            <p class="text-alt">
+                A big thanks to our
+                <a href="@Model.Configuration.CallForVolunteersUrl">
+                    <span class="highlight">awesome volunteers</span>
+                </a>
+            </p>
+            <br/>
+            @foreach (var (index, volunteer) in Model.Volunteers.Select((value, i) => (i, value)))
+            {
+                if (index % 3 == 0)
+                {
+                    @:<div class="row">
+                }
+                <div class="col-sm-4">
+                    <div class="speaker">
+                        <div class="photo-wrapper rounded">
+                            <img src="@volunteer.ImageUrl" width="200" height="200" alt="@volunteer.FirstName - @volunteer.LastName" class="img-responsive">
+                        </div>
+                        <h3 class="name">@volunteer.FirstName @volunteer.LastName</h3>
+                        <p class="text-alt">
+                            <small>@volunteer.Description</small>
+                        </p>
+                    </div>
+                </div>
+                if (index % 3 == 2)
+                {
+                    @:</div>
+                }
+            }
+        }
+
+
+    </div>
+</section>

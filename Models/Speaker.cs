@@ -16,6 +16,14 @@ namespace gab_athens.Models
         public IList<Link> Links { get; set; }
     }
 
+    public class Volunteer
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Description { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
     public class Entity
     {
         public string Name { get; set; }
@@ -87,6 +95,7 @@ namespace gab_athens.Models
         public DateTime? ShowStreamUrlsTo { get; set; }
         public bool ShowSessions { get; set; }
         public bool ShowSpeakers { get; set; }
+        public bool ShowVolunteers { get; set; }
         public bool ShowSponsors { get; set; }
         public bool ShowSpeakerDescription { get; set; }
     }
@@ -96,6 +105,7 @@ namespace gab_athens.Models
         public State State { get; set; }
         public Configuration Configuration { get; set; }
         public IList<Speaker> Speakers { get; set; }
+        public IList<Volunteer> Volunteers { get; set; }
         public IList<Entity> Sponsors { get; set; }
         public IList<Entity> Communities { get; set; }
         public Schedule Schedule { get; set; }
