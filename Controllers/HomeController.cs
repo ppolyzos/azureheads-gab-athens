@@ -71,7 +71,7 @@ namespace gab_athens.Controllers
                 session.Speakers = new List<Speaker>();
                 session.StreamUrl = streamUrls?.FirstOrDefault(c => c.Name.Equals(session.Room))?.Url;
 
-                if (session.Title == "Welcome Keynote")
+                if (session.Title == "Welcome Keynote" || session.Title == "Closing / Gifts")
                 {
                     session.StreamUrl = streamUrls?.FirstOrDefault(c => c.Name.Equals("Slot 1"))?.Url;
                 }
