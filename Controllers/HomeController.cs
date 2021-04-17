@@ -70,6 +70,11 @@ namespace gab_athens.Controllers
             {
                 session.Speakers = new List<Speaker>();
                 session.StreamUrl = streamUrls?.FirstOrDefault(c => c.Name.Equals(session.Room))?.Url;
+
+                if (session.Title == "Welcome Keynote")
+                {
+                    session.StreamUrl = streamUrls?.FirstOrDefault(c => c.Name.Equals("Slot 1"))?.Url;
+                }
                 
                 if (session.SpeakerIds == null) continue;
 
