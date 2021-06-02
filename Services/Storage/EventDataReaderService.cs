@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using gab_athens.Models;
 using gab_athens.Utilities;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 
 namespace gab_athens.Services.Storage
 {
@@ -15,28 +16,34 @@ namespace gab_athens.Services.Storage
 
     public class EventDataStorageService : IEventDataStorageService
     {
+        private readonly ILogger<EventDataStorageService> _logger;
         private readonly IStorageService _storageService;
         private readonly IMemoryCache _memoryCache;
 
-        public EventDataStorageService(IStorageService storageService, IMemoryCache memoryCache)
+        public EventDataStorageService(
+            ILogger<EventDataStorageService> logger,
+            IStorageService storageService,
+            IMemoryCache memoryCache)
         {
+            _logger = logger;
             _storageService = storageService;
             _memoryCache = memoryCache;
         }
 
         public async Task<EventDetails> FetchEventDetailsAsync(string container, string configFile)
         {
-            if (_memoryCache.TryGetValue(Constants.CacheEventsKey, out EventDetails eventDetails)) return eventDetails;
-            
+            if (_memoryCache.TryGetValue(Constants.CacheEventsKey, out EventDetails eventDetails))
+                return eventDetails;
+
             var cacheEntryOptions = new MemoryCacheEntryOptions()
                 .SetSlidingExpiration(TimeSpan.FromDays(3));
-                
+
             eventDetails = await GetAsync(container, configFile);
             _memoryCache.Set(Constants.CacheEventsKey, eventDetails, cacheEntryOptions);
 
             return eventDetails;
         }
-        
+
         private async Task<EventDetails> GetAsync(string container, string configFile)
         {
             var eventDetails = await _storageService.FetchAsync<EventDetails>(container, configFile);
@@ -50,6 +57,8 @@ namespace gab_athens.Services.Storage
             {
                 HydrateSpeakers(eventDetails.Speakers, slot.Value);
             }
+            
+            _logger.LogInformation("event details loaded from storage service.");
 
             return eventDetails;
         }
@@ -63,7 +72,7 @@ namespace gab_athens.Services.Storage
                 {
                     var speaker = speakers.FirstOrDefault(c => c.Id.Equals(speakerId));
                     if (speaker == null) continue;
-                    
+
                     session.Speakers.Add(speaker);
                 }
             }

@@ -46,7 +46,7 @@ namespace gab_athens.Controllers
                 .OrderBy(c => c.Room)
                 .GroupBy(c => c.Room)
                 .ToDictionary(g => g.Key, g => g.ToArray());
-            Console.WriteLine("");
+            
             foreach (var slot in eventDetails.Schedule.Slots)
             {
                 var streamUrls =
