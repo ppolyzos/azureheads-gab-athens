@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using gab_athens.Models;
-using gab_athens.Utilities;
+using EventManagement.Web.Models;
+using EventManagement.Web.Utilities;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
-namespace gab_athens.Services.Storage
+namespace EventManagement.Web.Services.Storage
 {
     public interface IEventDataStorageService
     {

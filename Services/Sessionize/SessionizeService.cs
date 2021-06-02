@@ -4,13 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using gab_athens.Configuration;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 using System.Threading.Tasks;
-using gab_athens.Services.Sessionize.Models;
+using EventManagement.Web.Configuration;
+using EventManagement.Web.Services.Sessionize.Models;
 
-namespace gab_athens.Services
+namespace EventManagement.Web.Services
 {
     public interface ISessionizeService
     {

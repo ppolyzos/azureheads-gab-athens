@@ -3,10 +3,10 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
-using gab_athens.Infrastructure.Output;
+using EventManagement.Web.Infrastructure.Output;
 using Microsoft.Extensions.Configuration;
 
-namespace gab_athens.Services.Storage
+namespace EventManagement.Web.Services.Storage
 {
     public interface IStorageService
     {

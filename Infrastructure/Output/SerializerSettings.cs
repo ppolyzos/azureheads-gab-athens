@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using gab_athens.Utilities.Json.Converters;
+using EventManagement.Web.Utilities.Json.Converters;
 
-namespace gab_athens.Infrastructure.Output
+namespace EventManagement.Web.Infrastructure.Output
 {
     public static class SerializerSettings
     {

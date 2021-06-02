@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace gab_athens.Services.Sessionize.Models
+namespace EventManagement.Web.Services.Sessionize.Models
 {
     public class Error
     {

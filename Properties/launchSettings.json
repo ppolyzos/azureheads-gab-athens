@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "gab-athens": {
+    "EventManagement.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

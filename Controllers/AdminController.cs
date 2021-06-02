@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
-using gab_athens.Services;
-using gab_athens.Services.Storage;
-using gab_athens.Utilities;
+using EventManagement.Web.Services;
+using EventManagement.Web.Services.Storage;
+using EventManagement.Web.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace gab_athens.Controllers
+namespace EventManagement.Web.Controllers
 {
     public class AdminController : Controller
     {

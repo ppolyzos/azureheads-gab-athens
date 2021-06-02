@@ -1,13 +1,13 @@
-﻿using gab_athens.Configuration.Extensions;
-using gab_athens.Services;
-using gab_athens.Services.Storage;
+﻿using EventManagement.Web.Configuration.Extensions;
+using EventManagement.Web.Services;
+using EventManagement.Web.Services.Storage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace gab_athens
+namespace EventManagement.Web
 {
     public class Startup
     {

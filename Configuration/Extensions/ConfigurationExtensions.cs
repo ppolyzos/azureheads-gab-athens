@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace gab_athens.Configuration.Extensions
+namespace EventManagement.Web.Configuration.Extensions
 {
     public static class ConfigurationExtensions
     {

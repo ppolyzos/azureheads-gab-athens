@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>19cc57a0-379f-4c8a-8b7f-dcbe04b74ff8</UserSecretsId>
-    <ApplicationInsightsResourceId>/subscriptions/50a1c729-5f81-4f61-bce3-c044a329891d/resourcegroups/gab-athens/providers/microsoft.insights/components/global-azure-greece-2020</ApplicationInsightsResourceId>
+    <ApplicationInsightsResourceId>/subscriptions/50a1c729-5f81-4f61-bce3-c044a329891d/resourcegroups/EventManagement.Web/providers/microsoft.insights/components/global-azure-greece-2020</ApplicationInsightsResourceId>
     <LangVersion>8</LangVersion>
     <Nullable>disable</Nullable>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-﻿namespace gab_athens.Configuration
+﻿namespace EventManagement.Web.Configuration
 {
     public class SessionizeConfig
     {

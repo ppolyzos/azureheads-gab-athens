@@ -1,4 +1,4 @@
-namespace gab_athens.Utilities
+namespace EventManagement.Web.Utilities
 {
     public static class Constants
     {

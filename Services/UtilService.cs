@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace gab_athens.Services
+namespace EventManagement.Web.Services
 {
     public class UtilService
     {

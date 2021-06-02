@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using gab_athens.Infrastructure.Extensions;
-using gab_athens.Models;
-using gab_athens.Utilities;
+using EventManagement.Web.Infrastructure.Extensions;
+using EventManagement.Web.Models;
+using EventManagement.Web.Utilities;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace gab_athens.Services
+namespace EventManagement.Web.Services
 {
     public interface IEventSessionizeService
     {

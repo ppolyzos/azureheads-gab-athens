@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace gab_athens.Models
+namespace EventManagement.Web.Models
 {
     public class Speaker
     {

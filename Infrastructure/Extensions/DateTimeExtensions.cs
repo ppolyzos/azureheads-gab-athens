@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace gab_athens.Infrastructure.Extensions
+namespace EventManagement.Web.Infrastructure.Extensions
 {
     public static class DateTimeExtensions
     {

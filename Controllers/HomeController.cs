@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using gab_athens.Models;
-using gab_athens.Services;
-using gab_athens.Services.Storage;
-using gab_athens.Utilities;
+using EventManagement.Web.Models;
+using EventManagement.Web.Services;
+using EventManagement.Web.Services.Storage;
+using EventManagement.Web.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace gab_athens.Controllers
+namespace EventManagement.Web.Controllers
 {
     public class HomeController : Controller
     {
@@ -57,7 +57,7 @@ namespace gab_athens.Controllers
                 Hydrate(slot.Value, eventDetails.Speakers, streamUrls);
             }
 
-            //return View("~/Views/Home/Index.cshtml"); // Default for gab-athens-2019
+            //return View("~/Views/Home/Index.cshtml"); // Default for EventManagement.Web-2019
             // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
             return View("~/Views/ga/Index.cshtml", eventDetails);
         }

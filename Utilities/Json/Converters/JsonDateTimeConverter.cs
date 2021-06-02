@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace gab_athens.Utilities.Json.Converters
+namespace EventManagement.Web.Utilities.Json.Converters
 {
     public class JsonDateTimeConverter : JsonConverter<DateTime>
     {
