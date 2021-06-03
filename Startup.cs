@@ -1,11 +1,14 @@
 ﻿using EventManagement.Web.Configuration.Extensions;
 using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace EventManagement.Web
 {
@@ -22,7 +25,8 @@ namespace EventManagement.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddHealthChecks();
+            services.AddHealthChecks()
+                .AddCheck("self", () => HealthCheckResult.Healthy());
 
             services.SetupConfiguration(Configuration);
             services.AddApplicationInsightsTelemetry();
@@ -50,10 +54,24 @@ namespace EventManagement.Web
             app.UseCors("default");
             app.UseStaticFiles();
 
+            var pathBase = Configuration["PATH_BASE"];
+            if (!string.IsNullOrEmpty(pathBase))
+            {
+                app.UsePathBase(pathBase);
+            }
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapHealthChecks("/health");
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+                endpoints.MapHealthChecks("/liveness", new HealthCheckOptions
+                {
+                    Predicate = r => r.Name.Contains("self")
+                });
             });
         }
     }
