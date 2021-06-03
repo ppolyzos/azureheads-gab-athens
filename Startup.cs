@@ -1,4 +1,5 @@
 ﻿using EventManagement.Web.Configuration.Extensions;
+using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
 using HealthChecks.UI.Client;

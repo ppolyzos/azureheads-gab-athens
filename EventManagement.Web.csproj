@@ -44,6 +44,10 @@
 
   <ItemGroup>
     <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Integrations" />
   </ItemGroup> 
 
 </Project>

@@ -4,13 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using Microsoft.Extensions.Options;
 using System.Text.Json;
 using System.Threading.Tasks;
 using EventManagement.Web.Configuration;
-using EventManagement.Web.Services.Sessionize.Models;
+using EventManagement.Web.Integrations.Sessionize.Models;
+using Microsoft.Extensions.Options;
 
-namespace EventManagement.Web.Services
+namespace EventManagement.Web.Integrations.Sessionize
 {
     public interface ISessionizeService
     {

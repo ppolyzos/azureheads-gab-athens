@@ -7,7 +7,7 @@ using EventManagement.Web.Models;
 using EventManagement.Web.Utilities;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace EventManagement.Web.Services
+namespace EventManagement.Web.Integrations.Sessionize
 {
     public interface IEventSessionizeService
     {

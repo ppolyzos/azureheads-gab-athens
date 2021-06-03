@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace EventManagement.Web.Services.Sessionize.Models
+namespace EventManagement.Web.Integrations.Sessionize.Models
 {
     public class Speaker
     {

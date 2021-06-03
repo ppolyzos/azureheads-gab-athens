@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Models;
 using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
