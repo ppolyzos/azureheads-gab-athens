@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagement.Web", "EventManagement.Web.csproj", "{1B4BAE51-CD34-4123-89FB-341E9AD0F925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagement.Web", "src\Web\EventManagement.Web.csproj", "{1B4BAE51-CD34-4123-89FB-341E9AD0F925}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C49E1971-917E-4F44-938B-902624CF8745}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C5A684DA-4F18-401A-82DA-0176F3CB6E2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,5 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0DFE5C6-1130-4A54-BF96-30332485E758}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5A684DA-4F18-401A-82DA-0176F3CB6E2F} = {C49E1971-917E-4F44-938B-902624CF8745}
+		{1B4BAE51-CD34-4123-89FB-341E9AD0F925} = {C5A684DA-4F18-401A-82DA-0176F3CB6E2F}
 	EndGlobalSection
 EndGlobal
