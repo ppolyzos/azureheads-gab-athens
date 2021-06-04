@@ -1,6 +1,6 @@
-namespace EventManagement.Web.Models
+namespace EventManagement.Web.Data.ViewModels
 {
-    public class ErrorViewModel
+    public class ErrorVm
     {
         public string RequestId { get; set; }
 
