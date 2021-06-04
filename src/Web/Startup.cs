@@ -38,12 +38,7 @@ namespace EventManagement.Web
                 .AddCheck("self", () => HealthCheckResult.Healthy());
 
             services.AddSwagger(Configuration);
-
             services.SetupConfiguration(Configuration);
-            services.AddApplicationInsightsTelemetry();
-            
-            services.AddSingleton<IEventDataStorageService, EventDataStorageService>();
-
             services.InstallServicesInAssembly(Configuration);
             
             return services.AddAutofacService(Container);
