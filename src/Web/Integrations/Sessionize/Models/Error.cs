@@ -10,9 +10,4 @@ namespace EventManagement.Web.Integrations.Sessionize.Models
 
         [JsonPropertyName("message")] public string Message { get; set; }
     }
-
-    public class ErrorResponse
-    {
-        [JsonPropertyName("error")] public Error Error { get; set; }
-    }
 }
