@@ -5,6 +5,8 @@ using EventManagement.Web.Configuration.Extensions;
 using EventManagement.Web.Extensions;
 using EventManagement.Web.Infrastructure.DI;
 using EventManagement.Web.Installers.Core;
+using EventManagement.Web.Installers.Tools;
+using EventManagement.Web.Installers.Tools.Swagger;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
@@ -36,8 +38,7 @@ namespace EventManagement.Web
             services.AddMvc();
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy());
-
-            services.AddSwagger(Configuration);
+            
             services.SetupConfiguration(Configuration);
             services.InstallServicesInAssembly(Configuration);
             
@@ -53,28 +54,12 @@ namespace EventManagement.Web
                 app.UsePathBase(pathBase);
             }
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger()
-                    .UseSwaggerUI(options =>
-                    {
-                        options.SwaggerEndpoint(
-                            $"{(!string.IsNullOrEmpty(pathBase) ? pathBase : string.Empty)}/swagger/v1/swagger.json",
-                            "Event Management V1");
-                        options.OAuthClientId("eventmngtswaggerui");
-                        options.OAuthAppName("EventManagement.Web.API Swagger UI");
-                    });
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            app.UseDeveloperTools(env, Configuration);
+            
 
             app.UseRouting();
             app.UseCors("default");
             app.UseStaticFiles();
-
 
             app.UseEndpoints(endpoints =>
             {
