@@ -1,4 +1,7 @@
-﻿using EventManagement.Web.Configuration.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using EventManagement.Web.Configuration.Extensions;
+using EventManagement.Web.Extensions;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
@@ -10,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.OpenApi.Models;
 
 namespace EventManagement.Web
 {
@@ -29,6 +33,8 @@ namespace EventManagement.Web
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy());
 
+            services.AddSwagger(Configuration);
+
             services.SetupConfiguration(Configuration);
             services.AddApplicationInsightsTelemetry();
             services.AddSingleton<IStorageService, StorageService>();
@@ -42,9 +48,24 @@ namespace EventManagement.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            var pathBase = Configuration["PATH_BASE"];
+            if (!string.IsNullOrEmpty(pathBase))
+            {
+                app.UsePathBase(pathBase);
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger()
+                    .UseSwaggerUI(options =>
+                    {
+                        options.SwaggerEndpoint(
+                            $"{(!string.IsNullOrEmpty(pathBase) ? pathBase : string.Empty)}/swagger/v1/swagger.json",
+                            "Event Management V1");
+                        options.OAuthClientId("eventmngtswaggerui");
+                        options.OAuthAppName("EventManagement.Web.API Swagger UI");
+                    });
             }
             else
             {
@@ -55,11 +76,6 @@ namespace EventManagement.Web
             app.UseCors("default");
             app.UseStaticFiles();
 
-            var pathBase = Configuration["PATH_BASE"];
-            if (!string.IsNullOrEmpty(pathBase))
-            {
-                app.UsePathBase(pathBase);
-            }
 
             app.UseEndpoints(endpoints =>
             {
