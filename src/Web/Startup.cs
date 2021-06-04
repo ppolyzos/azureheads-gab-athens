@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Autofac;
 using EventManagement.Web.Configuration.Extensions;
 using EventManagement.Web.Extensions;
+using EventManagement.Web.Infrastructure.DI;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
@@ -25,9 +27,10 @@ namespace EventManagement.Web
         }
 
         public IConfiguration Configuration { get; }
+        public IContainer Container { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
             services.AddHealthChecks()
@@ -37,12 +40,12 @@ namespace EventManagement.Web
 
             services.SetupConfiguration(Configuration);
             services.AddApplicationInsightsTelemetry();
-            services.AddSingleton<IStorageService, StorageService>();
+            
             services.AddSingleton<IEventDataStorageService, EventDataStorageService>();
             services.AddSingleton<UtilService>();
-
-            services.AddScoped<ISessionizeService, SessionizeService>();
-            services.AddScoped<IEventSessionizeService, EventSessionizeService>();
+            
+            
+            return services.AddAutofacService(Container);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -21,8 +21,8 @@ namespace EventManagement.Web
                 .Build()
                 .Run();
 
-        private static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        private static IWebHostBuilder CreateHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((host, builder) =>
                 {
                     builder.SetBasePath(Directory.GetCurrentDirectory())
@@ -31,10 +31,6 @@ namespace EventManagement.Web
                             reloadOnChange: true)
                         .AddEnvironmentVariables();
                 })
-                .ConfigureWebHostDefaults(webBuilder => webBuilder
-                    .UseStartup<Startup>()
-                    .CaptureStartupErrors(false)
-                    .UseContentRoot(Directory.GetCurrentDirectory()))
                 .UseSerilog((host, builder) =>
                 {
                     var seqServerUrl = host.Configuration["Serilog:SeqServerUrl"];
@@ -52,6 +48,9 @@ namespace EventManagement.Web
                             ? "http://logstash:8080"
                             : logstashUrl)
                         .ReadFrom.Configuration(host.Configuration);
-                });
+                })
+                .UseStartup<Startup>()
+                .CaptureStartupErrors(false)
+                .UseContentRoot(Directory.GetCurrentDirectory());
     }
 }
