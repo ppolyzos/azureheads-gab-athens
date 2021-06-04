@@ -2,7 +2,7 @@
 
 namespace EventManagement.Web.Services
 {
-    public class UtilService
+    public class UtilsService
     {
         public string SplitText(string text, int take = 10, int skip = 0)
         {

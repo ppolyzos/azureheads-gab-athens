@@ -4,6 +4,7 @@ using Autofac;
 using EventManagement.Web.Configuration.Extensions;
 using EventManagement.Web.Extensions;
 using EventManagement.Web.Infrastructure.DI;
+using EventManagement.Web.Installers.Core;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
@@ -42,8 +43,8 @@ namespace EventManagement.Web
             services.AddApplicationInsightsTelemetry();
             
             services.AddSingleton<IEventDataStorageService, EventDataStorageService>();
-            services.AddSingleton<UtilService>();
-            
+
+            services.InstallServicesInAssembly(Configuration);
             
             return services.AddAutofacService(Container);
         }

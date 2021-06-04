@@ -16,10 +16,9 @@ namespace EventManagement.Web.Infrastructure.DI.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<UtilService>()
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope();
-            
+            builder.RegisterType<UtilsService>()
+                .SingleInstance();
+
             foreach (var assembly in _assemblies)
             {
                 builder.RegisterAssemblyTypes(assembly)
