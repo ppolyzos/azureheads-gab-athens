@@ -1,4 +1,4 @@
-﻿namespace EventManagement.Web.Models
+﻿namespace EventManagement.Web.Data.Models
 {
     public class Social
     {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using EventManagement.Web.Utilities.Json.Converters;
+using EventManagement.Core.Utilities.Json.Converters;
 
 namespace EventManagement.Web.Infrastructure.Output
 {
