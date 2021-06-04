@@ -6,6 +6,7 @@ using EventManagement.Web.Extensions;
 using EventManagement.Web.Infrastructure.DI;
 using EventManagement.Web.Installers.Core;
 using EventManagement.Web.Installers.Tools;
+using EventManagement.Web.Installers.Tools.HealthChecks;
 using EventManagement.Web.Installers.Tools.Swagger;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services;
@@ -36,9 +37,6 @@ namespace EventManagement.Web
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddHealthChecks()
-                .AddCheck("self", () => HealthCheckResult.Healthy());
-            
             services.SetupConfiguration(Configuration);
             services.InstallServicesInAssembly(Configuration);
             
@@ -64,15 +62,7 @@ namespace EventManagement.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
-                {
-                    Predicate = _ => true,
-                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-                });
-                endpoints.MapHealthChecks("/liveness", new HealthCheckOptions
-                {
-                    Predicate = r => r.Name.Contains("self")
-                });
+                endpoints.MapAppHealthChecks();
             });
         }
     }
