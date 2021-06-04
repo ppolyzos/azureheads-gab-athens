@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using EventManagement.Web.Data.Models;
 using EventManagement.Web.Data.ViewModels;
 using EventManagement.Web.Integrations.Sessionize;
-using EventManagement.Web.Services;
 using EventManagement.Web.Services.Storage;
 using EventManagement.Web.Utilities;
 using Microsoft.AspNetCore.Mvc;
