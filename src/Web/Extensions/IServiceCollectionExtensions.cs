@@ -1,4 +1,4 @@
-﻿using EventManagement.Web.Filters;
+﻿using EventManagement.Web.Infrastructure.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
