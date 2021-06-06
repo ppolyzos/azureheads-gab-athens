@@ -55,6 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\core\EventManagement.Api.Core\EventManagement.Api.Core.csproj" />
     <ProjectReference Include="..\core\EventManagement.Core\EventManagement.Core.csproj" />
   </ItemGroup> 
 

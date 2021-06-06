@@ -1,5 +1,5 @@
-﻿using EventManagement.Web.Extensions;
-using EventManagement.Web.Installers.Core;
+﻿using EventManagement.Api.Core.Installers;
+using EventManagement.Web.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

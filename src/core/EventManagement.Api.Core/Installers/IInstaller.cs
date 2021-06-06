@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EventManagement.Web.Installers.Core
+namespace EventManagement.Api.Core.Installers
 {
     public interface IInstaller
     {

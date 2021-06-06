@@ -3,13 +3,13 @@ using System.Linq;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EventManagement.Web.Installers.Core
+namespace EventManagement.Api.Core.Installers
 {
     public static class InstallerExtensions
     {
-        public static void InstallServicesInAssembly(this IServiceCollection services, IConfiguration configuration)
+        public static void InstallServicesInAssembly<T>(this IServiceCollection services, IConfiguration configuration)
         {
-            var installers = typeof(Startup).Assembly.ExportedTypes
+            var installers = typeof(T).Assembly.ExportedTypes
                 .Where(c => typeof(IInstaller).IsAssignableFrom(c)
                             && !c.IsInterface
                             && !c.IsAbstract)

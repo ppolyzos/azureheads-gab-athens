@@ -1,8 +1,8 @@
 ﻿using System;
 using Autofac;
+using EventManagement.Api.Core.Installers;
 using EventManagement.Web.Configuration.Extensions;
 using EventManagement.Web.Infrastructure.DI;
-using EventManagement.Web.Installers.Core;
 using EventManagement.Web.Installers.Tools;
 using EventManagement.Web.Installers.Tools.HealthChecks;
 using Microsoft.AspNetCore.Builder;
@@ -26,7 +26,7 @@ namespace EventManagement.Web
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.SetupConfiguration(Configuration);
-            services.InstallServicesInAssembly(Configuration);
+            services.InstallServicesInAssembly<Startup>(Configuration);
             return services.AddAutofacService(Container);
         }
 

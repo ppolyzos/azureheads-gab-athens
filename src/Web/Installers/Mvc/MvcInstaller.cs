@@ -1,6 +1,6 @@
-﻿using EventManagement.Web.Infrastructure.Extensions;
+﻿using EventManagement.Api.Core.Installers;
+using EventManagement.Web.Infrastructure.Extensions;
 using EventManagement.Web.Infrastructure.Output;
-using EventManagement.Web.Installers.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
