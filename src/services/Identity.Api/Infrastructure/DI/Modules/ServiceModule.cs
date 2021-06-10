@@ -3,7 +3,7 @@ using System.Reflection;
 using Autofac;
 using EventManagement.Core.Utilities;
 
-namespace EventManagement.Web.Infrastructure.DI.Modules
+namespace Identity.Api.Infrastructure.DI.Modules
 {
     public class ServiceModule : Autofac.Module
     {

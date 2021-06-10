@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace EventManagement.Web.Services
+namespace EventManagement.Core.Utilities
 {
     public class UtilsService
     {

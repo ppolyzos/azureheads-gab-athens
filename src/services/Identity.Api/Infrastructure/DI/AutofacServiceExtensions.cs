@@ -3,13 +3,13 @@ using System.Linq;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using EventManagement.Core.Utilities;
-using EventManagement.Web.Infrastructure.DI.Modules;
+using Identity.Api.Infrastructure.DI.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace EventManagement.Web.Infrastructure.DI
+namespace Identity.Api.Infrastructure.DI
 {
     public static class AutofacServiceExtensions
     {

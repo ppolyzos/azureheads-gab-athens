@@ -1,28 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using Autofac;
-using EventManagement.Core.Utilities;
 
-namespace EventManagement.Web.Infrastructure.DI.Modules
+namespace Identity.Api.Infrastructure.DI.Modules
 {
-    public class ServiceModule : Autofac.Module
+    public class RepositoryModule : Autofac.Module
     {
         private readonly IEnumerable<Assembly> _assemblies;
 
-        public ServiceModule(IEnumerable<Assembly> assemblies)
+        public RepositoryModule(IEnumerable<Assembly> assemblies)
         {
             _assemblies = assemblies;
         }
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<UtilsService>()
-                .SingleInstance();
-
             foreach (var assembly in _assemblies)
             {
+                // Query Instantiation
                 builder.RegisterAssemblyTypes(assembly)
-                    .Where(t => t.Name.EndsWith("Service"))
+                    .Where(t => t.Name.EndsWith("Query"))
+                    .AsSelf();
+
+                // Repository Instantiation
+                builder.RegisterAssemblyTypes(assembly)
+                    .Where(t => t.Name.EndsWith("Repository"))
                     .AsImplementedInterfaces()
                     .InstancePerLifetimeScope();
             }
