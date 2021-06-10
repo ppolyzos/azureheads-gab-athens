@@ -2,7 +2,6 @@ using System;
 using Autofac;
 using EventManagement.Api.Core.Installers;
 using Identity.Api.Application.Configuration.Extensions;
-using Identity.Api.Data.Seed;
 using Identity.Api.Data.Seed.Core;
 using Identity.Api.Infrastructure.DI;
 using Microsoft.AspNetCore.Builder;

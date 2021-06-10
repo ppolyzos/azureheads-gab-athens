@@ -94,9 +94,9 @@ namespace Identity.Api.Data.Seed
             {
                 Id = id ?? Guid.NewGuid().ToString(),
                 UserName = username,
-                Email = $"{username}@ppolyzos.com",
+                Email = $"{username}@testmail.com",
                 PhoneNumber = "1234567890",
-                NormalizedEmail = $"{username}@ppolyzos.com".ToUpperInvariant(),
+                NormalizedEmail = $"{username}@testmail.com".ToUpperInvariant(),
                 NormalizedUserName = username.ToUpperInvariant(),
                 SecurityStamp = Guid.NewGuid().ToString("D")
             };
