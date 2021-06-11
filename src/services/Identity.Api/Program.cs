@@ -2,6 +2,7 @@ using System.IO;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
 namespace Identity.Api
 {
@@ -26,6 +27,11 @@ namespace Identity.Api
                         .AddJsonFile($"appsettings.{host.HostingEnvironment.EnvironmentName}.json", optional: true,
                             reloadOnChange: true)
                         .AddEnvironmentVariables();
+                    
+                    if (host.HostingEnvironment.IsDevelopment())
+                    {
+                        builder.AddUserSecrets<Program>();
+                    }
                 })
                 .UseStartup<Startup>()
                 .CaptureStartupErrors(false)
