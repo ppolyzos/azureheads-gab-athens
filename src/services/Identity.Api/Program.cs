@@ -3,6 +3,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Serilog;
+using Serilog.Events;
 
 namespace Identity.Api
 {
@@ -32,6 +34,24 @@ namespace Identity.Api
                     {
                         builder.AddUserSecrets<Program>();
                     }
+                })
+                .UseSerilog((host, builder) =>
+                {
+                    var seqServerUrl = host.Configuration["Serilog:SeqServerUrl"];
+                    var logstashUrl = host.Configuration["Serilog:LogstashUrl"];
+
+                    builder.MinimumLevel.Verbose()
+                        .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                        .Enrich.WithProperty("ApplicationContext", host.HostingEnvironment.ApplicationName)
+                        .Enrich.FromLogContext()
+                        .WriteTo.Console()
+                        .WriteTo.Seq(string.IsNullOrWhiteSpace(seqServerUrl)
+                            ? "http://seq"
+                            : seqServerUrl)
+                        .WriteTo.Http(string.IsNullOrWhiteSpace(logstashUrl)
+                            ? "http://logstash:8080"
+                            : logstashUrl)
+                        .ReadFrom.Configuration(host.Configuration);
                 })
                 .UseStartup<Startup>()
                 .CaptureStartupErrors(false)
