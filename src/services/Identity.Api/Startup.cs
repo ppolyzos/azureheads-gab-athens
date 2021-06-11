@@ -1,9 +1,9 @@
 using System;
 using Autofac;
+using EventManagement.Api.Core.Infrastructure.DI;
 using EventManagement.Api.Core.Installers;
 using Identity.Api.Application.Configuration.Extensions;
 using Identity.Api.Data.Seed.Core;
-using Identity.Api.Infrastructure.DI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -33,7 +33,7 @@ namespace Identity.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Identity.Api", Version = "v1" });
             });
-            return services.AddAutofacService(Container);
+            return services.AddAutofacService(Container, Program.AppName);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

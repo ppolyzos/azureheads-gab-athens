@@ -2,7 +2,7 @@
 using System.Reflection;
 using Autofac;
 
-namespace EventManagement.Web.Infrastructure.DI.Modules
+namespace EventManagement.Api.Core.Infrastructure.DI.Modules
 {
     public class SettingsModule : Autofac.Module
     {

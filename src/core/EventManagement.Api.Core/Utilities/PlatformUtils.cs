@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyModel;
 
-namespace EventManagement.Core.Utilities
+namespace EventManagement.Api.Core.Utilities
 {
     public static class PlatformUtils
     {

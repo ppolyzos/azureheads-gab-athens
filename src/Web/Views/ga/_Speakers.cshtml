@@ -1,7 +1,5 @@
-﻿@using EventManagement.Web.Services
+﻿@model EventManagement.Web.Data.Models.EventDetails;
 @using EventManagement.Core.Utilities
-@model EventManagement.Web.Data.Models.EventDetails;
-@inject UtilsService _utilsService;
 
 <section id="speakers" class="section align-center">
     <div class="container">
@@ -47,9 +45,9 @@
                                 @{
                                     if (speaker.About.Length > 300)
                                     {
-                                        <span>@_utilsService.SplitText(speaker.About, 30)</span>
+                                        <span>@UtilsService.SplitText(speaker.About, 30)</span>
                                         <span class="collapse" id="about-@speaker.Id">
-                                            @_utilsService.SplitText(speaker.About, 1000, 30)
+                                            @UtilsService.SplitText(speaker.About, 1000, 30)
                                         </span>
                                         <a data-toggle="collapse" href="#about-@speaker.Id" role="button" aria-expanded="false" aria-controls="about-@speaker.Id">
                                             ...

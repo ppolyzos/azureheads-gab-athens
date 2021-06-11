@@ -2,13 +2,13 @@
 using System.Reflection;
 using Autofac;
 
-namespace Identity.Api.Infrastructure.DI.Modules
+namespace EventManagement.Api.Core.Infrastructure.DI.Modules
 {
-    public class SettingsModule : Autofac.Module
+    public class SeedersModule : Autofac.Module
     {
         private readonly IEnumerable<Assembly> _assemblies;
 
-        public SettingsModule(IEnumerable<Assembly> assemblies)
+        public SeedersModule(IEnumerable<Assembly> assemblies)
         {
             _assemblies = assemblies;
         }
@@ -18,9 +18,9 @@ namespace Identity.Api.Infrastructure.DI.Modules
             foreach (var assembly in _assemblies)
             {
                 builder.RegisterAssemblyTypes(assembly)
-                    .Where(t => t.Name.EndsWith("Settings"))
+                    .Where(t => t.Name.EndsWith("DataSeeder"))
                     .AsSelf()
-                    .SingleInstance();
+                    .InstancePerLifetimeScope();
             }
         }
     }

@@ -2,18 +2,18 @@
 using System.Linq;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using EventManagement.Core.Utilities;
-using Identity.Api.Infrastructure.DI.Modules;
+using EventManagement.Api.Core.Infrastructure.DI.Modules;
+using EventManagement.Api.Core.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Identity.Api.Infrastructure.DI
+namespace EventManagement.Api.Core.Infrastructure.DI
 {
     public static class AutofacServiceExtensions
     {
-        public static IServiceProvider AddAutofacService(this IServiceCollection services, IContainer container)
+        public static IServiceProvider AddAutofacService(this IServiceCollection services, IContainer container, string appName)
         {
             var containerBuilder = new ContainerBuilder();
 
@@ -22,7 +22,7 @@ namespace Identity.Api.Infrastructure.DI
             // don't try to fix container warning, DI won't work properly (try to run Integration Tests)
             containerBuilder.Register(c => container).As<IContainer>().SingleInstance();
 
-            var runtimeAssemblies = PlatformUtils.GetAllAssemblies(Program.AppName).ToArray();
+            var runtimeAssemblies = PlatformUtils.GetAllAssemblies(appName).ToArray();
 
             containerBuilder.RegisterModule(new SettingsModule(runtimeAssemblies));
             containerBuilder.RegisterModule(new ServiceModule(runtimeAssemblies));

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using Autofac;
-using EventManagement.Core.Utilities;
 
-namespace EventManagement.Web.Infrastructure.DI.Modules
+namespace EventManagement.Api.Core.Infrastructure.DI.Modules
 {
     public class ServiceModule : Autofac.Module
     {
@@ -16,9 +15,6 @@ namespace EventManagement.Web.Infrastructure.DI.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<UtilsService>()
-                .SingleInstance();
-
             foreach (var assembly in _assemblies)
             {
                 builder.RegisterAssemblyTypes(assembly)

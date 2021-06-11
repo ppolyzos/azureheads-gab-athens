@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Identity.Api.Application.Configuration;
 using Identity.Api.Contracts.V1.Responses;
-using Identity.Api.Data;
 using Identity.Api.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;

@@ -1,8 +1,8 @@
 ﻿using System;
 using Autofac;
+using EventManagement.Api.Core.Infrastructure.DI;
 using EventManagement.Api.Core.Installers;
 using EventManagement.Web.Configuration.Extensions;
-using EventManagement.Web.Infrastructure.DI;
 using EventManagement.Web.Installers.Tools;
 using EventManagement.Web.Installers.Tools.HealthChecks;
 using Microsoft.AspNetCore.Builder;
@@ -27,7 +27,7 @@ namespace EventManagement.Web
         {
             services.SetupConfiguration(Configuration);
             services.InstallServicesInAssembly<Startup>(Configuration);
-            return services.AddAutofacService(Container);
+            return services.AddAutofacService(Container, Program.AppName);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
