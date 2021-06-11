@@ -18,13 +18,13 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.102'
+        dotnet-version: '5.0'
 
     - name: Build with dotnet
       run: dotnet build EventManagement.sln --configuration Release
 
     - name: dotnet publish
-      run: dotnet publish EventManagement.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      run: dotnet publish src/web/EventManagement.Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
