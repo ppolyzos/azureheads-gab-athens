@@ -1,0 +1,30 @@
+# The . dockerignore file allows you to exclude files from the context like a . gitignore file allow you to exclude files from your git repository.
+# It helps to make build faster and lighter by excluding from the context big files or repository that are not used in the build.
+
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.sonarqube
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/bin
+**/charts
+**/docker-compose*.yml
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+**/WebSPA/wwwroot
+LICENSE
+**/README*.md
