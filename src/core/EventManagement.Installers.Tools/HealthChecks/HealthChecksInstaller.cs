@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace EventManagement.Web.Installers.Tools.HealthChecks
+namespace EventManagement.Installers.Tools.HealthChecks
 {
     public class HealthChecksInstaller : IInstaller
     {

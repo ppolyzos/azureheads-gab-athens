@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Routing;
 
-namespace EventManagement.Web.Installers.Tools.HealthChecks
+namespace EventManagement.Installers.Tools.HealthChecks
 {
     public static class HealthChecksExtensions
     {

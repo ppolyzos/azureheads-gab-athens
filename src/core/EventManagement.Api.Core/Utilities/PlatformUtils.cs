@@ -18,6 +18,8 @@ namespace EventManagement.Api.Core.Utilities
                 .Select(Assembly.Load);
         }
 
+        public static IEnumerable<Assembly> GetAssembliesBasedOn<T>() => new[] { typeof(T).Assembly };
+
         public static IEnumerable<Type> GetAllTypesOf<T>(string startsWith)
         {
             return GetAllTypes(startsWith)

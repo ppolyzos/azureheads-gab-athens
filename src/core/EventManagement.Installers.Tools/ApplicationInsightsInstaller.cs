@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EventManagement.Web.Installers.Tools
+namespace EventManagement.Installers.Tools
 {
     public class ApplicationInsightsInstaller : IInstaller
     {

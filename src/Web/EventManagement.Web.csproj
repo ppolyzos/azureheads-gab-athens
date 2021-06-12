@@ -57,6 +57,7 @@
   <ItemGroup>
     <ProjectReference Include="..\core\EventManagement.Api.Core\EventManagement.Api.Core.csproj" />
     <ProjectReference Include="..\core\EventManagement.Core\EventManagement.Core.csproj" />
+    <ProjectReference Include="..\core\EventManagement.Installers.Tools\EventManagement.Installers.Tools.csproj" />
   </ItemGroup> 
 
 </Project>

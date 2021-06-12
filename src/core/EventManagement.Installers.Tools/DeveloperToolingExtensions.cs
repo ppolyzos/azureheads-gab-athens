@@ -1,10 +1,10 @@
-﻿using EventManagement.Web.Installers.Tools.Swagger;
+﻿using EventManagement.Installers.Tools.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace EventManagement.Web.Installers.Tools
+namespace EventManagement.Installers.Tools
 {
     public static class DeveloperToolingExtensions
     {

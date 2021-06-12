@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
 using Autofac;
 using EventManagement.Api.Core.Infrastructure.DI;
 using EventManagement.Api.Core.Installers;
+using EventManagement.Api.Core.Utilities;
+using EventManagement.Installers.Tools;
+using EventManagement.Installers.Tools.HealthChecks;
 using EventManagement.Web.Configuration.Extensions;
-using EventManagement.Web.Installers.Tools;
-using EventManagement.Web.Installers.Tools.HealthChecks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +28,9 @@ namespace EventManagement.Web
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.SetupConfiguration(Configuration);
-            services.InstallServicesInAssembly<Startup>(Configuration);
+            services.InstallServicesIn(Configuration,
+                PlatformUtils.GetAllAssemblies("EventManagement.Installers.Tools").Concat(
+                    PlatformUtils.GetAssembliesBasedOn<Startup>()));
             return services.AddAutofacService(Container, Program.AppName);
         }
 
@@ -41,6 +45,7 @@ namespace EventManagement.Web
 
             app.UseDeveloperTools(env, Configuration);
 
+            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseCors("default");
             app.UseStaticFiles();
@@ -48,6 +53,7 @@ namespace EventManagement.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
                 endpoints.MapAppHealthChecks();
             });
         }
