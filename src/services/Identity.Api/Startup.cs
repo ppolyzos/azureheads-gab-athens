@@ -36,14 +36,14 @@ namespace Identity.Api
             services.InstallServicesIn(Configuration,
                 PlatformUtils.GetAllAssemblies("EventManagement.Installers.Tools").Concat(
                     PlatformUtils.GetAssembliesBasedOn<Startup>()));
-            
+
             var runtimeAssemblies = PlatformUtils.GetAllAssemblies(Program.AppName).ToArray();
             var modules = new List<IModule>
             {
                 new StandardModule(runtimeAssemblies)
             };
-            
-            return services.AddAutofacService(Container, Program.AppName, modules);
+
+            return services.AddAutofacService(Container, runtimeAssemblies, modules);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

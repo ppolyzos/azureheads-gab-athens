@@ -31,7 +31,9 @@ namespace EventManagement.Web
             services.InstallServicesIn(Configuration,
                 PlatformUtils.GetAllAssemblies("EventManagement.Installers.Tools").Concat(
                     PlatformUtils.GetAssembliesBasedOn<Startup>()));
-            return services.AddAutofacService(Container, Program.AppName);
+
+            var runtimeAssemblies = PlatformUtils.GetAllAssemblies(Program.AppName).ToArray();
+            return services.AddAutofacService(Container, runtimeAssemblies);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

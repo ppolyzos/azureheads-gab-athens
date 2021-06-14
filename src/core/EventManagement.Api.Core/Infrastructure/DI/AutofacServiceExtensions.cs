@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Autofac;
 using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
@@ -16,8 +17,8 @@ namespace EventManagement.Api.Core.Infrastructure.DI
     public static class AutofacServiceExtensions
     {
         public static IServiceProvider AddAutofacService(this IServiceCollection services, 
-            IContainer container, 
-            string appName,
+            IContainer container,
+            Assembly[] runtimeAssemblies,
             IEnumerable<IModule> extraModules = null)
         {
             var containerBuilder = new ContainerBuilder();
@@ -26,8 +27,6 @@ namespace EventManagement.Api.Core.Infrastructure.DI
 
             // don't try to fix container warning, DI won't work properly (try to run Integration Tests)
             containerBuilder.Register(c => container).As<IContainer>().SingleInstance();
-
-            var runtimeAssemblies = PlatformUtils.GetAllAssemblies(appName).ToArray();
 
             containerBuilder.RegisterModule(new SettingsModule(runtimeAssemblies));
             containerBuilder.RegisterModule(new ServiceModule(runtimeAssemblies));
