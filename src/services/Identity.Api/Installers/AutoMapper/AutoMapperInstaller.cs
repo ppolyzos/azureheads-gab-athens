@@ -5,7 +5,6 @@ using EventManagement.Api.Core.Installers;
 using EventManagement.Api.Core.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyModel;
 using IConfigurationProvider = AutoMapper.IConfigurationProvider;
 
 namespace Identity.Api.Installers.AutoMapper

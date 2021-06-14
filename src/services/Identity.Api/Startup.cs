@@ -40,7 +40,8 @@ namespace Identity.Api
             var runtimeAssemblies = PlatformUtils.GetAllAssemblies(Program.AppName).ToArray();
             var modules = new List<IModule>
             {
-                new StandardModule(runtimeAssemblies)
+                new StandardModule(runtimeAssemblies),
+                new MediatorModule(runtimeAssemblies)
             };
 
             return services.AddAutofacService(Container, runtimeAssemblies, modules);

@@ -4,6 +4,7 @@ using System.Reflection;
 using Autofac;
 using Identity.Api.Data.Models;
 using Identity.Api.Data.Repositories;
+using Identity.Api.Services;
 using Microsoft.AspNetCore.Identity;
 
 namespace Identity.Api.Infrastructure.DI
@@ -23,6 +24,10 @@ namespace Identity.Api.Infrastructure.DI
                 .InstancePerLifetimeScope();
             builder.RegisterType<CurrentUser>().As<ICurrentUser>();
             builder.RegisterType<HttpClient>().AsSelf().InstancePerLifetimeScope();
+            
+            builder.RegisterType<AuthMessageSender>()
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
         }
     }
 }
