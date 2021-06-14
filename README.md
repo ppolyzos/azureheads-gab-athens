@@ -24,3 +24,12 @@ or the Sessionize EventId:
 ```
 dotnet user-secrets set "Sessionize:EventId" "<sessionize_event_id>"
 ```
+
+
+## Logging
+For logging [SEQ](https://datalust.co/seq) is used.
+
+### Setup & Usage
+You can set it up using [dev-tools](https://github.com/ppolyzos/dev-tools) and spin up a `seq` instance.
+
+To view logs you can open [localhost/#/events](http://localhost/#/events).
