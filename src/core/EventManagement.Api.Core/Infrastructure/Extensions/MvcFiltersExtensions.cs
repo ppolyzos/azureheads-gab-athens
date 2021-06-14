@@ -1,8 +1,8 @@
-﻿using EventManagement.Web.Infrastructure.Filters;
-using EventManagement.Web.Infrastructure.Input.CommaSeparated;
+﻿using EventManagement.Api.Core.Infrastructure.Filters;
+using EventManagement.Api.Core.Infrastructure.Input.CommaSeparated;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventManagement.Web.Infrastructure.Extensions
+namespace EventManagement.Api.Core.Infrastructure.Extensions
 {
     public static class MvcFiltersExtensions
     {

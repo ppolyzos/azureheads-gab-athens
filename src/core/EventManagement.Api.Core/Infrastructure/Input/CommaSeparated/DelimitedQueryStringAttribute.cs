@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace EventManagement.Web.Infrastructure.Input.CommaSeparated
+namespace EventManagement.Api.Core.Infrastructure.Input.CommaSeparated
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
     public class DelimitedQueryStringAttribute : Attribute, IResourceFilter

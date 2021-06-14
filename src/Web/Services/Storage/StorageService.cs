@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
-using EventManagement.Web.Infrastructure.Output;
+using EventManagement.Api.Core.Infrastructure.Output;
 using Microsoft.Extensions.Configuration;
 
 namespace EventManagement.Web.Services.Storage

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Primitives;
 
-namespace EventManagement.Web.Infrastructure.Input.CommaSeparated
+namespace EventManagement.Api.Core.Infrastructure.Input.CommaSeparated
 {
     public class DelimitedQueryStringValueProvider : QueryStringValueProvider
     {

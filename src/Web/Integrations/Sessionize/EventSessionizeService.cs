@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EventManagement.Api.Core.Infrastructure.Extensions;
 using EventManagement.Web.Data.Models;
-using EventManagement.Web.Infrastructure.Extensions;
 using EventManagement.Web.Utilities;
 using Microsoft.Extensions.Caching.Memory;
 

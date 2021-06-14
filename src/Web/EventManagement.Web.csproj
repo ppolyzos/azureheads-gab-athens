@@ -51,6 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Installers" />
     <Folder Include="Integrations" />
   </ItemGroup>
 

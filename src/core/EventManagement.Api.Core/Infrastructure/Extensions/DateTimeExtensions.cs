@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EventManagement.Web.Infrastructure.Extensions
+namespace EventManagement.Api.Core.Infrastructure.Extensions
 {
     public static class DateTimeExtensions
     {

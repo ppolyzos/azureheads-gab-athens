@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace EventManagement.Web.Infrastructure.Output
+namespace EventManagement.Api.Core.Infrastructure.Output
 {
     public static class MvcJsonOptionsExtensions
     {

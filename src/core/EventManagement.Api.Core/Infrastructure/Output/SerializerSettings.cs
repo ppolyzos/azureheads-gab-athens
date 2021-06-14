@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using EventManagement.Core.Utilities.Json.Converters;
 
-namespace EventManagement.Web.Infrastructure.Output
+namespace EventManagement.Api.Core.Infrastructure.Output
 {
     public static class SerializerSettings
     {

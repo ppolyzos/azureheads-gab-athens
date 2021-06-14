@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <LangVersion>9</LangVersion>
-    </PropertyGroup>
+      <UserSecretsId>6de32adb-d3b8-4bd9-ba15-a8a538bee42f</UserSecretsId>
+  </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Autofac" Version="6.2.0" />

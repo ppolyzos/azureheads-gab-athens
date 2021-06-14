@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace EventManagement.Web.Infrastructure.Input.CommaSeparated
+namespace EventManagement.Api.Core.Infrastructure.Input.CommaSeparated
 {
     public static class ValueProviderFactoriesExtensions
     {

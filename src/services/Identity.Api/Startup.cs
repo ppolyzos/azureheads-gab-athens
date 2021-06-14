@@ -29,6 +29,7 @@ namespace Identity.Api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.SetupConfiguration(Configuration);
+            services.AddControllers();
             services.InstallServicesIn(Configuration,
                 PlatformUtils.GetAllAssemblies("EventManagement.Installers.Tools").Concat(
                     PlatformUtils.GetAssembliesBasedOn<Startup>()));

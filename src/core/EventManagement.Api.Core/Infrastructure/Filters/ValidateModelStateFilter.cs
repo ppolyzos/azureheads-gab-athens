@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace EventManagement.Web.Infrastructure.Filters
+namespace EventManagement.Api.Core.Infrastructure.Filters
 {
     public class ValidateModelStateFilter : ActionFilterAttribute
     {
