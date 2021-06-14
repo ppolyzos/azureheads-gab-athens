@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Identity.Api.ViewModels.Users
+namespace Identity.Api.ViewModels.Account
 {
     public class LoginVm
     {
