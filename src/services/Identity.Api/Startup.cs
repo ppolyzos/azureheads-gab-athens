@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Autofac;
+using Autofac.Core;
 using EventManagement.Api.Core.Infrastructure.DI;
 using EventManagement.Api.Core.Installers;
 using EventManagement.Api.Core.Utilities;
@@ -8,6 +10,7 @@ using EventManagement.Installers.Tools;
 using EventManagement.Installers.Tools.HealthChecks;
 using Identity.Api.Application.Configuration.Extensions;
 using Identity.Api.Data.Seed.Core;
+using Identity.Api.Infrastructure.DI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -33,7 +36,14 @@ namespace Identity.Api
             services.InstallServicesIn(Configuration,
                 PlatformUtils.GetAllAssemblies("EventManagement.Installers.Tools").Concat(
                     PlatformUtils.GetAssembliesBasedOn<Startup>()));
-            return services.AddAutofacService(Container, Program.AppName);
+            
+            var runtimeAssemblies = PlatformUtils.GetAllAssemblies(Program.AppName).ToArray();
+            var modules = new List<IModule>
+            {
+                new StandardModule(runtimeAssemblies)
+            };
+            
+            return services.AddAutofacService(Container, Program.AppName, modules);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

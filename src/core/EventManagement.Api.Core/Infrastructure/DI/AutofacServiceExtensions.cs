@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Autofac;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using EventManagement.Api.Core.Infrastructure.DI.Modules;
 using EventManagement.Api.Core.Utilities;
@@ -13,7 +15,10 @@ namespace EventManagement.Api.Core.Infrastructure.DI
 {
     public static class AutofacServiceExtensions
     {
-        public static IServiceProvider AddAutofacService(this IServiceCollection services, IContainer container, string appName)
+        public static IServiceProvider AddAutofacService(this IServiceCollection services, 
+            IContainer container, 
+            string appName,
+            IEnumerable<IModule> extraModules = null)
         {
             var containerBuilder = new ContainerBuilder();
 
@@ -28,6 +33,14 @@ namespace EventManagement.Api.Core.Infrastructure.DI
             containerBuilder.RegisterModule(new ServiceModule(runtimeAssemblies));
             containerBuilder.RegisterModule(new RepositoryModule(runtimeAssemblies));
             containerBuilder.RegisterModule(new SeedersModule(runtimeAssemblies));
+
+            if (extraModules != null)
+            {
+                foreach (var extraModule in extraModules)
+                {
+                    containerBuilder.RegisterModule(extraModule);
+                }
+            }
 
             containerBuilder.Populate(services);
 
