@@ -3,11 +3,14 @@ using System.Threading.Tasks;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services.Storage;
 using EventManagement.Web.Utilities;
+using Identity.Api.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace EventManagement.Web.Controllers
 {
+    [Authorize(Roles = Roles.Admin), Route("api/[controller]")]
     public class AdminController : Controller
     {
         private readonly IEventDataStorageService _eventDataStorageService;
@@ -26,7 +29,7 @@ namespace EventManagement.Web.Controllers
             _memoryCache = memoryCache;
         }
 
-        [HttpPost("api/cache/refresh")]
+        [HttpPost("cache/refresh")]
         public async Task<IActionResult> CacheRefreshAsync([FromQuery] string key)
         {
             if (string.IsNullOrEmpty(key) ||
@@ -46,7 +49,7 @@ namespace EventManagement.Web.Controllers
             return Ok(content);
         }
 
-        [HttpGet("api/current-event")]
+        [HttpGet("current-event")]
         public async Task<IActionResult> GetCurrentEventAsync([FromQuery] string key)
         {
             if (string.IsNullOrEmpty(key) ||
@@ -62,7 +65,7 @@ namespace EventManagement.Web.Controllers
             return Ok(content);
         }
         
-        [HttpGet("api/admin/sessionize/speakers")]
+        [HttpGet("sessionize/speakers")]
         public async Task<IActionResult> FetchSessionizeSpeakersAsync([FromQuery] string key)
         {
             if (string.IsNullOrEmpty(key) ||
@@ -74,7 +77,7 @@ namespace EventManagement.Web.Controllers
             return Ok(speakers);
         }
 
-        [HttpGet("api/admin/sessionize/sessions")]
+        [HttpGet("sessionize/sessions")]
         public async Task<IActionResult> FetchSessionizeSessionsAsync([FromQuery] string key)
         {
             if (string.IsNullOrEmpty(key) ||
@@ -86,7 +89,7 @@ namespace EventManagement.Web.Controllers
             return Ok(sessions);
         }
 
-        [HttpGet("api/admin/sessions")]
+        [HttpGet("sessions")]
         public async Task<IActionResult> FetchSessionsAsync([FromQuery] string key)
         {
             if (string.IsNullOrEmpty(key) ||

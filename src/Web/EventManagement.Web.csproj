@@ -17,6 +17,7 @@
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="Microsoft.ApplicationInsights" Version="2.17.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.17.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.7" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="5.0.7" />
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
@@ -25,6 +26,7 @@
     <PackageReference Include="Serilog.Sinks.Http" Version="7.2.0" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="5.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +60,7 @@
     <ProjectReference Include="..\core\EventManagement.Api.Core\EventManagement.Api.Core.csproj" />
     <ProjectReference Include="..\core\EventManagement.Core\EventManagement.Core.csproj" />
     <ProjectReference Include="..\core\EventManagement.Installers.Tools\EventManagement.Installers.Tools.csproj" />
+    <ProjectReference Include="..\services\Identity.Api\Identity.Api.csproj" />
   </ItemGroup> 
 
 </Project>

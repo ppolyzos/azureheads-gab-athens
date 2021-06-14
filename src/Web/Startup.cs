@@ -50,6 +50,8 @@ namespace EventManagement.Web
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseCors("default");
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
