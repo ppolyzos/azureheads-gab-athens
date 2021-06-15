@@ -42,10 +42,10 @@ namespace Identity.Api.Application.Commands.Communication.Emails
             var t = await _emailSender.SendEmailAsync(request.User.Email,
                 _emailConfig.Templates[EmailConfig.Template.EmailConfirm], new Dictionary<string, object>
                 {
-                    {"confirmUrl", $"{_emailConfig.ConfirmUrl}?code={code}"}
+                    {"confirmUrl", $"{_emailConfig.ConfirmUrl}?code={code}"} 
                 });
 
-            _logger.LogInformation(3, $"User forgot his password. Email sent: ${t.StatusCode}");
+            _logger.LogInformation("User forgot his password. Email sent: {statusCode}", t.StatusCode);
 
             return new ResponseResult(request);
         }
