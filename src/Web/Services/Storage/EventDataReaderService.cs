@@ -17,16 +17,16 @@ namespace EventManagement.Web.Services.Storage
     public class EventDataStorageService : IEventDataStorageService
     {
         private readonly ILogger<EventDataStorageService> _logger;
-        private readonly IStorageService _storageService;
+        private readonly IBlobStorageService _blobStorageService;
         private readonly IMemoryCache _memoryCache;
 
         public EventDataStorageService(
             ILogger<EventDataStorageService> logger,
-            IStorageService storageService,
+            IBlobStorageService blobStorageService,
             IMemoryCache memoryCache)
         {
             _logger = logger;
-            _storageService = storageService;
+            _blobStorageService = blobStorageService;
             _memoryCache = memoryCache;
         }
 
@@ -46,7 +46,7 @@ namespace EventManagement.Web.Services.Storage
 
         private async Task<EventDetails> GetAsync(string container, string configFile)
         {
-            var eventDetails = await _storageService.FetchAsync<EventDetails>(container, configFile);
+            var eventDetails = await _blobStorageService.FetchAsync<EventDetails>(container, configFile);
 
             eventDetails.Schedule.Slots = eventDetails.Schedule.Sessions
                 .Where(c => !string.IsNullOrEmpty(c.Room))

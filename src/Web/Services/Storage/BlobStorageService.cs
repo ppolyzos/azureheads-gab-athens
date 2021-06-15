@@ -8,16 +8,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace EventManagement.Web.Services.Storage
 {
-    public interface IStorageService
+    public interface IBlobStorageService
     {
         Task<T> FetchAsync<T>(string container, string fileConfig);
     }
 
-    public class StorageService : IStorageService
+    public class BlobStorageService : IBlobStorageService
     {
         private readonly BlobServiceClient _blobServiceClient;
 
-        public StorageService(IConfiguration configuration)
+        public BlobStorageService(IConfiguration configuration)
         {
             _blobServiceClient = new BlobServiceClient(configuration.GetConnectionString("StorageAccount"));
         }
