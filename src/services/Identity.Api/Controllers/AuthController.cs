@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Identity.Api.Data.Models;
+using Identity.Api.Dtos.Account;
 using Identity.Api.Services.Auth;
-using Identity.Api.ViewModels.Account;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +26,7 @@ namespace Identity.Api.Controllers
         }
 
         [AllowAnonymous, HttpPost("token")]
-        public async Task<IActionResult> GetToken([FromBody] LoginVm model)
+        public async Task<IActionResult> GetToken([FromBody] LoginDto model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null) return Unauthorized();

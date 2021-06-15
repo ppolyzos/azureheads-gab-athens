@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Identity.Api.ViewModels.Account
+namespace Identity.Api.Dtos.Account
 {
-    public class ResetPasswordVm
+    public class ResetPasswordDto
     {
         [Required, EmailAddress]
         public string Email { get; set; }

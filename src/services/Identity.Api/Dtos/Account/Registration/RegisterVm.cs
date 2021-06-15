@@ -1,6 +1,6 @@
-﻿namespace Identity.Api.ViewModels.Account.Registration
+﻿namespace Identity.Api.Dtos.Account.Registration
 {
-    public class RegisterVm
+    public class RegisterDto
     {
         public string Id { get; set; }
         public bool EmailConfirmed { get; set; }

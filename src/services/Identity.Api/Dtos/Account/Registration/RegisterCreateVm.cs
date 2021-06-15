@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Identity.Api.ViewModels.Account.Registration
+namespace Identity.Api.Dtos.Account.Registration
 {
-    public class RegisterCreateVm
+    public class RegisterCreateDto
     {
         [Required, EmailAddress]
         public string Email { get; set; }

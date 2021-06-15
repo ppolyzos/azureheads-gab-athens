@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Identity.Api.ViewModels.Account
+namespace Identity.Api.Dtos.Account
 {
-    public class SendCodeVm
+    public class SendCodeDto
     {
         public string SelectedProvider { get; set; }
 

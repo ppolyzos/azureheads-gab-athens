@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Identity.Api.ViewModels.Account.Confirmation
+namespace Identity.Api.Dtos.Account.Confirmation
 {
-    public class ConfirmCreateVm
+    public class ConfirmCreateDto
     {
         [Required]
         public string UserId { get; set; }

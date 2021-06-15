@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Identity.Api.ViewModels.Account
+namespace Identity.Api.Dtos.Account
 {
-    public class VerifyCodeVm
+    public class VerifyCodeDto
     {
         [Required]
         public string Provider { get; set; }

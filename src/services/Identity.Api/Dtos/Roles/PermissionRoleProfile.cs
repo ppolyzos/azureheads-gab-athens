@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 
-namespace Identity.Api.ViewModels.Roles
+namespace Identity.Api.Dtos.Roles
 {
     public class RoleProfile : Profile
     {
         public RoleProfile()
         {
-            CreateMap<IdentityRole, RoleVm>();
+            CreateMap<IdentityRole, RoleDto>();
         }
     }
 }

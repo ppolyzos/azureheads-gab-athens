@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using Identity.Api.Data.Repositories;
-using Identity.Api.ViewModels;
+using Identity.Api.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +25,7 @@ namespace Identity.Api.Controllers
         public async Task<IActionResult> CurrentUser()
         {
             var user = await _currentUser.GetAppUserAsync();
-            return Ok(_mapper.Map<UserVm>(user));
+            return Ok(_mapper.Map<UserDto>(user));
         }
     }
 }

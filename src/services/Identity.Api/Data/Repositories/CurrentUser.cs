@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Identity.Api.Data.Models;
-using Identity.Api.ViewModels.Account;
+using Identity.Api.Dtos.Account;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
@@ -11,7 +11,7 @@ namespace Identity.Api.Data.Repositories
 {
     public interface ICurrentUser
     {
-        Task<UserVm> GetUserAsync();
+        Task<UserDto> GetUserAsync();
         Task<ApplicationUser> GetAppUserAsync();
         string UserId { get; }
     }
@@ -34,7 +34,7 @@ namespace Identity.Api.Data.Repositories
             _httpContext = httpContextAccessor.HttpContext;
         }
 
-        public async Task<UserVm> GetUserAsync() => _mapper.Map<UserVm>(await GetAppUserAsync());
+        public async Task<UserDto> GetUserAsync() => _mapper.Map<UserDto>(await GetAppUserAsync());
 
         public async Task<ApplicationUser> GetAppUserAsync() => await _userManager.GetUserAsync(_httpContext.User);
     }

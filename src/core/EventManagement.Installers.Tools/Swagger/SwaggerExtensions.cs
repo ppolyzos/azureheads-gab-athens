@@ -1,4 +1,5 @@
 ﻿using EventManagement.Installers.Tools.Infrastructure.Filters;
+using EventManagement.Installers.Tools.Swagger.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +20,7 @@ namespace EventManagement.Installers.Tools.Swagger
                     options.SwaggerEndpoint(
                         $"{(!string.IsNullOrEmpty(pathBase) ? pathBase : string.Empty)}/swagger/v1/swagger.json",
                         "Event Management V1");
-                    options.OAuthClientId("eventmngtswaggerui");
+                    options.OAuthClientId("EventManagement");
                     options.OAuthAppName("EventManagement.Web.API Swagger UI");
                 });
 
@@ -38,6 +39,7 @@ namespace EventManagement.Installers.Tools.Swagger
                 });
 
                 options.OperationFilter<AuthorizeCheckOperationFilter>();
+                options.DocumentFilter<LowerCaseDocumentFilter>();
             });
 
             return services;

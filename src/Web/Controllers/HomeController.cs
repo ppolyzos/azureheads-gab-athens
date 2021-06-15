@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using EventManagement.Web.Data.Dtos;
 using EventManagement.Web.Data.Models;
-using EventManagement.Web.Data.ViewModels;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services.Storage;
 using EventManagement.Web.Utilities;
@@ -63,7 +63,7 @@ namespace EventManagement.Web.Controllers
             return View("~/Views/ga/Index.cshtml", eventDetails);
         }
         
-        public IActionResult Error() => View(new ErrorVm { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult Error() => View(new ErrorDto { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 
         private static void Hydrate(IEnumerable<Session> sessions, IList<Speaker> speakers, IList<StreamUrl> streamUrls)
         {

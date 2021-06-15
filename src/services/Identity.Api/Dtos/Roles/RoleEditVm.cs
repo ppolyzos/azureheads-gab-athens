@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Identity.Api.ViewModels.Roles
+namespace Identity.Api.Dtos.Roles
 {
-    public class RoleEditVm
+    public class RoleEditDto
     {
         [Required, MinLength(2)]
         public string OldName { get; set; }

@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using Identity.Api.Data.Models;
 
-namespace Identity.Api.ViewModels
+namespace Identity.Api.Dtos
 {
     public class UserProfile : Profile
     {
         public UserProfile()
         {
-            CreateMap<ApplicationUser, UserVm>();
+            CreateMap<ApplicationUser, UserDto>();
         }
     }
 }

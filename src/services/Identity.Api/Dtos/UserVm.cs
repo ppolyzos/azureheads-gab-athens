@@ -1,6 +1,6 @@
-﻿namespace Identity.Api.ViewModels
+﻿namespace Identity.Api.Dtos
 {
-    public class UserVm
+    public class UserDto
     {
         public string Id { get; set; }
         public string UserName { get; set; }

@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace EventManagement.Web.Data.ViewModels
+namespace EventManagement.Web.Data.Dtos
 {
-    public class SearchResultsVm<TVm>
+    public class SearchResultsDto<TDto>
     {
         [JsonPropertyName("total")]
         public int Total { get; set; }
 
         [JsonPropertyName("items")]
-        public IEnumerable<TVm> Results { get; set; }
+        public IEnumerable<TDto> Results { get; set; }
     }
 }

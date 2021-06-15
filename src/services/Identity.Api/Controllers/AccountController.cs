@@ -6,10 +6,10 @@ using Identity.Api.Application.Commands.Communication.Sms;
 using Identity.Api.Application.Models;
 using Identity.Api.Application.Models.Errors;
 using Identity.Api.Data.Models;
+using Identity.Api.Dtos.Account;
+using Identity.Api.Dtos.Account.Confirmation;
+using Identity.Api.Dtos.Account.Registration;
 using Identity.Api.Services;
-using Identity.Api.ViewModels.Account;
-using Identity.Api.ViewModels.Account.Confirmation;
-using Identity.Api.ViewModels.Account.Registration;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -48,7 +48,7 @@ namespace Identity.Api.Controllers
         }
 
         [AllowAnonymous, HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterCreateVm model)
+        public async Task<IActionResult> Register([FromBody] RegisterCreateDto model)
         {
             var user = new ApplicationUser
             {
@@ -73,7 +73,7 @@ namespace Identity.Api.Controllers
                     //await _mediator.Send(new SmsConfirmationCommand {User = user});
                     await _mediator.Send(new SmsVerifyLinkCommand { User = user });
                 }
-                return Ok(_mapper.Map<RegisterVm>(existingUser));
+                return Ok(_mapper.Map<RegisterDto>(existingUser));
             }
 
             await _mediator.Send(new EmailConfirmationCommand { User = user });
@@ -82,11 +82,11 @@ namespace Identity.Api.Controllers
 
             _logger.LogInformation("UserProfile created a new account with password");
 
-            return Ok(_mapper.Map<RegisterVm>(user));
+            return Ok(_mapper.Map<RegisterDto>(user));
         }
 
         [AllowAnonymous, HttpPost("confirm")]
-        public async Task<IActionResult> ConfirmEmail([FromBody] ConfirmCreateVm model)
+        public async Task<IActionResult> ConfirmEmail([FromBody] ConfirmCreateDto model)
         {
             var user = await _userManager.FindByIdAsync(model.UserId);
             if (user == null)
@@ -99,7 +99,7 @@ namespace Identity.Api.Controllers
         }
 
         [AllowAnonymous, HttpGet("confirm-phone")]
-        public async Task<IActionResult> ConfirmPhoneGet([FromQuery] ConfirmCreateVm model)
+        public async Task<IActionResult> ConfirmPhoneGet([FromQuery] ConfirmCreateDto model)
         {
             var user = await _userManager.FindByIdAsync(model.UserId);
             if (user == null) return NotFound(new ErrorResult("UserNotFound", "No user found with this id"));
@@ -119,7 +119,7 @@ namespace Identity.Api.Controllers
         }
 
         [AllowAnonymous, HttpPost("forgot")]
-        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordVm model)
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null || !await _userManager.IsEmailConfirmedAsync(user))
@@ -134,7 +134,7 @@ namespace Identity.Api.Controllers
         }
 
         [AllowAnonymous, HttpPost("reset")]
-        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordVm model)
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null) return NotFound();
@@ -147,7 +147,7 @@ namespace Identity.Api.Controllers
         }
 
         [AllowAnonymous, HttpPost("code")]
-        public async Task<IActionResult> SendCode([FromBody] SendCodeVm model)
+        public async Task<IActionResult> SendCode([FromBody] SendCodeDto model)
         {
             var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
             if (user == null) return NotFound();
@@ -174,7 +174,7 @@ namespace Identity.Api.Controllers
         }
 
         [AllowAnonymous, HttpPost]
-        public async Task<IActionResult> VerifyCode(VerifyCodeVm model)
+        public async Task<IActionResult> VerifyCode(VerifyCodeDto model)
         {
             // The following code protects for brute force attacks against the two factor codes.
             // If a user enters incorrect codes for a specified amount of time then the user account
