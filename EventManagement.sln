@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManagement.Installers.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManagement.Core.EF", "src\core\EventManagement.Core.EF\EventManagement.Core.EF.csproj", "{FBA15C61-27D9-48DC-8170-32C986AA23B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api.Tests", "src\services\Identity.Api.Tests\Identity.Api.Tests.csproj", "{E5C9D468-F6EE-4AEB-972B-05948D9371DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{FBA15C61-27D9-48DC-8170-32C986AA23B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBA15C61-27D9-48DC-8170-32C986AA23B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBA15C61-27D9-48DC-8170-32C986AA23B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C9D468-F6EE-4AEB-972B-05948D9371DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C9D468-F6EE-4AEB-972B-05948D9371DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C9D468-F6EE-4AEB-972B-05948D9371DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C9D468-F6EE-4AEB-972B-05948D9371DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +76,6 @@ Global
 		{59C739CF-9FC6-4A9B-89D8-E12579ECD61C} = {D14E0DEA-7FCB-49E6-8724-EF030142FEA0}
 		{582C4769-0890-44CC-A327-E9AFC81E3F47} = {D14E0DEA-7FCB-49E6-8724-EF030142FEA0}
 		{FBA15C61-27D9-48DC-8170-32C986AA23B0} = {D14E0DEA-7FCB-49E6-8724-EF030142FEA0}
+		{E5C9D468-F6EE-4AEB-972B-05948D9371DF} = {73CBA0C2-3570-427B-9F87-396D47E8115C}
 	EndGlobalSection
 EndGlobal
