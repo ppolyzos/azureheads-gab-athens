@@ -38,7 +38,7 @@ namespace Identity.Api.Services
             var emailMsg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, message);
 
             var response = await _sendGridClient.SendEmailAsync(emailMsg);
-            _logger.LogInformation("An email has been send to {email} with status: {statusCode}", email,
+            _logger.LogInformation("An email has been send to {Email} with status: {StatusCode}", email,
                 response.StatusCode);
 
             return response;
@@ -52,7 +52,7 @@ namespace Identity.Api.Services
             var template = MailHelper.CreateSingleTemplateEmail(from, to, templateId, templateData);
             var response = await _sendGridClient.SendEmailAsync(template);
 
-            _logger.LogInformation("An email has been sent to {email} with status: {statusCode}", email,
+            _logger.LogInformation("An email has been sent to {Email} with status: {StatusCode}", email,
                 response.StatusCode);
 
             return response;
@@ -70,7 +70,7 @@ namespace Identity.Api.Services
                 to: new Twilio.Types.PhoneNumber(destination)
             );
             _logger.LogInformation("UserProfile created a new account with password");
-            _logger.LogInformation("An email has been send to {destination} with status: {status}", destination,
+            _logger.LogInformation("An email has been send to {Destination} with status: {@Status}", destination,
                 twilioMsg.Status);
 
             return Task.FromResult(twilioMsg);

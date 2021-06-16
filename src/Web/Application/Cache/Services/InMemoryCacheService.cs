@@ -37,7 +37,7 @@ namespace EventManagement.Web.Application.Cache.Services
             {
                 if (refreshObject)
                 {
-                    _logger.LogInformation("object of {type} with {key} refreshed for {duration}",
+                    _logger.LogInformation("object of {Type} with {Key} refreshed for {Duration}",
                         typeof(T), key, duration);
                     return InsertCacheObject(addToCacheLoader, cacheKey, duration);
                 }
@@ -47,14 +47,14 @@ namespace EventManagement.Web.Application.Cache.Services
                         ? InsertCacheObject(addToCacheLoader, cacheKey, duration)
                         : cachedObject;
 
-                _logger.LogInformation("object of {type} with {key} was fetched from cache",
+                _logger.LogInformation("object of {Type} with {Key} was fetched from cache",
                     typeof(T), key);
                 return cachedObject;
             }
             catch (NullReferenceException)
             {
                 // When T is a struct cachedObject cannot be null because structs are value types
-                _logger.LogInformation("object of {type} with {key} cached as null",
+                _logger.LogInformation("object of {Type} with {Key} cached as null",
                     typeof(T), key);
                 return InsertCacheObject(addToCacheLoader, cacheKey, duration);
             }
@@ -69,7 +69,7 @@ namespace EventManagement.Web.Application.Cache.Services
             {
                 if (refreshObject)
                 {
-                    _logger.LogInformation("object of {type} with {key} refreshed for {duration}",
+                    _logger.LogInformation("object of {Type} with {Key} refreshed for {Duration}",
                         typeof(T), key, duration);
                     return await InsertCacheObjectAsync(addToCacheLoader, cacheKey, duration);
                 }
@@ -78,14 +78,14 @@ namespace EventManagement.Web.Application.Cache.Services
                     return cachedObject == null
                         ? await InsertCacheObjectAsync(addToCacheLoader, cacheKey, duration)
                         : cachedObject;
-                _logger.LogInformation("object of {type} with {key} was fetched from cache",
+                _logger.LogInformation("object of {Type} with {Key} was fetched from cache",
                     typeof(T), key);
                 return cachedObject;
             }
             catch (NullReferenceException)
             {
                 // When T is a struct cachedObject cannot be null because structs are value types
-                _logger.LogInformation("object of {type} with {key} cached as null",
+                _logger.LogInformation("object of {Type} with {Key} cached as null",
                     typeof(T), key);
                 return await InsertCacheObject(addToCacheLoader, cacheKey, duration);
             }
@@ -100,7 +100,7 @@ namespace EventManagement.Web.Application.Cache.Services
             var cacheEntryOptions = new MemoryCacheEntryOptions()
                 .SetSlidingExpiration(TimeSpan.FromSeconds(duration));
             _memoryCache.Set(cacheKey, cachedObject, cacheEntryOptions);
-            _logger.LogInformation("object of {type} with {key} cached for {duration}",
+            _logger.LogInformation("object of {Type} with {Key} cached for {Duration}",
                 typeof(T), cacheKey, duration);
 
             return cachedObject;
@@ -116,7 +116,7 @@ namespace EventManagement.Web.Application.Cache.Services
             var cacheEntryOptions = new MemoryCacheEntryOptions()
                 .SetSlidingExpiration(TimeSpan.FromSeconds(duration));
             _memoryCache.Set(cacheKey, cachedObject, cacheEntryOptions);
-            _logger.LogInformation("object of {type} with {key} cached for {duration}",
+            _logger.LogInformation("object of {Type} with {Key} cached for {Duration}",
                 typeof(T), cacheKey, duration);
 
             return cachedObject;

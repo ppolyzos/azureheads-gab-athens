@@ -42,7 +42,7 @@ namespace Identity.Api.Application.Commands.Communication.Sms
             var result = await _smsSender.SendSmsAsync(user.PhoneNumber,
                 $"Your {_appConfig.ProjectName} code is: {code}");
 
-            _logger.LogInformation("An sms is sent to verify user's phone number. code: {code}, status: {status}", code, result.Status);
+            _logger.LogInformation("An sms is sent to verify user's phone number. code: {Code}, status: {@Status}", code, result.Status);
 
             return new ResponseResult(request);
         }

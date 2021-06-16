@@ -65,7 +65,7 @@ namespace EventManagement.Web.Integrations.Sessionize
             {
                 response = (HttpWebResponse) e.Response;
                 responseBody = ParseResponse(response);
-                var error = JsonSerializer.Deserialize<ErrorResponse>(responseBody).Error;
+                var error = JsonSerializer.Deserialize<ErrorResponse>(responseBody)?.Error;
                 if (error != null)
                 {
                     throw new Exception($"{error.Code}:{error.Message}");

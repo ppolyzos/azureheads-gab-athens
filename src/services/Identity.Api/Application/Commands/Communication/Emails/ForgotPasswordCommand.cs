@@ -45,7 +45,7 @@ namespace Identity.Api.Application.Commands.Communication.Emails
                     {"confirmUrl", $"{_emailConfig.ConfirmUrl}?code={code}"} 
                 });
 
-            _logger.LogInformation("User forgot his password. Email sent: {statusCode}", t.StatusCode);
+            _logger.LogInformation("User forgot his password. Email sent: {StatusCode}", t.StatusCode);
 
             return new ResponseResult(request);
         }

@@ -47,7 +47,7 @@ namespace Identity.Api.Application.Commands.Communication.Emails
                     { "confirmUrl", $"{_emailConfig.ConfirmUrl}?userId={request.User.Id}&code={encodedToken}" }
                 });
 
-            _logger.LogInformation("An email is sent to verify user's account. Status: {statusCode}", t.StatusCode);
+            _logger.LogInformation("An email is sent to verify user's account. Status: {StatusCode}", t.StatusCode);
 
             return new ResponseResult(request);
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using EventManagement.Web.Application.Cache;
 using EventManagement.Web.Application.Cache.Enumerations;
 using EventManagement.Web.Application.Cache.Redis;
 using EventManagement.Web.Integrations.Sessionize;

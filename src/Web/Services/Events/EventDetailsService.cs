@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EventManagement.Web.Application.Cache.Enumerations;
@@ -7,7 +6,6 @@ using EventManagement.Web.Application.Cache.Services;
 using EventManagement.Web.Data.Models;
 using EventManagement.Web.Services.Storage;
 using EventManagement.Web.Utilities;
-using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
 namespace EventManagement.Web.Services.Events

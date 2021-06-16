@@ -51,14 +51,14 @@ namespace Identity.Api.Application.Commands.Communication.Sms
                 var response = await client.GetAsync($"api-create.php?url={apiUrl}", cancellationToken);
                 if (!response.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation("Error creating tinyUrl to verify user's phone number using link. code: {code}, status: {statusCode}", code, response.StatusCode);
+                    _logger.LogInformation("Error creating tinyUrl to verify user's phone number using link. code: {Code}, status: {StatusCode}", code, response.StatusCode);
                 }
                 else
                 {
                     var link = await response.Content.ReadAsStringAsync(cancellationToken);
                     var result = await _smsSender.SendSmsAsync(user.PhoneNumber,
                         $"Verify your {_appConfig.ProjectName} account by clicking this link: {link}");
-                    _logger.LogInformation("An sms is sent to verify user's phone number using link. code: {code}, status: ${status}", code,
+                    _logger.LogInformation("An sms is sent to verify user's phone number using link. code: {Code}, status: {@Status}", code,
                         result.Status);
                 }
             }

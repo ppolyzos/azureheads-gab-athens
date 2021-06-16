@@ -48,7 +48,7 @@ namespace Identity.Api.Data.Seed.Core
                 if (retryForAvailability < 10)
                 {
                     retryForAvailability++;
-                    log.LogError(ex.Message);
+                    log.LogError("seed failed due to {Message}", ex.Message);
                     await SeedAsync(retryForAvailability);
                 }
             }
