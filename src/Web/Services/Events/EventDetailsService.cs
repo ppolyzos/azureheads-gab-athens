@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EventManagement.Web.Data.Models;
+using EventManagement.Web.Services.Storage;
 using EventManagement.Web.Utilities;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
-namespace EventManagement.Web.Services.Storage
+namespace EventManagement.Web.Services.Events
 {
-    public interface IEventDataStorageService
+    public interface IEventDetailsService
     {
-        Task<EventDetails> FetchEventDetailsAsync(string container, string configFile);
+        Task<EventDetails> FetchAsync(string container, string configFile);
     }
 
-    public class EventDataStorageService : IEventDataStorageService
+    public class EventDetailsService : IEventDetailsService
     {
-        private readonly ILogger<EventDataStorageService> _logger;
+        private readonly ILogger<EventDetailsService> _logger;
         private readonly IBlobStorageService _blobStorageService;
         private readonly IMemoryCache _memoryCache;
 
-        public EventDataStorageService(
-            ILogger<EventDataStorageService> logger,
+        public EventDetailsService(
+            ILogger<EventDetailsService> logger,
             IBlobStorageService blobStorageService,
             IMemoryCache memoryCache)
         {
@@ -30,16 +31,16 @@ namespace EventManagement.Web.Services.Storage
             _memoryCache = memoryCache;
         }
 
-        public async Task<EventDetails> FetchEventDetailsAsync(string container, string configFile)
+        public async Task<EventDetails> FetchAsync(string container, string configFile)
         {
-            if (_memoryCache.TryGetValue(Constants.CacheEventsKey, out EventDetails eventDetails))
+            if (_memoryCache.TryGetValue(Constants.CacheEventDetailsKey, out EventDetails eventDetails))
                 return eventDetails;
 
             var cacheEntryOptions = new MemoryCacheEntryOptions()
                 .SetSlidingExpiration(TimeSpan.FromDays(3));
 
             eventDetails = await GetAsync(container, configFile);
-            _memoryCache.Set(Constants.CacheEventsKey, eventDetails, cacheEntryOptions);
+            _memoryCache.Set(Constants.CacheEventDetailsKey, eventDetails, cacheEntryOptions);
 
             return eventDetails;
         }
@@ -58,7 +59,7 @@ namespace EventManagement.Web.Services.Storage
                 HydrateSpeakers(eventDetails.Speakers, slot.Value);
             }
             
-            _logger.LogInformation("event details loaded from storage service.");
+            _logger.LogInformation("event details loaded from storage service");
 
             return eventDetails;
         }

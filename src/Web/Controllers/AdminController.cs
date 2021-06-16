@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using EventManagement.Web.Integrations.Sessionize;
-using EventManagement.Web.Services.Storage;
+using EventManagement.Web.Services.Events;
 using EventManagement.Web.Utilities;
 using Identity.Api.Data;
 using Microsoft.AspNetCore.Authorization;
@@ -13,17 +13,17 @@ namespace EventManagement.Web.Controllers
     [Authorize(Roles = Roles.Admin), Route("api/[controller]")]
     public class AdminController : Controller
     {
-        private readonly IEventDataStorageService _eventDataStorageService;
+        private readonly IEventDetailsService _eventDetailsService;
         private readonly ISessionizeService _sessionizeService;
         private readonly IEventSessionizeService _eventSessionizeService;
         private readonly IMemoryCache _memoryCache;
 
-        public AdminController(IEventDataStorageService eventDataStorageService,
+        public AdminController(IEventDetailsService eventDetailsService,
             ISessionizeService sessionizeService,
             IEventSessionizeService eventSessionizeService,
             IMemoryCache memoryCache)
         {
-            _eventDataStorageService = eventDataStorageService;
+            _eventDetailsService = eventDetailsService;
             _sessionizeService = sessionizeService;
             _eventSessionizeService = eventSessionizeService;
             _memoryCache = memoryCache;
@@ -36,12 +36,12 @@ namespace EventManagement.Web.Controllers
                 !string.Equals(key, Environment.GetEnvironmentVariable(Constants.EnvAdminKey)))
                 return BadRequest();
 
-            _memoryCache.Remove(Constants.CacheEventsKey);
+            _memoryCache.Remove(Constants.CacheEventDetailsKey);
 
             var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2021.json";
             var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
 
-            var content = await _eventDataStorageService.FetchEventDetailsAsync(eventContainer, eventFile);
+            var content = await _eventDetailsService.FetchAsync(eventContainer, eventFile);
             
             _memoryCache.Remove(Constants.CacheSpeakersKey);
             _memoryCache.Remove(Constants.CacheSessionsKey);
@@ -56,12 +56,12 @@ namespace EventManagement.Web.Controllers
                 !string.Equals(key, Environment.GetEnvironmentVariable(Constants.EnvAdminKey)))
                 return BadRequest();
 
-            _memoryCache.Remove(Constants.CacheEventsKey);
+            _memoryCache.Remove(Constants.CacheEventDetailsKey);
 
             var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2021.json";
             var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
 
-            var content = await _eventDataStorageService.FetchEventDetailsAsync(eventContainer, eventFile);
+            var content = await _eventDetailsService.FetchAsync(eventContainer, eventFile);
             return Ok(content);
         }
         

@@ -2,7 +2,8 @@ namespace EventManagement.Web.Utilities
 {
     public static class Constants
     {
-        public const string CacheEventsKey = "event-details";
+        public const string CacheEventDetailsKey = "event-details";
+        public const string CacheEventsKey = "event";
         
         public const string EnvAdminKey = "ADMIN_KEY";
         public const string EnvEventFile = "EVENT_FILE";
