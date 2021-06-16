@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EventManagement.Web.Application.Cache
+namespace EventManagement.Web.Application.Cache.Redis
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class CacheApiResponseAttribute : Attribute, IAsyncActionFilter

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EventManagement.Web.Application.Cache.Enumerations;
+using EventManagement.Web.Application.Cache.Services;
 using EventManagement.Web.Data.Models;
 using EventManagement.Web.Services.Storage;
 using EventManagement.Web.Utilities;
@@ -19,30 +21,22 @@ namespace EventManagement.Web.Services.Events
     {
         private readonly ILogger<EventDetailsService> _logger;
         private readonly IBlobStorageService _blobStorageService;
-        private readonly IMemoryCache _memoryCache;
+        private readonly IInMemoryCacheService _inMemoryCacheService;
 
         public EventDetailsService(
             ILogger<EventDetailsService> logger,
             IBlobStorageService blobStorageService,
-            IMemoryCache memoryCache)
+            IInMemoryCacheService inMemoryCacheService)
         {
             _logger = logger;
             _blobStorageService = blobStorageService;
-            _memoryCache = memoryCache;
+            _inMemoryCacheService = inMemoryCacheService;
         }
 
         public async Task<EventDetails> FetchAsync(string container, string configFile)
         {
-            if (_memoryCache.TryGetValue(Constants.CacheEventDetailsKey, out EventDetails eventDetails))
-                return eventDetails;
-
-            var cacheEntryOptions = new MemoryCacheEntryOptions()
-                .SetSlidingExpiration(TimeSpan.FromDays(3));
-
-            eventDetails = await GetAsync(container, configFile);
-            _memoryCache.Set(Constants.CacheEventDetailsKey, eventDetails, cacheEntryOptions);
-
-            return eventDetails;
+            return await _inMemoryCacheService.CacheAsync(async () => await GetAsync(container, configFile),
+                Constants.CacheEventDetailsKey, CacheDuration.CacheLow);
         }
 
         private async Task<EventDetails> GetAsync(string container, string configFile)
@@ -58,7 +52,7 @@ namespace EventManagement.Web.Services.Events
             {
                 HydrateSpeakers(eventDetails.Speakers, slot.Value);
             }
-            
+
             _logger.LogInformation("event details loaded from storage service");
 
             return eventDetails;

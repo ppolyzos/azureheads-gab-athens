@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using EventManagement.Api.Core.Infrastructure.Output;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace EventManagement.Web.Application.Cache
+namespace EventManagement.Web.Application.Cache.Redis
 {
     public interface IResponseCacheService
     {

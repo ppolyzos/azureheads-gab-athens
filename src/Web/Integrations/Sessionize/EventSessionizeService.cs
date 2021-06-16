@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EventManagement.Api.Core.Infrastructure.Extensions;
 using EventManagement.Web.Data.Models;
-using EventManagement.Web.Utilities;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace EventManagement.Web.Integrations.Sessionize
 {
@@ -29,25 +26,17 @@ namespace EventManagement.Web.Integrations.Sessionize
         };
 
         private readonly ISessionizeService _sessionizeService;
-        private readonly IMemoryCache _memoryCache;
 
-        public EventSessionizeService(ISessionizeService sessionizeService, IMemoryCache memoryCache)
+        public EventSessionizeService(ISessionizeService sessionizeService)
         {
             _sessionizeService = sessionizeService;
-            _memoryCache = memoryCache;
         }
 
         public async Task<IEnumerable<Speaker>> FetchSpeakersAsync()
         {
-            if (_memoryCache.TryGetValue(Constants.CacheSpeakersKey, out IList<Speaker> speakers))
-                return speakers;
-
-            var cacheEntryOptions = new MemoryCacheEntryOptions()
-                .SetSlidingExpiration(TimeSpan.FromHours(1));
-
             var sessionizeSpeakers = await _sessionizeService.FetchSpeakersAsync();
 
-            speakers = sessionizeSpeakers.Select(ss => new Speaker
+            var speakers = sessionizeSpeakers.Select(ss => new Speaker
             {
                 Id = $"{ss.FirstName}-{ss.LastName}".ToLowerInvariant(),
                 Aliases = new[] { ss.LastName.ToLowerInvariant() },
@@ -59,23 +48,15 @@ namespace EventManagement.Web.Integrations.Sessionize
                     { Url = c.Url, Icon = _icons[c.LinkType] }).ToList()
             }).ToList();
 
-            _memoryCache.Set(Constants.CacheSpeakersKey, speakers, cacheEntryOptions);
-
             return speakers;
         }
 
         public async Task<IEnumerable<Session>> FetchSessionsAsync()
         {
-            if (_memoryCache.TryGetValue(Constants.CacheSessionsKey, out List<Session> sessions))
-                return sessions;
-
-            var cacheEntryOptions = new MemoryCacheEntryOptions()
-                .SetSlidingExpiration(TimeSpan.FromHours(1));
-
             var sessionizeSessions = await _sessionizeService.FetchSessionsAsync();
 
             var speakers = (await FetchSpeakersAsync()).ToArray();
-            sessions = sessionizeSessions.Select(ss => new Session
+            var sessions = sessionizeSessions.Select(ss => new Session
             {
                 Title = ss.Title,
                 Description = ss.Description,
@@ -112,12 +93,10 @@ namespace EventManagement.Web.Integrations.Sessionize
 
             sessions = sessions.OrderBy(c => c.Room).ThenBy(c => c.Time).ToList();
 
-            _memoryCache.Set(Constants.CacheSessionsKey, sessions, cacheEntryOptions);
-
             return sessions;
         }
 
-        private Session[] GetServiceSessions(string room)
+        private static Session[] GetServiceSessions(string room)
         {
             return new[]
             {

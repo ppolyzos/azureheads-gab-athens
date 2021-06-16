@@ -1,4 +1,4 @@
-﻿namespace EventManagement.Web.Application.Cache
+﻿namespace EventManagement.Web.Application.Cache.Redis
 {
     public class RedisCacheSettings
     {

@@ -3,9 +3,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 
-namespace EventManagement.Web.Application.Cache
+namespace EventManagement.Web.Application.Cache.Redis
 {
-    public class CacheInstaller : IInstaller
+    public class RedisCacheInstaller : IInstaller
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
