@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EventManagement.Web.Application.Cache;
 using EventManagement.Web.Data.Models;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Utilities;

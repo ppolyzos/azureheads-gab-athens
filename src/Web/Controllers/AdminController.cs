@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using EventManagement.Web.Application.Cache;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services.Events;
 using EventManagement.Web.Utilities;
@@ -14,20 +15,33 @@ namespace EventManagement.Web.Controllers
     public class AdminController : Controller
     {
         private readonly IEventDetailsService _eventDetailsService;
+        private readonly IEventService _eventService;
         private readonly ISessionizeService _sessionizeService;
         private readonly IEventSessionizeService _eventSessionizeService;
         private readonly IMemoryCache _memoryCache;
 
         public AdminController(IEventDetailsService eventDetailsService,
+            IEventService eventService,
             ISessionizeService sessionizeService,
             IEventSessionizeService eventSessionizeService,
             IMemoryCache memoryCache)
         {
             _eventDetailsService = eventDetailsService;
+            _eventService = eventService;
             _sessionizeService = sessionizeService;
             _eventSessionizeService = eventSessionizeService;
             _memoryCache = memoryCache;
         }
+
+        [HttpGet("cached-event"), CacheApiResponse(CacheDuration.CacheLow)]
+        public async Task<IActionResult> GetCachedEvent()
+        {
+            var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
+            var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2021.json";
+            var eventDetails = await _eventService.FetchAsync(eventContainer, eventFile);
+            return Ok(eventDetails);
+        }
+        
 
         [HttpPost("cache/refresh")]
         public async Task<IActionResult> CacheRefreshAsync([FromQuery] string key)
