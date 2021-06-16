@@ -1,4 +1,5 @@
 ﻿using System;
+using TimeZoneConverter;
 
 namespace EventManagement.Api.Core.Infrastructure.Extensions
 {
@@ -9,7 +10,7 @@ namespace EventManagement.Api.Core.Infrastructure.Extensions
 
         public static string ToTimeZone(this DateTime dateTime, string format, string nameOfTimeZone = TimeZoneAthens)
         {
-            var tst = TimeZoneInfo.FindSystemTimeZoneById(nameOfTimeZone);
+            var tst = TZConvert.GetTimeZoneInfo(nameOfTimeZone);
             return TimeZoneInfo.ConvertTimeFromUtc(dateTime, tst).ToString(format);
         }
     }
