@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -40,18 +41,20 @@ namespace EventManagement.Web
                 {
                     var seqServerUrl = host.Configuration["Serilog:SeqServerUrl"];
                     var logstashUrl = host.Configuration["Serilog:LogstashUrl"];
+                    var isDevelopment = host.HostingEnvironment.IsDevelopment();
 
                     builder.MinimumLevel.Verbose()
                         .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                         .Enrich.WithProperty("ApplicationContext", host.HostingEnvironment.ApplicationName)
                         .Enrich.FromLogContext()
                         .WriteTo.Console()
-                        .WriteTo.Seq(string.IsNullOrWhiteSpace(seqServerUrl)
+                        .WriteTo.Conditional(_ => isDevelopment, wt => wt.Seq(string.IsNullOrWhiteSpace(seqServerUrl)
                             ? "http://seq"
-                            : seqServerUrl)
-                        .WriteTo.Http(string.IsNullOrWhiteSpace(logstashUrl)
+                            : seqServerUrl))
+                        .WriteTo.Conditional(_ => isDevelopment, wt => wt.Http(string.IsNullOrWhiteSpace(logstashUrl)
                             ? "http://logstash:8080"
-                            : logstashUrl)
+                            : logstashUrl))
+                        .WriteTo.Conditional(_ => !isDevelopment, wt => wt.ApplicationInsights(TelemetryConverter.Traces))
                         .ReadFrom.Configuration(host.Configuration);
                 })
                 .UseStartup<Startup>()
