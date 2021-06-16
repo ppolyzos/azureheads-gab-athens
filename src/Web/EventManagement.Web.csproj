@@ -38,10 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\global-ai-bootcamp.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Update="Views\Partial\ScheduleSlot.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -61,6 +57,26 @@
     <ProjectReference Include="..\core\EventManagement.Core\EventManagement.Core.csproj" />
     <ProjectReference Include="..\core\EventManagement.Installers.Tools\EventManagement.Installers.Tools.csproj" />
     <ProjectReference Include="..\services\Identity.Api\Identity.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_About.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Communities.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_FindUs.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_FOOTER.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Gallery.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Header.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Hero.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Schedule.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Speakers.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\_Sponsors.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\img\testimonials\client1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\img\testimonials\client2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\img\testimonials\client3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\img\testimonials\client4.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\img\testimonials\client5.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\img\testimonials\client6.jpg" />
   </ItemGroup> 
 
 </Project>

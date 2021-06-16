@@ -57,9 +57,7 @@ namespace EventManagement.Web.Controllers
                         : null;
                 Hydrate(slot.Value, eventDetails.Speakers, streamUrls);
             }
-
-            //return View("~/Views/Home/Index.cshtml"); // Default for EventManagement.Web-2019
-            // return View("~/Views/Ai/Index.cshtml"); // Default for ai-athens-2019
+            
             return View("~/Views/ga/Index.cshtml", eventDetails);
         }
         
