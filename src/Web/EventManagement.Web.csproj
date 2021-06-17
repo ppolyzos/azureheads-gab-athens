@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>19cc57a0-379f-4c8a-8b7f-dcbe04b74ff8</UserSecretsId>
-    <ApplicationInsightsResourceId>/subscriptions/50a1c729-5f81-4f61-bce3-c044a329891d/resourcegroups/EventManagement.Web/providers/microsoft.insights/components/global-azure-greece-2020</ApplicationInsightsResourceId>
+    <ApplicationInsightsResourceId>/subscriptions/7509e10b-ffb3-45f4-9037-e56b29d69deb/resourceGroups/gab-events/providers/microsoft.insights/components/global-azure-greece-2021</ApplicationInsightsResourceId>
     <LangVersion>9</LangVersion>
     <Nullable>disable</Nullable>
   </PropertyGroup>

@@ -8,7 +8,7 @@ namespace EventManagement.Installers.Tools
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddApplicationInsightsTelemetry();
+            services.AddApplicationInsightsTelemetry(configuration["ApplicationInsights:ConnectionString"]);
         }
     }
 }
