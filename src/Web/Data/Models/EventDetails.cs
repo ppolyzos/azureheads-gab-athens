@@ -5,6 +5,8 @@ namespace EventManagement.Web.Data.Models
     public class EventDetails
     {
         public State State { get; set; }
+        
+        public Integrations Integrations { get; set; }
         public Configuration Configuration { get; set; }
         public IList<Speaker> Speakers { get; set; }
         public IList<Volunteer> Volunteers { get; set; }

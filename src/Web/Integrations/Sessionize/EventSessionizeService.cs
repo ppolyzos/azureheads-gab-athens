@@ -8,13 +8,13 @@ namespace EventManagement.Web.Integrations.Sessionize
 {
     public interface IEventSessionizeService
     {
-        Task<IEnumerable<Speaker>> FetchSpeakersAsync();
-        Task<IEnumerable<Session>> FetchSessionsAsync();
+        Task<IEnumerable<Speaker>> FetchSpeakersAsync(string eventId);
+        Task<IEnumerable<Session>> FetchSessionsAsync(string eventId);
     }
 
     public class EventSessionizeService : IEventSessionizeService
     {
-        private readonly Dictionary<string, string> _icons = new Dictionary<string, string>
+        private readonly Dictionary<string, string> _icons = new()
         {
             { "LinkedIn", "fa fa-linkedin" },
             { "Blog", "fa fa-globe" },
@@ -32,9 +32,9 @@ namespace EventManagement.Web.Integrations.Sessionize
             _sessionizeService = sessionizeService;
         }
 
-        public async Task<IEnumerable<Speaker>> FetchSpeakersAsync()
+        public async Task<IEnumerable<Speaker>> FetchSpeakersAsync(string eventId)
         {
-            var sessionizeSpeakers = await _sessionizeService.FetchSpeakersAsync();
+            var sessionizeSpeakers = await _sessionizeService.FetchSpeakersAsync(eventId);
 
             var speakers = sessionizeSpeakers.Select(ss => new Speaker
             {
@@ -51,11 +51,11 @@ namespace EventManagement.Web.Integrations.Sessionize
             return speakers;
         }
 
-        public async Task<IEnumerable<Session>> FetchSessionsAsync()
+        public async Task<IEnumerable<Session>> FetchSessionsAsync(string eventId)
         {
-            var sessionizeSessions = await _sessionizeService.FetchSessionsAsync();
+            var sessionizeSessions = await _sessionizeService.FetchSessionsAsync(eventId);
 
-            var speakers = (await FetchSpeakersAsync()).ToArray();
+            var speakers = (await FetchSpeakersAsync(eventId)).ToArray();
             var sessions = sessionizeSessions.Select(ss => new Session
             {
                 Title = ss.Title,
@@ -74,9 +74,10 @@ namespace EventManagement.Web.Integrations.Sessionize
                 {
                     var speaker = speakers.FirstOrDefault(s => s.Name == speakerId);
                     if (speaker == null) continue;
-                    
+
                     session.Speakers.Add(speaker);
                 }
+
                 session.SpeakerIds = session.Speakers.Select(c => c.Id).ToArray();
             }
 
@@ -88,6 +89,7 @@ namespace EventManagement.Web.Integrations.Sessionize
                 {
                     serviceSessions = serviceSessions.Where(s => s.Title != "Welcome Keynote").ToArray();
                 }
+
                 sessions.AddRange(serviceSessions);
             }
 
@@ -117,7 +119,7 @@ namespace EventManagement.Web.Integrations.Sessionize
                     Room = room,
                     IsGreeting = true
                 },
-                
+
                 new Session
                 {
                     Title = "Closing / Gifts",

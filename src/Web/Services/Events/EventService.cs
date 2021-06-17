@@ -43,7 +43,7 @@ namespace EventManagement.Web.Services.Events
 
                 if (eventDetails.SpeakerOrder != null)
                 {
-                    var speakers = (await _eventSessionizeService.FetchSpeakersAsync()).ToArray();
+                    var speakers = (await _eventSessionizeService.FetchSpeakersAsync(eventDetails.Integrations.Sessionize.EventId)).ToArray();
                     eventDetails.Speakers = eventDetails.SpeakerOrder
                         .Select(key => speakers.FirstOrDefault(c => c.Id == key))
                         .Where(s => s != null)
@@ -51,7 +51,7 @@ namespace EventManagement.Web.Services.Events
                     _logger.LogInformation("speaker order has been applied");
                 }
 
-                eventDetails.Schedule = new Schedule { Sessions = await _eventSessionizeService.FetchSessionsAsync() };
+                eventDetails.Schedule = new Schedule { Sessions = await _eventSessionizeService.FetchSessionsAsync(eventDetails.Integrations.Sessionize.EventId) };
                 eventDetails.Schedule.Slots = eventDetails.Schedule.Sessions
                     .Where(c => !string.IsNullOrEmpty(c.Room))
                     .OrderBy(c => c.Room)

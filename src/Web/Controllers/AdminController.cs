@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using EventManagement.Web.Application.Cache.Enumerations;
 using EventManagement.Web.Application.Cache.Redis;
+using EventManagement.Web.Configuration;
 using EventManagement.Web.Integrations.Sessionize;
 using EventManagement.Web.Services.Events;
 using EventManagement.Web.Utilities;
@@ -9,6 +10,7 @@ using Identity.Api.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 
 namespace EventManagement.Web.Controllers
 {
@@ -25,6 +27,7 @@ namespace EventManagement.Web.Controllers
             IEventService eventService,
             ISessionizeService sessionizeService,
             IEventSessionizeService eventSessionizeService,
+            IOptions<SessionizeConfig> sessionizeConfig,
             IMemoryCache memoryCache)
         {
             _eventDetailsService = eventDetailsService;
@@ -42,7 +45,7 @@ namespace EventManagement.Web.Controllers
             var eventDetails = await _eventService.FetchAsync(eventContainer, eventFile);
             return Ok(eventDetails);
         }
-        
+
 
         [HttpPost("cache/refresh")]
         public async Task<IActionResult> CacheRefreshAsync([FromQuery] string key)
@@ -57,10 +60,10 @@ namespace EventManagement.Web.Controllers
             var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
 
             var content = await _eventDetailsService.FetchAsync(eventContainer, eventFile);
-            
+
             _memoryCache.Remove(Constants.CacheSpeakersKey);
             _memoryCache.Remove(Constants.CacheSessionsKey);
-            
+
             return Ok(content);
         }
 
@@ -79,39 +82,41 @@ namespace EventManagement.Web.Controllers
             var content = await _eventDetailsService.FetchAsync(eventContainer, eventFile);
             return Ok(content);
         }
-        
+
         [HttpGet("sessionize/speakers")]
-        public async Task<IActionResult> FetchSessionizeSpeakersAsync([FromQuery] string key)
+        public async Task<IActionResult> FetchSessionizeSpeakersAsync([FromQuery] string key,
+            [FromQuery] string eventId)
         {
             if (string.IsNullOrEmpty(key) ||
                 !string.Equals(key, Environment.GetEnvironmentVariable(Constants.EnvAdminKey)))
                 return BadRequest();
 
-            var speakers = await _sessionizeService.FetchSpeakersAsync();
+            var speakers = await _sessionizeService.FetchSpeakersAsync(eventId);
 
             return Ok(speakers);
         }
 
         [HttpGet("sessionize/sessions")]
-        public async Task<IActionResult> FetchSessionizeSessionsAsync([FromQuery] string key)
+        public async Task<IActionResult> FetchSessionizeSessionsAsync([FromQuery] string key,
+            [FromQuery] string eventId)
         {
             if (string.IsNullOrEmpty(key) ||
                 !string.Equals(key, Environment.GetEnvironmentVariable(Constants.EnvAdminKey)))
                 return BadRequest();
 
-            var sessions = await _sessionizeService.FetchSessionsAsync();
+            var sessions = await _sessionizeService.FetchSessionsAsync(eventId);
 
             return Ok(sessions);
         }
 
         [HttpGet("sessions")]
-        public async Task<IActionResult> FetchSessionsAsync([FromQuery] string key)
+        public async Task<IActionResult> FetchSessionsAsync([FromQuery] string key, [FromQuery] string eventId)
         {
             if (string.IsNullOrEmpty(key) ||
                 !string.Equals(key, Environment.GetEnvironmentVariable(Constants.EnvAdminKey)))
                 return BadRequest();
 
-            var sessions = await _eventSessionizeService.FetchSessionsAsync();
+            var sessions = await _eventSessionizeService.FetchSessionsAsync(eventId);
 
             return Ok(sessions);
         }

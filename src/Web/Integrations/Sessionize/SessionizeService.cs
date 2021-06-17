@@ -14,8 +14,8 @@ namespace EventManagement.Web.Integrations.Sessionize
 {
     public interface ISessionizeService
     {
-        Task<IList<Speaker>> FetchSpeakersAsync();
-        Task<IEnumerable<Session>> FetchSessionsAsync();
+        Task<IList<Speaker>> FetchSpeakersAsync(string eventId);
+        Task<IEnumerable<Session>> FetchSessionsAsync(string eventId);
     }
 
     public class SessionizeService : ISessionizeService
@@ -25,32 +25,32 @@ namespace EventManagement.Web.Integrations.Sessionize
         public SessionizeService(IOptions<SessionizeConfig> config)
         {
             _config = config.Value;
-            _config.ApiUrl = _config.ApiUrl.Replace("{{EventId}}", _config.EventId);
         }
 
-        public async Task<IList<Speaker>> FetchSpeakersAsync() => await Invoke<Speaker[]>("Speakers", HttpMethod.Get);
+        public async Task<IList<Speaker>> FetchSpeakersAsync(string eventId) =>
+            await Invoke<Speaker[]>(eventId, "Speakers", HttpMethod.Get);
 
-        public async Task<IEnumerable<Session>> FetchSessionsAsync()
+        public async Task<IEnumerable<Session>> FetchSessionsAsync(string eventId)
         {
-            var groupSessions = await Invoke<GroupSession[]>("Sessions", HttpMethod.Get);
+            var groupSessions = await Invoke<GroupSession[]>(eventId, "Sessions", HttpMethod.Get);
 
             var groupSession = groupSessions.FirstOrDefault();
             return groupSession?.Sessions;
         }
 
-        private async Task<T> Invoke<T>(string path, HttpMethod method, IDictionary<string, string> data = null)
+        private async Task<T> Invoke<T>(string eventId, string path, HttpMethod method,
+            IDictionary<string, string> data = null)
         {
-            var uri = $"{_config.ApiUrl}/{path}";
+            var uri = $"{_config.ApiUrl.Replace("{{EventId}}", eventId)}/{path}";
 
             if (method == HttpMethod.Get && data?.Count > 0)
             {
-                uri = uri + "?" + GetQueryString(data);
+                uri = $"{uri}?{GetQueryString(data)}";
             }
 
             var request = (HttpWebRequest) WebRequest.Create(uri);
             request.Method = method.ToString();
             request.ContentLength = 0;
-
 
             string responseBody;
             HttpWebResponse response;
@@ -65,17 +65,16 @@ namespace EventManagement.Web.Integrations.Sessionize
             {
                 response = (HttpWebResponse) e.Response;
                 responseBody = ParseResponse(response);
+
                 var error = JsonSerializer.Deserialize<ErrorResponse>(responseBody)?.Error;
                 if (error != null)
-                {
                     throw new Exception($"{error.Code}:{error.Message}");
-                }
             }
 
             return JsonSerializer.Deserialize<T>(responseBody);
         }
 
-        private string ParseResponse(WebResponse response)
+        private static string ParseResponse(WebResponse response)
         {
             var responseBody = string.Empty;
             using var responseStream = response.GetResponseStream();
@@ -87,7 +86,7 @@ namespace EventManagement.Web.Integrations.Sessionize
             return responseBody;
         }
 
-        private string GetQueryString(IDictionary<string, string> dict)
+        private static string GetQueryString(IDictionary<string, string> dict)
         {
             var list = dict.Select(item => item.Key + "=" + item.Value).ToList();
             return string.Join("&", list);
