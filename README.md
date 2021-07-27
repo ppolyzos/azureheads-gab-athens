@@ -33,3 +33,19 @@ For logging [SEQ](https://datalust.co/seq) is used.
 You can set it up using [dev-tools](https://github.com/ppolyzos/dev-tools) and spin up a `seq` instance.
 
 To view logs you can open [localhost/#/events](http://localhost/#/events).
+
+
+## IoC
+
+To setup the infrastructure in azure and start working with your environment you can run the terraform code that exists in `src\ioc\<env>\<region>` folder using:
+```
+$ terraform init    # to initialize a working directory containing Terraform configuration files.
+$ terraform plan    # to create an execution plan
+$ terraform apply   # to execute the actions proposed in a Terraform plan.
+
+$ terraform destroy # to destroy all remote objects managed by a particular Terraform configuration and start again
+```
+
+For more info about Terraform please visit the following links:
+* [Terraform CLI](https://www.terraform.io/docs/cli/index.html)
+* [Terraform Azure Provider (azurerm)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
