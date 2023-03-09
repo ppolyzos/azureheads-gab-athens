@@ -85,7 +85,7 @@ namespace EventManagement.Web.Integrations.Sessionize
             foreach (var slot in slots)
             {
                 var serviceSessions = GetServiceSessions(slot);
-                if (slot.Equals("Slot 1"))
+                if (slot.Equals("Gazarte 1"))
                 {
                     serviceSessions = serviceSessions.Where(s => s.Title != "Welcome Keynote").ToArray();
                 }
@@ -105,7 +105,7 @@ namespace EventManagement.Web.Integrations.Sessionize
                 new Session
                 {
                     Title = "Welcome Keynote",
-                    Time = "11:00 - 11:15",
+                    Time = "10:00 - 10:30",
                     Icon = "fa fa-building-o",
                     Room = room,
                     IsGreeting = true,
@@ -114,7 +114,7 @@ namespace EventManagement.Web.Integrations.Sessionize
                 new Session
                 {
                     Title = "Lunch Break",
-                    Time = "14:00 - 15:00",
+                    Time = "13:05 - 14:00",
                     Icon = "fa fa-coffee",
                     Room = room,
                     IsGreeting = true
@@ -122,9 +122,9 @@ namespace EventManagement.Web.Integrations.Sessionize
 
                 new Session
                 {
-                    Title = "Closing / Gifts",
-                    Description = "Gifts are a kind offer from InfoQuest Technologies.",
-                    Time = "17:45 - 18:00",
+                    Title = "Closing",
+                    Description = "",
+                    Time = "16:35 - 17:00",
                     Icon = "fa fa-gift",
                     Room = room,
                     IsGreeting = true

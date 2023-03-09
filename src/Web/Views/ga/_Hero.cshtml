@@ -37,12 +37,12 @@
                         <li>
                             <a class="btn btn-md btn-lg-size btn-green" onclick="selectSchedule('#day1_auditorium1')">Slot A</a>
                             <a class="btn btn-md btn-lg-size btn-pink" onclick="selectSchedule('#day1_auditorium2')">Slot B</a>
-                            <a class="btn btn-md btn-lg-size btn-berry" onclick="selectSchedule('#day1_auditorium3')">Slot C</a>
+                            @* <a class="btn btn-md btn-lg-size btn-berry" onclick="selectSchedule('#day1_auditorium3')">Slot C</a> *@
                         </li>
                         <li>
                             @foreach (var (index, slot) in Model.Schedule.Slots.Select((session, i) => (i, session)))
                             {
-                                <a class="btn btn-outline btn-lg-size btn-speaker-highlight" onclick="selectSchedule(@($"'#day1_auditorium{index+1}'"))">
+                                <a class="btn btn-outline btn-lg-size btn-speaker-highlight" onclick="selectSchedule(@($"'#day1_auditorium{index + 1}'"))">
                                     @foreach (var speaker in DistinctSpeakers(slot.Value))
                                     {
                                         <div class="speaker">@speaker</div>
@@ -66,6 +66,9 @@
                             <a class="btn btn-md btn-lg-size btn-green" target="_blank" href="@Model.Configuration.CallForSpeakersUrl">Speakers</a>
                             <a class="btn btn-md btn-lg-size btn-pink" target="_blank" href="@Model.Configuration.CallForVolunteersUrl">Volunteers</a>
                         </li>
+                        @* <li style="margin-top: 1rem"> *@
+                        @*     <a class="btn btn-md btn-x-lg-size btn-promo" target="_blank" href="https://forms.office.com/r/gg99LXNJ9c">Certification exam voucher from Infolab!</a> *@
+                        @* </li> *@
                         @* <li> *@
                         @*     <a class="btn btn-md btn-lg-size btn-berry" target="_blank" href="~/files/AzureBootcamp2018_Sponsorship.pdf">Sponsorship</a> *@
                         @* </li> *@

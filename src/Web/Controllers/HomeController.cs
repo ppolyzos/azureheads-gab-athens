@@ -20,7 +20,7 @@ namespace EventManagement.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var eventContainer = Environment.GetEnvironmentVariable(Constants.EnvEventContainer) ?? "gab-events";
-            var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2021.json";
+            var eventFile = Environment.GetEnvironmentVariable(Constants.EnvEventFile) ?? "ga-greece-2022.json";
 
             var eventDetails = await _eventService.FetchAsync(eventContainer, eventFile);
 

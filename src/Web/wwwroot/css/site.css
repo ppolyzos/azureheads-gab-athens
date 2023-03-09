@@ -508,6 +508,12 @@ span {
     background-color: #fe4918 !important;
 }
 
+.btn-promo {
+    background-color: #ffc52a !important;
+    color: #3a3a3b !important;
+    text-shadow: none;
+}
+
 .btn-lg-size {
     width: 30%;
 }
@@ -6531,4 +6537,10 @@ button[type="submit"] .loading {
     margin: 2px;
     padding: 2px;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1025px) {
+    .sponsor-logo-big-mobile img {
+        width: 90% !important;
+    }
 }

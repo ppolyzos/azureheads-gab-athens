@@ -1,0 +1,300 @@
+﻿{
+  "configuration": {
+    "name": "Global Azure Greece 2022",
+    "description": "One day full of <strong>Microsoft Azure and the Cloud</strong>",
+    "location": "GREECE",
+    "date": "7 May",
+    "dateExt": "May 7, 2022",
+    "bgHeroCssName": "bg-ga-2022",
+    "registrationUrl": "https://www.eventbrite.com/e/global-azure-greece-2022-tickets-302563885727",
+    "callForSpeakersUrl": "https://sessionize.com/global-azure-greece-2022/",
+    "callForVolunteersUrl": " https://forms.office.com/r/m7X5T2KBRb",
+    "sponsorshipUrl": "~/files/AzureBootcamp2018_Sponsorship.pdf",
+    "productionUrl": "https://global-azure-greece-2022.azurewebsites.net/",
+    "productionImageUrl": "https://global-azure-greece-2022.azurewebsites.net/img/ga/global-azure-2022-logo.jpg?v=1",
+    "links": [
+      {
+        "url": "https://www.twitter.com/azureheads/",
+        "icon": "fa fa-twitter"
+      },
+      {
+        "url": "https://www.facebook.com/azureheads/",
+        "icon": "fa fa-facebook"
+      },
+      {
+        "url": "https://www.meetup.com/azureheads/",
+        "icon": "fa fa-meetup"
+      }
+    ]
+  },
+  "integrations": {
+    "sessionize": {
+      "eventId": "0m5gibmb"
+    }
+  },
+  "state": {
+    "showRegistration": true,
+    "showSchedule": true,
+    "showSessionLinks": false,
+    "showSessions": false,
+    "showSpeakers": false,
+    "showVolunteers": false,
+    "showSpeakerDescription": false,
+    "showSponsors": true,
+    "showStreamUrlsFrom": "2022-05-07",
+    "showStreamUrlsTo": "2022-05-08"
+  },
+  "streamUrls": [
+    {
+      "name": "Slot 1",
+      "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjJlNzY3MDMtZDkxMy00NTgwLWI1OTMtMWMxMDFiZjA3MDBi%40thread.v2/0?context=%7b%22Tid%22%3a%224c367664-6ba4-4159-a3a0-7134830c9204%22%2c%22Oid%22%3a%22bda75f60-be8b-4b12-b572-ab8279f2ac55%22%7d"
+    },
+    {
+      "name": "Slot 2",
+      "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjMwNmQzMDctY2VjNS00YzQ4LWFkNmQtMWEwZjk2NmMyODYz%40thread.v2/0?context=%7b%22Tid%22%3a%224c367664-6ba4-4159-a3a0-7134830c9204%22%2c%22Oid%22%3a%22bda75f60-be8b-4b12-b572-ab8279f2ac55%22%7d"
+    },
+    {
+      "name": "Slot 3",
+      "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzZiYzdlZTYtOGZjZC00YjNiLWE4MmYtYmJkNjQzOTk2ZTg1%40thread.v2/0?context=%7b%22Tid%22%3a%224c367664-6ba4-4159-a3a0-7134830c9204%22%2c%22Oid%22%3a%22bda75f60-be8b-4b12-b572-ab8279f2ac55%22%7d"
+    },
+    {
+      "name": "Slot 4",
+      "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTZjYjU5YmItMWI3YS00YWNmLTk2OGMtMWFkODAxMTVkYzhi%40thread.v2/0?context=%7b%22Tid%22%3a%224c367664-6ba4-4159-a3a0-7134830c9204%22%2c%22Oid%22%3a%22bda75f60-be8b-4b12-b572-ab8279f2ac55%22%7d"
+    },
+    {
+      "name": "Slot 5",
+      "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDY5ZGQxNmMtZDEyNS00NTE5LWE3NTEtY2JhYWE0MjA0MTkw%40thread.v2/0?context=%7b%22Tid%22%3a%224c367664-6ba4-4159-a3a0-7134830c9204%22%2c%22Oid%22%3a%22bda75f60-be8b-4b12-b572-ab8279f2ac55%22%7d"
+    },
+    {
+      "name": "Slot 6",
+      "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjY0MGFiNDMtZjQ4YS00ZWQzLWIwYzUtNjAwMDVhNWUyZTA1%40thread.v2/0?context=%7b%22Tid%22%3a%224c367664-6ba4-4159-a3a0-7134830c9204%22%2c%22Oid%22%3a%22bda75f60-be8b-4b12-b572-ab8279f2ac55%22%7d"
+    }
+  ],
+  "sponsors": [
+    {
+      "url": "https://kaizengaming.com/",
+      "imageUrl": "/img/sponsors/kaizen-gaming.png",
+      "width": "100%",
+      "name": "Kaizen Gaming",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "https://www.infoquest.gr/",
+      "imageUrl": "/img/sponsors/40years_iqt_logo_H.png",
+      "width": "60%",
+      "name": "40 Years InfoQuest group",
+      "style": "inline",
+      "enabled": true
+    },
+    {
+      "url": "https://candi.gr/",
+      "imageUrl": "/img/sponsors/candi_h.png",
+      "width": "60%",
+      "name": "CANDI Advanced Business And Digital Solutions",
+      "style": "inline",
+      "enabled": false
+    },
+    {
+      "url": "http://officeline.gr/",
+      "imageUrl": "/img/sponsors/sponsor-office-line-gold.png",
+      "width": "60%",
+      "name": "Office Line",
+      "style": "inline",
+      "enabled": false
+    },
+    {
+      "url": "https://sessionize.com/",
+      "imageUrl": "/img/sponsors/sessionize-logo.png",
+      "width": "60%",
+      "name": "Sessionize",
+      "style": "inline",
+      "enabled": true
+    },
+
+    {
+      "url": "https://microsoft.com/",
+      "imageUrl": "/img/sponsors/microsoft.png",
+      "width": "100%",
+      "name": "Microsoft",
+      "style": "big",
+      "enabled": false
+    }
+  ],
+  "communities": [
+    {
+      "url": "https://www.azureheads.gr",
+      "imageUrl": "/img/communities/azureheads.jpg",
+      "width": "100%",
+      "name": "AzureHeads.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.autoexec.gr",
+      "imageUrl": "/img/communities/autoexec.jpg",
+      "width": "100%",
+      "name": "autoexec.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.sqlschool.gr",
+      "imageUrl": "/img/communities/sqlschool.png",
+      "width": "100%",
+      "name": "sqlschool.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.dotnetzone.gr",
+      "imageUrl": "/img/communities/dotnetzone.png",
+      "width": "100%",
+      "name": "dotnetzone.gr",
+      "style": "big",
+      "enabled": false
+    },
+    {
+      "url": "https://www.meetup.com/Thessaloniki-NET-Meetup/",
+      "imageUrl": "/img/communities/thessaloniki-dotnet-meetup.jpeg",
+      "width": "100%",
+      "name": "Thessaloniki .NET Meetup",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "https://studentambassadors.microsoft.com/",
+      "imageUrl": "/img/communities/student-partners.png",
+      "width": "100%",
+      "name": "Microsoft Learn Student Ambassadors",
+      "style": "big",
+      "enabled": true
+    }
+  ],
+  "speakerOrder": [
+    "konstantinos-pantos",
+    "paris-polyzos",
+    "vaggelis-kappas",
+    "pantelis-apostolidis",
+    "tiago-costa",
+    "nikolaos-antoniou",
+    "achilleas john-yfantis",
+    "antonios-chatzipavlis",
+    "m. scott-ford",
+    "george-kosmidis",
+    "dwayne-natwick",
+    "david-frappart",
+    "georgia-kalyva",
+    "george-spyrou",
+    "vukašin-terzić",
+    "christos-polydorou",
+    "demetris-bakas",
+    "dimitris-fintzos",
+    "dimitris-pantazis",
+    "foteini-savvidou",
+    "george-kavvalakis",
+    "george-markou",
+    "achilleas-raptis",
+    "thodoris-koutanis",
+    "george chrysovalantis-grammatikos",
+    "giannis-aidinis",
+    "ioannis-kolaxis",
+    "manos-pepis",
+    "michalis-nikolaidis",
+    "sergey-chubarov",
+    "konstantinos-boutsioulis",
+    "debasis-saha",
+    "konstantinos-ziazios",
+    "kourtzanidis-stratos",
+    "ambarish-ganguly",
+    "lazaros-katanas",
+    "maria-anastasia-moustaka",
+    "nick d.-dendris",
+    "vyron-vasileiadis",
+    "vassilis-ioannidis"
+  ],
+  "speakers": [],
+  "schedule": {
+    "sessions": []
+  },
+  "volunteers": [
+    {
+      "firstName": "Maria-Anastasia",
+      "lastName": "Moustaka",
+      "description": "Gold Microsoft Learn Student Ambassador",
+      "imageUrl": "https://sessionize.com/image/c634-400o400o2-99-6d81-4bb1-b2ec-04d0dfb70958.bae9529d-20ce-4c1b-9a9e-87987891a6a0.jpg"
+    },
+    {
+      "firstName": "Georgia",
+      "lastName": "Kalyva",
+      "description": "Micosoft AI MVP | MCT | Web Applications Developer",
+      "imageUrl": "https://sessionize.com/image/3fa7-200o200o2-7b-795a-492d-88fd-eab6166068a4.aeac5f05-3841-4d1b-b7b0-5b7c6fe022f3.jpeg"
+    },
+    {
+      "firstName": "Lazaros",
+      "lastName": "Katanas",
+      "description": "Cyber Security Consultant",
+      "imageUrl": "https://sessionize.com/image/f725-400o400o2-95-b77b-451f-8c9f-3d1aa89ade2b.6ca67ca5-3423-4669-948b-938e26f15e25.jpg"
+    },
+    {
+      "firstName": "Demetris",
+      "lastName": "Bakas",
+      "description": "Gold Microsoft Learn Student Ambassador",
+      "imageUrl": "https://sessionize.com/image/f801-400o400o2-23-7558-4296-963f-5c49e5ff4263.4aa9fb23-f704-40d2-9a55-a2f758631f82.jpg"
+    },
+    {
+      "firstName": "Iasonas",
+      "lastName": "Skafidas",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "/img/volunteers/iasonas-skafidas.jpg"
+    },
+    {
+      "firstName": "George",
+      "lastName": "Stavrakakis",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "/img/volunteers/george-stavrakakis.jpg"
+    },
+    {
+      "firstName": "Danai",
+      "lastName": "Karaviti",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "/img/volunteers/danai-karaviti.jpg"
+    },
+    {
+      "firstName": "Foteini",
+      "lastName": "Savvidou",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "https://sessionize.com/image/07d0-400o400o2-HS8uRntv2x3AP7nt71rdNL.jpg"
+    },
+    {
+      "firstName": "Michalis",
+      "lastName": "Nikolaidis",
+      "description": "Software Engineer & Trainer",
+      "imageUrl": "https://sessionize.com/image/2683-400o400o2-a836ae76-e12f-457b-81ce-a4ac8247ded1.jpg"
+    },
+    {
+      "firstName": "Andriana",
+      "lastName": "Vera",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "/img/volunteers/Andriana-Vera.jpg"
+    },
+    {
+      "firstName": "Christina",
+      "lastName": "Pardali",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "/img/volunteers/Christina-Pardali.jpg"
+    },
+    {
+      "firstName": "Rodanthi",
+      "lastName": "Alexiou",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "/img/volunteers/rodanthi-alexiou.jpg"
+    },
+    {
+      "firstName": "Achilleas",
+      "lastName": "Yfantis",
+      "description": "Beta Microsoft Learn Student Ambassador",
+      "imageUrl": "https://sessionize.com/image/bc1b-400o400o2-RVdWT7kLnj9HfCXgFmkHss.jpg"
+    }
+  ]
+}
