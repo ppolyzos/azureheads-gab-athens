@@ -1,0 +1,210 @@
+﻿{
+  "configuration": {
+    "name": "Global Azure Athens 2023",
+    "description": "One day full of <strong>Microsoft Azure and the Cloud</strong>",
+    "location": "GREECE",
+    "date": "13 May",
+    "dateExt": "May 13, 2023",
+    "bgHeroCssName": "bg-ga-2023",
+    "registrationUrl": "https://www.eventbrite.com/e/global-azure-athens-2023-tickets-588291143647",
+    "callForSpeakersUrl": "https://sessionize.com/global-azure-greece-2023/",
+    "callForVolunteersUrl": "https://forms.office.com/r/C1Ek76L3Uc",
+    "sponsorshipUrl": "~/files/AzureBootcamp2018_Sponsorship.pdf",
+    "productionUrl": "https://global-azure-athens-2023.azurewebsites.net/",
+    "productionImageUrl": "https://global-azure-athens-2023.azurewebsites.net/img/ga/GlobalAzure2023-500.png",
+    "links": [
+      {
+        "url": "https://www.twitter.com/azureheads/",
+        "icon": "fa fa-twitter"
+      },
+      {
+        "url": "https://www.facebook.com/azureheads/",
+        "icon": "fa fa-facebook"
+      },
+      {
+        "url": "https://www.meetup.com/azureheads/",
+        "icon": "fa fa-meetup"
+      }
+    ]
+  },
+  "integrations": {
+    "sessionize": {
+      "eventId": "hifgulkc"
+    }
+  },
+  "state": {
+    "showRegistration": true,
+    "showSchedule": true,
+    "showSessionLinks": true,
+    "showSessions": true,
+    "showSpeakers": true,
+    "showVolunteers": false,
+    "showSpeakerDescription": true,
+    "showSponsors": true,
+    "showStreamUrlsFrom": "2023-05-13",
+    "showStreamUrlsTo": "2023-05-14"
+  },
+  "streamUrls": [
+    {
+      "name": "Slot 1",
+      "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjJlNzY3MDMtZDkxMy00NTgwLWI1OTMtMWMxMDFiZjA3MDBi%40thread.v2/0?context=%7b%22Tid%22%3a%224c367664-6ba4-4159-a3a0-7134830c9204%22%2c%22Oid%22%3a%22bda75f60-be8b-4b12-b572-ab8279f2ac55%22%7d"
+    }
+  ],
+  "sponsors": [
+    {
+      "url": "https://www.kaizengaming.com",
+      "imageUrl": "/img/sponsors23/Logo_KaizenGaming_Colour.png",
+      "width": "70%",
+      "name": "Kaizen Gaming",
+      "style": "inline",
+      "enabled": true
+    },
+    {
+      "url": "https://microsoft.com/",
+      "imageUrl": "/img/sponsors/microsoft.png",
+      "width": "100%",
+      "name": "Microsoft",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "https://www.infoquest.gr",
+      "imageUrl": "/img/sponsors23/IQT.png",
+      "width": "100%",
+      "style": "big",
+      "name": "infoquest",
+      "enabled": true
+    },
+    {
+      "url": "https://www.candi.gr",
+      "imageUrl": "/img/sponsors23/CANDI_HOR.png",
+      "width": "100%",
+      "style": "big",
+      "name": "Candi",
+      "enabled": true
+    },
+    {
+      "url": "https://www.unisystems.gr",
+      "imageUrl": "/img/sponsors23/UniSystems yellow frame.png.png",
+      "width": "100%",
+      "style": "big",
+      "name": "Unisystems",
+      "enabled": true
+    },
+    {
+      "url": "https://www.cuberm.gr",
+      "imageUrl": "/img/sponsors23/CubeRM_Logo_Horizontal_OnWhite.png",
+      "width": "100%",
+      "style": "big",
+      "name": "CUBERM",
+      "enabled": true
+    },
+    {
+      "url": "https://www.bluestream.gr",
+      "imageUrl": "/img/sponsors23/bluestream.png",
+      "width": "100%",
+      "style": "big",
+      "name": "bluestream",
+      "enabled": true
+    },
+    {
+      "url": "https://www.officeline.gr",
+      "imageUrl": "/img/sponsors23/officeline.png",
+      "width": "100%",
+      "style": "big",
+      "name": "officeline",
+      "enabled": true
+    },
+    {
+      "url": "https://www.codehub.gr",
+      "imageUrl": "/img/sponsors23/CodeHub-logo_Full_small.png",
+      "width": "50%",
+      "style": "inline",
+      "name": "codehub",
+      "enabled": true
+    }
+  ],
+  "communities": [
+    {
+      "url": "https://www.azureheads.gr",
+      "imageUrl": "/img/communities/azureheads.jpg",
+      "width": "100%",
+      "name": "AzureHeads.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.autoexec.gr",
+      "imageUrl": "/img/communities/autoexec.jpg",
+      "width": "100%",
+      "name": "autoexec.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "http://www.sqlschool.gr",
+      "imageUrl": "/img/communities/sqlschool-logo-2023-200.png",
+      "width": "100%",
+      "name": "sqlschool.gr",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "https://www.meetup.com/athens-kubernetes-meetup/",
+      "imageUrl": "/img/communities/athensk8s.png",
+      "width": "100%",
+      "name": "Kubernetes Athens",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "https://studentambassadors.microsoft.com/",
+      "imageUrl": "/img/communities/student-partners.png",
+      "width": "100%",
+      "name": "Microsoft Learn Student Ambassadors",
+      "style": "big",
+      "enabled": true
+    },
+    {
+      "url": "https://funcnocode.gr/",
+      "imageUrl": "https://funcnocode.gr/images/logo.jpg",
+      "width": "100%",
+      "name": "Microsoft Learn Student Ambassadors",
+      "style": "big",
+      "enabled": true
+    }
+  ],
+  "speakerOrder": [
+    "pantelis-apostolidis",
+    "thodoris-theodorou",
+    "vaggelis-kappas",
+    "konstantinos-pantos",
+    "dimitris-pantazis",
+    "gerasimos-alexiou",
+    "georgia-kalyva",
+    "george chrysovalantis-grammatikos",
+    "thanassis-dadakarides",
+    "antonios-chatzipavlis",
+    "christos-galanopoulos",
+    "nikolaos-antoniou",
+    "vasilis-zisiadis",
+    "dimitrios-patsos",
+    "george-kavvalakis",
+    "lazaros-katanas",
+    "pantelis-apostolidis",
+    "dimitrios-papadoulis",
+    "panagiotis-pateas"
+  ],
+  "speakers": [],
+  "schedule": {
+    "sessions": []
+  },
+  "volunteers": [
+    {
+      "firstName": "Lazaros",
+      "lastName": "Katanas",
+      "description": "Cyber Security @ EY",
+      "imageUrl": "https://sessionize.com/image/f725-400o400o2-95-b77b-451f-8c9f-3d1aa89ade2b.6ca67ca5-3423-4669-948b-938e26f15e25.jpg"
+    }
+  ]
+}

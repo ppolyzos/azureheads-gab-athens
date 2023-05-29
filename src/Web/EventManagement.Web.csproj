@@ -6,6 +6,7 @@
     <ApplicationInsightsResourceId>/subscriptions/7509e10b-ffb3-45f4-9037-e56b29d69deb/resourceGroups/gab-events/providers/microsoft.insights/components/global-azure-greece-2021</ApplicationInsightsResourceId>
     <LangVersion>9</LangVersion>
     <Nullable>disable</Nullable>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
 
   <ItemGroup>

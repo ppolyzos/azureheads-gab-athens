@@ -61,7 +61,7 @@ namespace EventManagement.Web.Integrations.Sessionize
                 Title = ss.Title,
                 Description = ss.Description,
                 SpeakerIds = ss.Speakers.Select(c => c.Name).ToArray(),
-                Time = $"{ss.StartsAt.ToTimeZone("HH:mm")} - {ss.EndsAt.ToTimeZone("HH:mm")}",
+                Time = ss.StartsAt.HasValue ? $"{ss.StartsAt.Value.ToTimeZone("HH:mm")} - {ss.EndsAt.Value.ToTimeZone("HH:mm")}" : "N/A",
                 Room = ss.Room,
                 Categories = ss.Categories.ToDictionary(c => c.Name,
                     sc => sc.CategoryItems.Select(si => si.Name))
@@ -85,7 +85,7 @@ namespace EventManagement.Web.Integrations.Sessionize
             foreach (var slot in slots)
             {
                 var serviceSessions = GetServiceSessions(slot);
-                if (slot.Equals("Gazarte 1"))
+                if (slot != null && slot.Equals("Gazarte 1"))
                 {
                     serviceSessions = serviceSessions.Where(s => s.Title != "Welcome Keynote").ToArray();
                 }

@@ -6081,6 +6081,10 @@ button[type="submit"] .loading {
     background-image: url('../img/ga/global-azure-greece-2022-bg-v1.jpg');
 }
 
+.bg-ga-2023 {
+    background-image: url('../img/ga/global-azure-greece-2023-bg-v1.jpg');
+}
+
 .bg-ga-empty {
     background-image: url('../img/ga/global-azure-greece-2020-bg-empty.jpg');
 }

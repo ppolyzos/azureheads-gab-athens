@@ -9,7 +9,7 @@ namespace EventManagement.Web.Integrations.Sessionize.Models
         [JsonPropertyName("firstName")] public string FirstName { get; set; }
         [JsonPropertyName("lastName")] public string LastName { get; set; }
         [JsonPropertyName("fullName")] public string FullName { get; set; }
-        [JsonPropertyName("biio")] public string Bio { get; set; }
+        [JsonPropertyName("bio")] public string Bio { get; set; }
         [JsonPropertyName("tagLine")] public string TagLine { get; set; }
         [JsonPropertyName("profilePicture")] public string ProfilePicture { get; set; }
         [JsonPropertyName("sessions")] public IList<SessionOverview> Sessions { get; set; }
